@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 
 const GOOGLE_FORM_URL =
-  "https://docs.google.com/forms/d/e/XXXXX/viewform?usp=sf_link";
+  "https://docs.google.com/forms/d/e/1FAIpQLSfwY_2V2nYnON8jk7xfHTdibgj6PLhfUcZ6KK6CGoNCU9qF1w/viewform?usp=publish-editor";
 
 export default function VoiceInputSection() {
   return (
