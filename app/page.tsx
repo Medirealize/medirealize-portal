@@ -1,6 +1,7 @@
 import ProductLeadSection from "@/components/ProductLeadSection";
 import DeveloperThoughtFooter from "@/components/DeveloperThoughtFooter";
 import VoiceInputSection from "@/components/VoiceInputSection";
+import DeveloperProfileSection from "@/components/DeveloperProfileSection";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <main className="flex-1">
         <ProductLeadSection />
         <VoiceInputSection />
+        <DeveloperProfileSection />
       </main>
       <DeveloperThoughtFooter />
     </div>
