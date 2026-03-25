@@ -88,9 +88,10 @@ export default function ProductLeadSection() {
           {products.map((p, index) => {
             const href = p.externalUrl || "";
             const cardClassName = [
-              "group relative flex h-full flex-col rounded-4xl sm:rounded-3xl border border-blue-100 bg-white/80 p-5 text-left shadow-sm backdrop-blur transition-all duration-300",
+              "group relative flex w-full min-h-[340px] flex-col rounded-4xl sm:rounded-3xl border border-blue-100 bg-white/80 p-5 text-left shadow-sm backdrop-blur transition-all duration-300",
               "hover:-translate-y-1 hover:shadow-md active:-translate-y-0.5 active:shadow-md",
               "focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/80",
+              "cursor-pointer [touch-action:manipulation]",
             ].join(" ");
 
             const cardInner = (
@@ -151,8 +152,7 @@ export default function ProductLeadSection() {
               <a
                 key={p.key}
                 href={href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target="_self"
                 className={cardClassName}
                 aria-label={`${p.catchCopy} を使ってみる`}
               >
