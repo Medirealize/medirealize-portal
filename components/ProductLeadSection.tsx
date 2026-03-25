@@ -19,10 +19,11 @@ type Product = {
 };
 
 export default function ProductLeadSection() {
-  const KIDUKI2_URL = process.env.NEXT_PUBLIC_KIDUKI2_VERCEL_URL ?? "";
-  const SYMPTOMSUM_URL = process.env.NEXT_PUBLIC_SYMPTOMSUM_VERCEL_URL ?? "";
-  const PREFLECTION_URL = process.env.NEXT_PUBLIC_PREFLECTION_VERCEL_URL ?? "";
-  const FUTURECHART_URL = process.env.NEXT_PUBLIC_FUTURECHART_VERCEL_URL ?? "";
+  // URLは必ずカードのリンクとして成立するよう直書き（.env.local は通常コミットされないため）
+  const KIDUKI2_URL = "https://kiduki-app-v2.vercel.app/";
+  const SYMPTOMSUM_URL = "https://symptomsum-app.vercel.app/";
+  const PREFLECTION_URL = "https://kiduki-insight-v2.vercel.app/";
+  const FUTURECHART_URL = "https://future-chartv7.vercel.app/login";
 
   const products = useMemo<Product[]>(
     () => [
@@ -86,7 +87,6 @@ export default function ProductLeadSection() {
       <section className="mt-10" aria-label="プロダクト導線">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((p, index) => {
-            const href = p.externalUrl || "";
             const cardClassName = [
               "group relative flex w-full min-h-[340px] flex-col rounded-4xl sm:rounded-3xl border border-blue-100 bg-white/80 p-5 text-left shadow-sm backdrop-blur transition-all duration-300",
               "hover:-translate-y-1 hover:shadow-md active:-translate-y-0.5 active:shadow-md",
@@ -140,18 +140,10 @@ export default function ProductLeadSection() {
               </>
             );
 
-            if (!href) {
-              return (
-                <div key={p.key} className={cardClassName} aria-label={`${p.catchCopy} を使ってみる`}>
-                  {cardInner}
-                </div>
-              );
-            }
-
             return (
               <a
                 key={p.key}
-                href={href}
+                href={p.externalUrl}
                 target="_self"
                 className={cardClassName}
                 aria-label={`${p.catchCopy} を使ってみる`}
