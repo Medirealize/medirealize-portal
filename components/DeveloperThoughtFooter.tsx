@@ -15,7 +15,7 @@ export default function DeveloperThoughtFooter() {
             rel="noopener noreferrer"
             className="mt-3 inline-flex w-full items-center justify-center rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/80 sm:w-auto"
           >
-            メディリアライズを応援する
+            野村を応援する
           </a>
         </div>
 
