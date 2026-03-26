@@ -15,7 +15,7 @@ export default function StorySection() {
             なぜ、外科医がコードを書くのか
           </h3>
           <p className="mt-3 text-sm leading-relaxed text-slate-600">
-            15年のキャリア、ボストンでの研究、そして宮崎での再挑戦。医療の現場で何度も直面した「構造の限界」を、AIでハックするために。現場で見えていた痛みを、プロダクトへ変換しています。
+            15年のキャリア、ボストンでの研究、そして宮崎での再挑戦。医療の現場で見えてきた「構造の限界」を乗り越えるために、医師によるプロトタイプ開発を続けています。現場で得た知見を、実装可能なプロダクトへと変換しています。
           </p>
           <a
             href={NOTE_STORY_URL}
@@ -33,10 +33,10 @@ export default function StorySection() {
             Recruit
           </p>
           <h3 className="mt-2 text-xl font-bold tracking-tight text-slate-900">
-            共犯者（参謀）募集
+            開発パートナー（技術的右腕）を募集しています
           </h3>
           <p className="mt-3 text-sm leading-relaxed text-slate-600">
-            この狂気をロジックに変える右腕を探しています。医療の現場理解と、実装をつなげる挑戦に興味がある方は、ぜひ声をかけてください。
+            理想を現実に。医療の構造を共に実装しませんか。医師によるプロトタイプ開発のスピードを、技術で加速できる方との協業を歓迎しています。
           </p>
           <a
             href={X_DM_URL}
