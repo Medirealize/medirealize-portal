@@ -2,6 +2,7 @@ import ProductLeadSection from "@/components/ProductLeadSection";
 import DeveloperThoughtFooter from "@/components/DeveloperThoughtFooter";
 import VoiceInputSection from "@/components/VoiceInputSection";
 import DeveloperProfileSection from "@/components/DeveloperProfileSection";
+import StorySection from "@/components/StorySection";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <ProductLeadSection />
         <VoiceInputSection />
         <DeveloperProfileSection />
+        <StorySection />
       </main>
       <DeveloperThoughtFooter />
     </div>

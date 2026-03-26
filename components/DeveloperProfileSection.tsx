@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
+const NOTE_STORY_URL = "https://note.com/medirealize_note";
 
 export default function DeveloperProfileSection() {
   return (
@@ -21,6 +22,15 @@ export default function DeveloperProfileSection() {
             <p className="mt-1 text-sm leading-relaxed text-gray-600">
               医師 / 医学博士 / Medirealize代表
             </p>
+            <a
+              href={NOTE_STORY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-blue-700 underline decoration-blue-400 underline-offset-4 transition-colors hover:text-blue-800"
+            >
+              note：なぜ、外科医がコードを書くのか
+              <ExternalLink className="h-3.5 w-3.5" />
+            </a>
           </aside>
 
           <div className="min-w-0">

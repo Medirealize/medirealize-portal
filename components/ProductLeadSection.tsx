@@ -91,7 +91,7 @@ export default function ProductLeadSection() {
               "group relative flex w-full min-h-[340px] flex-col rounded-4xl sm:rounded-3xl border border-blue-100 bg-white/80 p-5 text-left shadow-sm backdrop-blur transition-all duration-300",
               "hover:-translate-y-1 hover:shadow-md active:-translate-y-0.5 active:shadow-md",
               "focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/80",
-              "cursor-pointer [touch-action:manipulation]",
+              "[touch-action:manipulation]",
             ].join(" ");
 
             const cardInner = (
@@ -129,11 +129,16 @@ export default function ProductLeadSection() {
                   ))}
                 </ol>
 
-                {/* ボタンは1つだけ：カード全体が導線なので、ここは文言の強調 */}
+                {/* ボタンは各アプリの外部リンク */}
                 <div className="mt-auto pt-5">
-                  <div className="rounded-2xl bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm transition-all group-hover:bg-blue-700 group-hover:ring-4 group-hover:ring-blue-200/30 active:scale-[0.99]">
+                  <a
+                    href={p.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block rounded-2xl bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm transition-all hover:bg-blue-700 hover:ring-4 hover:ring-blue-200/30 active:scale-[0.99]"
+                  >
                     {p.cta}
-                  </div>
+                  </a>
                 </div>
 
                 <span className="sr-only">product {index + 1}</span>
@@ -141,15 +146,9 @@ export default function ProductLeadSection() {
             );
 
             return (
-              <a
-                key={p.key}
-                href={p.externalUrl}
-                target="_self"
-                className={cardClassName}
-                aria-label={`${p.catchCopy} を使ってみる`}
-              >
+              <div key={p.key} className={cardClassName} aria-label={`${p.catchCopy} のカード`}>
                 {cardInner}
-              </a>
+              </div>
             );
           })}
         </div>
