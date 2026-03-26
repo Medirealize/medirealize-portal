@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 export default function DeveloperThoughtFooter() {
   return (
@@ -19,9 +20,17 @@ export default function DeveloperThoughtFooter() {
         </div>
 
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-          <p className="text-sm font-medium text-slate-700">
-            © 2026 メディリアライズ (Medirealize) | medirealize.jp
-          </p>
+          <div className="flex flex-col gap-1">
+            <p className="text-sm font-medium text-slate-700">
+              © 2026 メディリアライズ (Medirealize) | medirealize.jp
+            </p>
+            <Link
+              href="/tokushoho"
+              className="text-xs text-slate-600 underline decoration-slate-300 underline-offset-4 transition-colors hover:text-slate-800"
+            >
+              特定商取引法に基づく表記
+            </Link>
+          </div>
           <p className="text-[11px] leading-relaxed text-slate-500">
             ※当サイトの内容は個人の見解であり、所属組織とは一切関係ありません。
           </p>
