@@ -13,6 +13,10 @@ const rows = [
   { label: "電話番号", value: "050-1809-9969" },
   { label: "メールアドレス", value: "info@medirealize.jp" },
   {
+    label: "販売商品",
+    value: "開発日誌（デジタルコンテンツ）の閲覧権およびプレミアム機能の利用ライセンス",
+  },
+  {
     label: "販売価格",
     value: "各商品ページ（決済リンク先）に表示された金額 300円（税込）",
   },
@@ -41,7 +45,7 @@ export default function TokushohoPage() {
           特定商取引法に基づく表記
         </h1>
         <p className="mt-2 text-sm leading-relaxed text-slate-600">
-          Medirealizeのサービス提供に関する表記です。
+          Medirealizeのデジタルコンテンツ販売に関する表記です。
         </p>
 
         <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
@@ -56,12 +60,26 @@ export default function TokushohoPage() {
         </div>
 
         <div className="mt-6">
-          <Link
-            href="/"
-            className="inline-flex items-center rounded-xl border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-100"
-          >
-            ポータルへ戻る
-          </Link>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/terms"
+              className="inline-flex items-center rounded-xl border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-100"
+            >
+              利用規約
+            </Link>
+            <Link
+              href="/dev-log"
+              className="inline-flex items-center rounded-xl border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-100"
+            >
+              開発日誌
+            </Link>
+            <Link
+              href="/"
+              className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50"
+            >
+              ポータルへ戻る
+            </Link>
+          </div>
         </div>
       </main>
     </div>
