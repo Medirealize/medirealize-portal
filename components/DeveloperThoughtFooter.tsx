@@ -10,12 +10,6 @@ export default function DeveloperThoughtFooter() {
             月額300円から、開発日誌（デジタルコンテンツ）の購読者になりませんか？
           </p>
           <div className="mt-3 flex flex-wrap gap-3">
-            <Link
-              href="/dev-log/unlock"
-              className="inline-flex w-full items-center justify-center rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-100 sm:w-auto"
-            >
-              開発日誌を閲覧する
-            </Link>
             <a
               href="https://buy.stripe.com/7sY6oA2lKe2qfdg8NEeEo00"
               target="_blank"
@@ -24,6 +18,12 @@ export default function DeveloperThoughtFooter() {
             >
               開発日誌を購読する
             </a>
+            <Link
+              href="/dev-log/unlock"
+              className="inline-flex w-full items-center justify-center rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-100 sm:w-auto"
+            >
+              開発日誌を閲覧する
+            </Link>
           </div>
           <p className="mt-2 text-xs leading-relaxed text-slate-500">
             ※本決済は寄付ではなく、デジタルコンテンツの閲覧権およびプレミアム機能の利用ライセンス提供に対する対価です。
