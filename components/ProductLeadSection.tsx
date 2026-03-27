@@ -81,18 +81,18 @@ export default function ProductLeadSection() {
   return (
     <div className="mx-auto w-full max-w-6xl px-3 pb-16 pt-5 sm:px-4 sm:pb-20 sm:pt-8">
       <section className="text-center">
-        <div className="relative mx-auto max-w-5xl overflow-visible rounded-xl border border-[#DADDE1] bg-white px-3 py-7 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:rounded-2xl sm:px-8 sm:py-9">
-          <div className="relative mx-auto inline-flex max-w-[96%] flex-wrap items-center justify-center gap-x-1.5 gap-y-1 rounded-full border border-[#DADDE1] bg-[#F0F2F5] px-2.5 py-1.5 text-center text-[10px] font-semibold leading-tight text-[#65676B] sm:max-w-none sm:gap-2 sm:px-3 sm:py-1 sm:text-xs">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-xl border border-[#DADDE1] bg-white px-4 py-8 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:rounded-2xl sm:px-10 sm:py-10">
+          <div className="relative mx-auto inline-flex max-w-full flex-wrap items-center justify-center gap-x-1.5 gap-y-1 rounded-full border border-[#DADDE1] bg-[#F0F2F5] px-2.5 py-1.5 text-center text-[10px] font-semibold leading-tight text-[#65676B] sm:gap-2 sm:px-3 sm:py-1 sm:text-xs">
             <span className="inline-flex h-2 w-2 shrink-0 rounded-full bg-[#1877F2]" aria-hidden />
             <span className="sm:hidden">Phase 1 · MA · 構築中</span>
             <span className="hidden sm:inline">Phase 1 · Medical Articulation · 構築中</span>
           </div>
 
-          <h1 className="relative mx-auto mt-4 max-w-full text-balance text-center text-lg font-extrabold leading-[1.45] tracking-tight text-[#050505] sm:mt-5 sm:text-2xl md:text-3xl md:leading-[1.25] lg:text-4xl xl:whitespace-nowrap xl:text-[clamp(1.75rem,2.2vw,2.5rem)]">
+          <h1 className="relative mx-auto mt-5 w-full min-w-0 max-w-full break-words text-balance text-center text-[clamp(1rem,3.8vw,1.75rem)] font-extrabold leading-snug tracking-tight text-[#050505] sm:mt-6 sm:text-2xl sm:leading-tight md:text-[1.625rem] lg:text-[1.75rem]">
             届かなかった声を、医療(Medi)の形（Realize）に変える。
           </h1>
 
-          <p className="relative mx-auto mt-4 max-w-full text-pretty text-center text-sm font-normal leading-[1.65] text-[#65676B] sm:mt-5 sm:text-base md:mt-6 xl:whitespace-nowrap xl:text-[0.9375rem]">
+          <p className="relative mx-auto mt-4 w-full min-w-0 max-w-full break-words text-pretty text-center text-[0.8125rem] font-normal leading-relaxed text-[#65676B] sm:mt-5 sm:text-sm md:text-[0.9375rem] md:leading-relaxed">
             診察がひと段落したあと、静かな診察室でキーボードの音だけが続く――その時間に、今プロトタイプが少しずつ形になります。
           </p>
         </div>
@@ -170,29 +170,29 @@ export default function ProductLeadSection() {
       </section>
 
       <section
-        className="mt-8 rounded-xl border border-[#DADDE1] bg-white px-4 py-6 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:mt-9 sm:px-8 sm:py-8"
+        className="mt-8 rounded-xl border border-[#DADDE1] bg-white px-5 py-9 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:mt-9 sm:px-10 sm:py-11"
         aria-labelledby="devlog-portal-heading"
       >
         <h2
           id="devlog-portal-heading"
-          className="text-pretty text-center text-base font-bold leading-snug tracking-tight text-[#050505] sm:text-lg md:text-xl"
+          className="mx-auto max-w-2xl text-pretty text-center text-sm font-bold leading-snug tracking-tight text-[#050505] sm:text-base md:text-lg"
         >
           Medirealize：開発の軌跡～医療とAIの現場から～
         </h2>
-        <ul className="mx-auto mt-4 max-w-2xl list-none space-y-3 text-left text-[0.9375rem] leading-[1.65] text-[#1C1E21] sm:mt-5 sm:space-y-2.5 sm:text-sm sm:leading-relaxed">
+        <ul className="mx-auto mt-6 max-w-2xl list-none space-y-3.5 text-left text-xs leading-[1.75] text-[#1C1E21] sm:mt-7 sm:space-y-4 sm:text-[13px] sm:leading-[1.8]">
           {DEVLOG_BULLETS.map((line) => (
-            <li key={line} className="flex gap-2 pl-0">
-              <span className="shrink-0 pt-[0.15em] text-[#65676B]" aria-hidden>
+            <li key={line} className="flex gap-2.5 pl-0">
+              <span className="shrink-0 pt-[0.2em] text-[#65676B]" aria-hidden>
                 ・
               </span>
-              <span>{line}</span>
+              <span className="min-w-0 break-words">{line}</span>
             </li>
           ))}
         </ul>
-        <p className="mx-auto mt-5 max-w-2xl text-pretty text-left text-sm leading-[1.65] text-[#65676B] sm:mt-6 sm:text-center sm:text-sm sm:leading-relaxed">
+        <p className="mx-auto mt-7 max-w-2xl text-pretty text-left text-xs leading-[1.75] text-[#65676B] sm:mt-8 sm:text-center sm:text-sm sm:leading-relaxed">
           患者さんの届かなかった声を、医療の形に変えるまでの泥臭い試行錯誤を、月額300円の「開発日誌」として公開しています。一人の医師がキーボードを叩いて医療を再構築（Constructionism）する、その現在進行形のプロセスに並走していただけませんか。
         </p>
-        <div className="mt-6 flex justify-center sm:mt-7">
+        <div className="mt-8 flex justify-center sm:mt-9">
           <a
             href={DEVLOG_STRIPE_URL}
             target="_blank"
@@ -204,9 +204,9 @@ export default function ProductLeadSection() {
         </div>
       </section>
 
-      <div className="mt-8 flex justify-center px-1 sm:mt-10">
+      <div className="mt-9 flex justify-center px-2 sm:mt-10">
         <FadeInUpOnScroll>
-          <div className="max-w-lg rounded-2xl border border-[#DADDE1] bg-white px-4 py-3 text-center text-sm font-medium leading-relaxed text-[#65676B] shadow-[0_1px_2px_rgba(0,0,0,0.06)] sm:rounded-full sm:px-5 sm:py-2.5 sm:text-sm">
+          <div className="inline-block max-w-[19rem] rounded-full border border-[#DADDE1] bg-[#F0F2F5] px-4 py-2 text-center text-[11px] font-medium leading-snug text-[#65676B] shadow-[0_1px_2px_rgba(0,0,0,0.06)] sm:max-w-[22rem] sm:px-5 sm:py-2.5 sm:text-xs">
             Medical Articulation — 診察のあと、言葉の解像度を上げる実験を続けています
           </div>
         </FadeInUpOnScroll>

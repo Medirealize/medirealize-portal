@@ -6,12 +6,12 @@ const GOOGLE_FORM_URL =
 export default function VoiceInputSection() {
   return (
     <section className="mx-auto w-full max-w-6xl px-3 pb-10 pt-2 sm:px-4 sm:pb-12">
-      <div className="rounded-xl border border-[#DADDE1] bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:p-7">
-        <h3 className="text-center text-lg font-bold leading-snug tracking-tight text-[#050505] sm:text-xl">
+      <div className="rounded-xl border border-[#DADDE1] bg-white px-5 py-9 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:px-10 sm:py-10">
+        <h3 className="text-center text-base font-bold leading-snug tracking-tight text-[#050505] sm:text-lg">
           あなたの言葉を、聞かせてください。
         </h3>
 
-        <div className="mt-5 flex justify-center">
+        <div className="mt-7 flex justify-center sm:mt-8">
           <a
             href={GOOGLE_FORM_URL}
             target="_blank"
@@ -23,7 +23,7 @@ export default function VoiceInputSection() {
           </a>
         </div>
 
-        <p className="mt-4 text-center text-xs leading-relaxed text-[#65676B]">
+        <p className="mt-5 text-center text-[0.6875rem] leading-relaxed text-[#65676B] sm:mt-6 sm:text-xs">
           ※個別の診療相談にはお答えできません
         </p>
       </div>
