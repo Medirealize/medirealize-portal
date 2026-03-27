@@ -20,24 +20,17 @@ type Product = {
 
 const DEVLOG_STRIPE_URL = "https://buy.stripe.com/7sY6oA2lKe2qfdg8NEeEo00";
 
-const FALLBACK_LOG_TITLES = [
-  "Stripe審査対応：寄付からコンテンツ販売へ",
-  "医療を構造化する覚悟",
-  "導線と仕様を縫い直した日",
+const DEVLOG_BULLETS = [
+  "現場の医師の導線とAIの仕様を徹底的に磨き上げた日",
+  "医療の未来を見据え、理想の診療フローを呼吸させた日",
+  "言葉の責任と、法的な行間まで真摯に向き合った日",
 ];
 
-type Props = {
-  devLogPreviewTitles: string[];
-};
-
-export default function ProductLeadSection({ devLogPreviewTitles }: Props) {
+export default function ProductLeadSection() {
   const KIDUKI2_URL = "https://kiduki-app-v2.vercel.app/";
   const SYMPTOMSUM_URL = "https://symptomsum-app.vercel.app/";
   const PREFLECTION_URL = "https://kiduki-insight-v2.vercel.app/";
   const FUTURECHART_URL = "https://future-chartv7.vercel.app/login";
-
-  const previewTitles =
-    devLogPreviewTitles.length > 0 ? devLogPreviewTitles : FALLBACK_LOG_TITLES;
 
   const products = useMemo<Product[]>(
     () => [
@@ -55,7 +48,7 @@ export default function ProductLeadSection({ devLogPreviewTitles }: Props) {
       },
       {
         key: "app-2",
-        catchCopy: "いつから？に答える。",
+        catchCopy: "いつから？にお答え。",
         steps: [
           "症状が出た時にサッと記録",
           "AIが経過を一本の線に整理",
@@ -67,7 +60,7 @@ export default function ProductLeadSection({ devLogPreviewTitles }: Props) {
       },
       {
         key: "app-3",
-        catchCopy: "先生、本当はね。",
+        catchCopy: "先生、本当は話したいこと。",
         steps: ["言いにくい本音を吐き出す", "AIが伝わる「言葉」に翻訳", "医師への伝え方を台本化"],
         cta: "本音を言葉にする",
         icon: <MessageSquare className="h-5 w-5" />,
@@ -86,41 +79,30 @@ export default function ProductLeadSection({ devLogPreviewTitles }: Props) {
   );
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 pb-20 pt-6 sm:pt-8">
+    <div className="mx-auto w-full max-w-6xl px-3 pb-16 pt-5 sm:px-4 sm:pb-20 sm:pt-8">
       <section className="text-center">
-        <div className="relative mx-auto max-w-4xl overflow-hidden rounded-xl border border-[#DADDE1] bg-white px-5 py-9 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:rounded-2xl sm:px-10 sm:py-11">
-          <div className="relative mx-auto inline-flex items-center gap-2 rounded-full border border-[#DADDE1] bg-[#F0F2F5] px-3 py-1 text-[11px] font-semibold text-[#65676B] sm:text-xs">
-            <span className="inline-flex h-2 w-2 rounded-full bg-[#1877F2]" aria-hidden />
-            Phase 1 · Medical Articulation · 構築中
+        <div className="relative mx-auto max-w-5xl overflow-visible rounded-xl border border-[#DADDE1] bg-white px-3 py-7 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:rounded-2xl sm:px-8 sm:py-9">
+          <div className="relative mx-auto inline-flex max-w-[96%] flex-wrap items-center justify-center gap-x-1.5 gap-y-1 rounded-full border border-[#DADDE1] bg-[#F0F2F5] px-2.5 py-1.5 text-center text-[10px] font-semibold leading-tight text-[#65676B] sm:max-w-none sm:gap-2 sm:px-3 sm:py-1 sm:text-xs">
+            <span className="inline-flex h-2 w-2 shrink-0 rounded-full bg-[#1877F2]" aria-hidden />
+            <span className="sm:hidden">Phase 1 · MA · 構築中</span>
+            <span className="hidden sm:inline">Phase 1 · Medical Articulation · 構築中</span>
           </div>
 
-          <h1 className="relative mt-5 text-left text-[1.35rem] font-extrabold leading-snug tracking-tight text-[#050505] sm:text-center sm:text-3xl md:text-4xl lg:text-[2.5rem] lg:leading-[1.2]">
-            届かなかった声を、
-            <br className="sm:hidden" />
-            医療の形（Realize）に変える。
+          <h1 className="relative mx-auto mt-4 max-w-full text-balance text-center text-lg font-extrabold leading-[1.45] tracking-tight text-[#050505] sm:mt-5 sm:text-2xl md:text-3xl md:leading-[1.25] lg:text-4xl xl:whitespace-nowrap xl:text-[clamp(1.75rem,2.2vw,2.5rem)]">
+            届かなかった声を、医療(Medi)の形（Realize）に変える。
           </h1>
 
-          <p className="relative mt-4 text-left text-sm leading-relaxed text-[#65676B] sm:text-center sm:text-base">
-            患者さんの背中に残された「言葉にならない思い」を構造化し、対話の質を劇的に変える。
-          </p>
-          <p className="relative mt-3 text-left text-sm leading-relaxed text-[#1C1E21] sm:text-center sm:text-[1.05rem]">
-            Medirealizeは、
-            <strong className="font-bold text-[#050505]">
-              「医療の言語化（Medical Articulation）」
-            </strong>
-            を通じて、理想の診察を現実のものにします。
-          </p>
-          <p className="relative mt-4 border-t border-[#DADDE1] pt-4 text-left text-xs leading-relaxed text-[#65676B] sm:text-center sm:text-sm">
-            診察がひと段落したあと、静かな診察室でキーボードの音だけが続く——その時間に、いまプロトタイプが少しずつ形になります。
+          <p className="relative mx-auto mt-4 max-w-full text-pretty text-center text-sm font-normal leading-[1.65] text-[#65676B] sm:mt-5 sm:text-base md:mt-6 xl:whitespace-nowrap xl:text-[0.9375rem]">
+            診察がひと段落したあと、静かな診察室でキーボードの音だけが続く――その時間に、今プロトタイプが少しずつ形になります。
           </p>
         </div>
       </section>
 
-      <section className="mt-8" aria-label="プロダクト導線">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="mt-8 sm:mt-9" aria-label="プロダクト導線">
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((p, index) => {
             const cardClassName = [
-              "group relative flex w-full min-h-[280px] flex-col overflow-hidden rounded-xl border border-[#DADDE1] bg-white p-5 text-left shadow-[0_1px_2px_rgba(0,0,0,0.08)] transition-all duration-200",
+              "group relative flex w-full min-h-0 flex-col overflow-visible rounded-xl border border-[#DADDE1] bg-white p-4 pb-5 pt-5 text-left shadow-[0_1px_2px_rgba(0,0,0,0.08)] transition-all duration-200 sm:min-h-[280px] sm:p-5 sm:pt-6",
               "hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] active:translate-y-0",
               "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40",
               "[touch-action:manipulation]",
@@ -128,43 +110,47 @@ export default function ProductLeadSection({ devLogPreviewTitles }: Props) {
 
             const cardInner = (
               <>
-                <div className="relative flex min-w-0 items-start gap-2">
-                  <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F0F2F5] text-[#1877F2] ring-1 ring-[#DADDE1]">
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute -right-px -top-px z-10 rounded-bl-md rounded-tr-[11px] border border-[#DADDE1] bg-[#F0F2F5] px-2 py-1 text-[10px] font-medium leading-none text-[#65676B] shadow-sm sm:-right-1.5 sm:-top-1.5 sm:rounded-md sm:rounded-br-md sm:rounded-tl-none sm:rounded-tr-md sm:px-2 sm:py-0.5"
+                >
+                  [開発中]
+                </span>
+
+                <div className="relative flex min-w-0 items-start gap-3 pr-1 sm:pr-0">
+                  <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F0F2F5] text-[#1877F2] ring-1 ring-[#DADDE1] sm:h-9 sm:w-9">
                     {p.icon}
                   </span>
-                  <div className="flex min-w-0 flex-1 items-center gap-2">
-                    <h3 className="min-w-0 flex-1 truncate text-left text-base font-bold tracking-tight text-[#050505] sm:text-lg">
-                      {p.catchCopy}
-                    </h3>
-                    <span className="shrink-0 rounded border border-[#DADDE1] bg-[#F0F2F5] px-1.5 py-0.5 text-[10px] font-medium text-[#65676B]">
-                      [開発中]
-                    </span>
-                  </div>
+                  <h3 className="min-w-0 flex-1 text-pretty text-left text-base font-bold leading-snug tracking-tight text-[#050505] sm:text-[17px]">
+                    {p.catchCopy}
+                  </h3>
                 </div>
 
-                <ol className="mt-4 space-y-2.5">
+                <ol className="mt-4 space-y-3 sm:space-y-2.5">
                   {p.steps.map((step, stepIdx) => (
                     <li key={stepIdx} className="flex gap-3">
                       <span
                         className={[
-                          "mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-[11px] font-bold",
+                          "mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-[11px] font-bold sm:h-7 sm:w-7",
                           "border-[#DADDE1] bg-[#F0F2F5] text-[#050505]",
                           "group-hover:border-[#CCD0D5] group-hover:bg-[#E4E6EB]",
                         ].join(" ")}
                       >
                         {(["①", "②", "③"] as const)[stepIdx]}
                       </span>
-                      <span className="text-sm leading-relaxed text-[#1C1E21]">{step}</span>
+                      <span className="min-w-0 text-[0.9375rem] leading-[1.65] text-[#1C1E21] sm:text-sm sm:leading-relaxed">
+                        {step}
+                      </span>
                     </li>
                   ))}
                 </ol>
 
-                <div className="mt-auto pt-5">
+                <div className="mt-auto pt-4 sm:pt-5">
                   <a
                     href={p.externalUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block rounded-lg bg-[#1877F2] px-3 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#166FE5] active:scale-[0.99]"
+                    className="flex min-h-[48px] items-center justify-center rounded-lg bg-[#1877F2] px-3 py-3 text-center text-base font-semibold text-white shadow-sm transition-colors hover:bg-[#166FE5] active:scale-[0.99] sm:min-h-0 sm:py-2.5 sm:text-sm"
                   >
                     {p.cta}
                   </a>
@@ -184,38 +170,43 @@ export default function ProductLeadSection({ devLogPreviewTitles }: Props) {
       </section>
 
       <section
-        className="mt-8 rounded-xl border border-[#DADDE1] bg-white px-5 py-7 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:px-8 sm:py-8"
+        className="mt-8 rounded-xl border border-[#DADDE1] bg-white px-4 py-6 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:mt-9 sm:px-8 sm:py-8"
         aria-labelledby="devlog-portal-heading"
       >
         <h2
           id="devlog-portal-heading"
-          className="text-center text-lg font-bold tracking-tight text-[#050505] sm:text-xl"
+          className="text-pretty text-center text-base font-bold leading-snug tracking-tight text-[#050505] sm:text-lg md:text-xl"
         >
-          Medirealize：開発の裏側〜葛藤ログ〜
+          Medirealize：開発の軌跡～医療とAIの現場から～
         </h2>
-        <ul className="mx-auto mt-4 max-w-xl list-disc space-y-1.5 pl-5 text-left text-sm leading-relaxed text-[#1C1E21] sm:pl-6">
-          {previewTitles.map((title) => (
-            <li key={title}>{title}</li>
+        <ul className="mx-auto mt-4 max-w-2xl list-none space-y-3 text-left text-[0.9375rem] leading-[1.65] text-[#1C1E21] sm:mt-5 sm:space-y-2.5 sm:text-sm sm:leading-relaxed">
+          {DEVLOG_BULLETS.map((line) => (
+            <li key={line} className="flex gap-2 pl-0">
+              <span className="shrink-0 pt-[0.15em] text-[#65676B]" aria-hidden>
+                ・
+              </span>
+              <span>{line}</span>
+            </li>
           ))}
         </ul>
-        <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-relaxed text-[#65676B]">
+        <p className="mx-auto mt-5 max-w-2xl text-pretty text-left text-sm leading-[1.65] text-[#65676B] sm:mt-6 sm:text-center sm:text-sm sm:leading-relaxed">
           患者さんの届かなかった声を、医療の形に変えるまでの泥臭い試行錯誤を、月額300円の「開発日誌」として公開しています。一人の医師がキーボードを叩いて医療を再構築（Constructionism）する、その現在進行形のプロセスに並走していただけませんか。
         </p>
-        <div className="mt-6 flex justify-center">
+        <div className="mt-6 flex justify-center sm:mt-7">
           <a
             href={DEVLOG_STRIPE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-[48px] w-full max-w-md items-center justify-center rounded-lg bg-[#1877F2] px-6 py-3 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#166FE5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/50 active:scale-[0.99] sm:w-auto"
+            className="inline-flex min-h-[48px] w-full max-w-md items-center justify-center rounded-lg bg-[#1877F2] px-5 py-3.5 text-center text-base font-semibold text-white shadow-sm transition-colors hover:bg-[#166FE5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/50 active:scale-[0.99] sm:w-auto sm:py-3 sm:text-sm"
           >
             葛藤ログを購読する（月額300円）
           </a>
         </div>
       </section>
 
-      <div className="mt-10 flex justify-center">
+      <div className="mt-8 flex justify-center px-1 sm:mt-10">
         <FadeInUpOnScroll>
-          <div className="max-w-lg rounded-full border border-[#DADDE1] bg-white px-5 py-2.5 text-center text-xs font-medium leading-snug text-[#65676B] shadow-[0_1px_2px_rgba(0,0,0,0.06)] sm:text-sm">
+          <div className="max-w-lg rounded-2xl border border-[#DADDE1] bg-white px-4 py-3 text-center text-sm font-medium leading-relaxed text-[#65676B] shadow-[0_1px_2px_rgba(0,0,0,0.06)] sm:rounded-full sm:px-5 sm:py-2.5 sm:text-sm">
             Medical Articulation — 診察のあと、言葉の解像度を上げる実験を続けています
           </div>
         </FadeInUpOnScroll>

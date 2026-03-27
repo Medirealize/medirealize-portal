@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function DeveloperThoughtFooter() {
   return (
     <footer className="border-t border-[#DADDE1] bg-white">
-      <div className="mx-auto w-full max-w-6xl px-4 py-8">
+      <div className="mx-auto w-full max-w-6xl px-3 py-7 sm:px-4 sm:py-8">
         <div className="mb-6 rounded-xl border border-[#DADDE1] bg-[#F0F2F5] p-4 shadow-[0_1px_2px_rgba(0,0,0,0.06)] sm:p-5">
           <p className="text-sm font-semibold leading-relaxed text-[#050505] sm:text-base">
             この声が形になるまでの全記録は、開発日誌で公開中（月額300円）
