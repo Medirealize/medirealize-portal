@@ -59,14 +59,6 @@ export default async function DevLogPage() {
         </div>
 
         <div className="mt-6 flex flex-wrap gap-3">
-          <a
-            href="https://buy.stripe.com/7sY6oA2lKe2qfdg8NEeEo00"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
-          >
-            開発日誌を購読する
-          </a>
           <Link
             href="/"
             className="inline-flex items-center rounded-xl border border-blue-200 bg-blue-50 px-4 py-2.5 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-100"
