@@ -9,14 +9,22 @@ export default function DeveloperThoughtFooter() {
           <p className="text-sm leading-relaxed text-slate-700 sm:text-base">
             月額300円から、開発日誌（デジタルコンテンツ）の購読者になりませんか？
           </p>
-          <a
-            href="https://buy.stripe.com/7sY6oA2lKe2qfdg8NEeEo00"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-3 inline-flex w-full items-center justify-center rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/80 sm:w-auto"
-          >
-            開発日誌を購読する
-          </a>
+          <div className="mt-3 flex flex-wrap gap-3">
+            <Link
+              href="/dev-log/unlock"
+              className="inline-flex w-full items-center justify-center rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-100 sm:w-auto"
+            >
+              開発日誌を閲覧する
+            </Link>
+            <a
+              href="https://buy.stripe.com/7sY6oA2lKe2qfdg8NEeEo00"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/80 sm:w-auto"
+            >
+              開発日誌を購読する
+            </a>
+          </div>
           <p className="mt-2 text-xs leading-relaxed text-slate-500">
             ※本決済は寄付ではなく、デジタルコンテンツの閲覧権およびプレミアム機能の利用ライセンス提供に対する対価です。
           </p>
