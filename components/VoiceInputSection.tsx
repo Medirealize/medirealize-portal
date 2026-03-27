@@ -6,8 +6,8 @@ const GOOGLE_FORM_URL =
 export default function VoiceInputSection() {
   return (
     <section className="mx-auto w-full max-w-6xl px-4 pb-12 pt-2">
-      <div className="rounded-3xl border border-slate-600/40 bg-[#151f32]/85 p-5 sm:p-7">
-        <h3 className="text-center text-lg font-bold tracking-tight text-[#F8FAFC] sm:text-xl">
+      <div className="rounded-xl border border-[#DADDE1] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:p-7">
+        <h3 className="text-center text-lg font-bold tracking-tight text-[#050505] sm:text-xl">
           あなたの言葉を、聞かせてください。
         </h3>
 
@@ -16,14 +16,14 @@ export default function VoiceInputSection() {
             href={GOOGLE_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#3b5998] px-5 py-3 text-sm font-semibold text-[#F8FAFC] shadow-sm transition-colors hover:bg-[#334d86] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-500/60 active:scale-[0.99]"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#1877F2] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#166FE5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/50 active:scale-[0.99]"
           >
             感想・お問い合わせを送る
             <ArrowUpRight className="h-4 w-4" />
           </a>
         </div>
 
-        <p className="mt-4 text-center text-xs leading-relaxed text-slate-500">
+        <p className="mt-4 text-center text-xs leading-relaxed text-[#65676B]">
           ※個別の診療相談にはお答えできません
         </p>
       </div>
