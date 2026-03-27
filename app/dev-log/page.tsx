@@ -56,6 +56,12 @@ export default async function DevLogPage() {
         <p className="mt-2 text-sm leading-relaxed text-slate-600">
           診察室の課題を、どのように実装へ落とし込んでいるか。開発の舞台裏を記録しています。
         </p>
+        <Link
+          href="/dev-log/logs/latest"
+          className="mt-4 inline-flex items-center rounded-xl border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-100"
+        >
+          最新の葛藤ログを読む
+        </Link>
 
         <section className="mt-6 space-y-4" aria-label="開発ログ一覧">
           {sampleLogs.map((log) => (
