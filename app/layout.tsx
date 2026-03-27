@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Medirealize",
-  description: "医療を、もっと言葉に。",
+  description:
+    "届かなかった声を、医療の形（Realize）に変える。医療の言語化（Medical Articulation）で、理想の診察を現実に。",
 };
 
 export default function RootLayout({

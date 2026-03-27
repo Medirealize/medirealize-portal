@@ -5,8 +5,11 @@ export default function DeveloperThoughtFooter() {
   return (
     <footer className="border-t border-gray-200 bg-gray-50">
       <div className="mx-auto w-full max-w-6xl px-4 py-8">
-        <div className="mb-6 rounded-2xl border border-blue-100 bg-white p-4 sm:p-5">
-          <p className="text-sm leading-relaxed text-slate-700 sm:text-base">
+        <div className="mb-6 rounded-2xl border border-dashed border-slate-300/90 bg-[repeating-linear-gradient(135deg,transparent,transparent_12px,rgba(148,163,184,0.07)_12px,rgba(148,163,184,0.07)_13px)] p-4 sm:p-5">
+          <p className="text-sm font-medium leading-relaxed text-slate-800 sm:text-base">
+            この声が形になるまでの全記録は、開発日誌で公開中（月額300円）
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-slate-700 sm:text-base">
             月額300円から、開発日誌（デジタルコンテンツ）の購読者になりませんか？
           </p>
           <div className="mt-3 flex flex-wrap gap-3">
@@ -16,7 +19,7 @@ export default function DeveloperThoughtFooter() {
               rel="noopener noreferrer"
               className="inline-flex w-full items-center justify-center rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/80 sm:w-auto"
             >
-              開発日誌を購読する
+              開発の裏側（日誌）を覗く
             </a>
             <Link
               href="/dev-log/unlock"
