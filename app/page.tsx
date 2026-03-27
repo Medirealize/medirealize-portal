@@ -4,14 +4,21 @@ import VoiceInputSection from "@/components/VoiceInputSection";
 import DeveloperProfileSection from "@/components/DeveloperProfileSection";
 import StorySection from "@/components/StorySection";
 import SiteHeader from "@/components/SiteHeader";
+import { readDevLogEntries } from "@/lib/dev-log";
 
-export default function Home() {
+export default async function Home() {
+  const entries = await readDevLogEntries();
+  const devLogPreviewTitles = entries.slice(0, 3).map((e) => e.title);
+
   return (
-    <div id="top" className="min-h-screen bg-[#F7F8FB] text-slate-900 flex flex-col">
+    <div
+      id="top"
+      className="flex min-h-screen flex-col bg-[#0F172A] text-[#F8FAFC]"
+    >
       <SiteHeader />
       <main className="flex-1 pt-2 sm:pt-3">
         <section id="products">
-          <ProductLeadSection />
+          <ProductLeadSection devLogPreviewTitles={devLogPreviewTitles} />
         </section>
         <section id="voice">
           <VoiceInputSection />
