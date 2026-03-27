@@ -80,8 +80,8 @@ export default function ProductLeadSection() {
 
   return (
     <div className="mx-auto w-full max-w-6xl px-3 pb-16 pt-5 sm:px-4 sm:pb-20 sm:pt-8">
-      <section className="text-center">
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-xl border border-[#DADDE1] bg-white px-4 py-8 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:rounded-2xl sm:px-10 sm:py-10">
+      <section className="flex justify-center text-center">
+        <div className="relative w-fit max-w-[min(100%,26rem)] overflow-hidden rounded-xl border border-[#DADDE1] bg-white px-5 py-7 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:max-w-[min(100%,30rem)] sm:rounded-2xl sm:px-8 sm:py-8 md:max-w-[min(100%,34rem)]">
           <div className="relative mx-auto inline-flex max-w-full flex-wrap items-center justify-center gap-x-1.5 gap-y-1 rounded-full border border-[#DADDE1] bg-[#F0F2F5] px-2.5 py-1.5 text-center text-[10px] font-semibold leading-tight text-[#65676B] sm:gap-2 sm:px-3 sm:py-1 sm:text-xs">
             <span className="inline-flex h-2 w-2 shrink-0 rounded-full bg-[#1877F2]" aria-hidden />
             <span className="sm:hidden">Phase 1 · MA · 構築中</span>
@@ -98,7 +98,7 @@ export default function ProductLeadSection() {
         </div>
       </section>
 
-      <section className="mt-8 sm:mt-9" aria-label="プロダクト導線">
+      <section className="mx-auto mt-8 max-w-5xl sm:mt-9" aria-label="プロダクト導線">
         <div className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((p, index) => {
             const cardClassName = [
@@ -169,44 +169,46 @@ export default function ProductLeadSection() {
         </div>
       </section>
 
-      <section
-        className="mt-8 rounded-xl border border-[#DADDE1] bg-white px-5 py-9 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:mt-9 sm:px-10 sm:py-11"
-        aria-labelledby="devlog-portal-heading"
-      >
-        <h2
-          id="devlog-portal-heading"
-          className="mx-auto max-w-2xl text-pretty text-center text-sm font-bold leading-snug tracking-tight text-[#050505] sm:text-base md:text-lg"
+      <div className="mt-8 flex justify-center sm:mt-9">
+        <section
+          className="w-fit max-w-full rounded-xl border border-[#DADDE1] bg-white px-5 py-8 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:max-w-xl sm:px-8 sm:py-9 md:max-w-2xl"
+          aria-labelledby="devlog-portal-heading"
         >
-          Medirealize：開発の軌跡～医療とAIの現場から～
-        </h2>
-        <ul className="mx-auto mt-6 max-w-2xl list-none space-y-3.5 text-left text-xs leading-[1.75] text-[#1C1E21] sm:mt-7 sm:space-y-4 sm:text-[13px] sm:leading-[1.8]">
-          {DEVLOG_BULLETS.map((line) => (
-            <li key={line} className="flex gap-2.5 pl-0">
-              <span className="shrink-0 pt-[0.2em] text-[#65676B]" aria-hidden>
-                ・
-              </span>
-              <span className="min-w-0 break-words">{line}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="mx-auto mt-7 max-w-2xl text-pretty text-left text-xs leading-[1.75] text-[#65676B] sm:mt-8 sm:text-center sm:text-sm sm:leading-relaxed">
-          患者さんの届かなかった声を、医療の形に変えるまでの泥臭い試行錯誤を、月額300円の「開発日誌」として公開しています。一人の医師がキーボードを叩いて医療を再構築（Constructionism）する、その現在進行形のプロセスに並走していただけませんか。
-        </p>
-        <div className="mt-8 flex justify-center sm:mt-9">
-          <a
-            href={DEVLOG_STRIPE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-[48px] w-full max-w-md items-center justify-center rounded-lg bg-[#1877F2] px-5 py-3.5 text-center text-base font-semibold text-white shadow-sm transition-colors hover:bg-[#166FE5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/50 active:scale-[0.99] sm:w-auto sm:py-3 sm:text-sm"
+          <h2
+            id="devlog-portal-heading"
+            className="text-pretty text-center text-sm font-bold leading-snug tracking-tight text-[#050505] sm:text-base md:text-lg"
           >
-            葛藤ログを購読する（月額300円）
-          </a>
-        </div>
-      </section>
+            Medirealize：開発の軌跡～医療とAIの現場から～
+          </h2>
+          <ul className="mt-5 list-none space-y-3.5 text-left text-xs leading-[1.75] text-[#1C1E21] sm:mt-6 sm:space-y-4 sm:text-[13px] sm:leading-[1.8]">
+            {DEVLOG_BULLETS.map((line) => (
+              <li key={line} className="flex gap-2.5 pl-0">
+                <span className="shrink-0 pt-[0.2em] text-[#65676B]" aria-hidden>
+                  ・
+                </span>
+                <span className="min-w-0 break-words">{line}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-pretty text-left text-xs leading-[1.75] text-[#65676B] sm:mt-7 sm:text-center sm:text-sm sm:leading-relaxed">
+            患者さんの届かなかった声を、医療の形に変えるまでの泥臭い試行錯誤を、月額300円の「開発日誌」として公開しています。一人の医師がキーボードを叩いて医療を再構築（Constructionism）する、その現在進行形のプロセスに並走していただけませんか。
+          </p>
+          <div className="mt-7 flex justify-center sm:mt-8">
+            <a
+              href={DEVLOG_STRIPE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[48px] w-full max-w-sm items-center justify-center rounded-lg bg-[#1877F2] px-4 py-3.5 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#166FE5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/50 active:scale-[0.99] sm:w-auto sm:px-5 sm:py-3"
+            >
+              葛藤ログを購読する（月額300円）
+            </a>
+          </div>
+        </section>
+      </div>
 
       <div className="mt-9 flex justify-center px-2 sm:mt-10">
         <FadeInUpOnScroll>
-          <div className="inline-block max-w-[19rem] rounded-full border border-[#DADDE1] bg-[#F0F2F5] px-4 py-2 text-center text-[11px] font-medium leading-snug text-[#65676B] shadow-[0_1px_2px_rgba(0,0,0,0.06)] sm:max-w-[22rem] sm:px-5 sm:py-2.5 sm:text-xs">
+          <div className="w-fit max-w-[min(100%,calc(100vw-2rem))] rounded-full border border-[#DADDE1] bg-[#F0F2F5] px-3 py-1.5 text-center text-[10px] font-medium leading-snug text-[#65676B] shadow-[0_1px_2px_rgba(0,0,0,0.06)] sm:px-4 sm:py-2 sm:text-[11px] md:text-xs">
             Medical Articulation — 診察のあと、言葉の解像度を上げる実験を続けています
           </div>
         </FadeInUpOnScroll>

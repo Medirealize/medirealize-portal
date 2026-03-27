@@ -6,7 +6,7 @@ const X_DM_URL = "https://x.com/med_structure";
 export default function StorySection() {
   return (
     <section className="mx-auto w-full max-w-6xl px-3 pb-12 pt-2 sm:px-4 sm:pb-14" aria-label="信頼と共感のストーリー">
-      <div className="grid grid-cols-1 gap-3 sm:gap-4 lg:grid-cols-2">
+      <div className="mx-auto grid w-full max-w-xl grid-cols-1 gap-3 sm:max-w-2xl sm:gap-4 lg:max-w-none lg:grid-cols-2 lg:gap-4">
         <article className="rounded-xl border border-[#DADDE1] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1877F2]">
             Story

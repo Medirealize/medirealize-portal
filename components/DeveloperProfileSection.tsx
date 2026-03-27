@@ -69,13 +69,13 @@ export default function DeveloperProfileSection() {
                 </p>
               </section>
 
-              <section className="rounded-lg border border-[#DADDE1] bg-[#F0F2F5] p-4 shadow-[0_1px_2px_rgba(0,0,0,0.05)] sm:p-4">
+              <section className="inline-block max-w-full overflow-x-auto rounded-lg border border-[#DADDE1] bg-[#F0F2F5] p-4 shadow-[0_1px_2px_rgba(0,0,0,0.05)] sm:w-fit sm:overflow-visible sm:p-4">
                 <h4 className="text-[0.9375rem] font-semibold text-[#050505] sm:text-base">■ 略歴</h4>
-                <ul className="mt-2 space-y-2 text-pretty text-[#1C1E21] sm:space-y-1.5">
-                  <li>防衛医科大学校 卒業 / 同大学院 博士課程修了（医学博士）</li>
-                  <li>元 自衛隊熊本病院 外科部長 兼 健康管理センター長</li>
-                  <li>元 ハーバード大学医学部 リサーチフェロー</li>
-                  <li>日本外科学会、日本消化器外科学会、日本食道学会に所属</li>
+                <ul className="mt-2 w-max max-w-full space-y-2 text-left text-[#1C1E21] sm:space-y-1.5">
+                  <li className="whitespace-nowrap">防衛医科大学校 卒業 / 同大学院 博士課程修了（医学博士）</li>
+                  <li className="whitespace-nowrap">元 自衛隊熊本病院 外科部長 兼 健康管理センター長</li>
+                  <li className="whitespace-nowrap">元 ハーバード大学医学部 リサーチフェロー</li>
+                  <li className="whitespace-nowrap">日本外科学会、日本消化器外科学会、日本食道学会に所属</li>
                 </ul>
 
                 <div className="mt-3 border-t border-[#DADDE1] pt-3">
