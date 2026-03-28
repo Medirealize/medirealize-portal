@@ -1,5 +1,10 @@
 "use client";
 import Link from "next/link";
+import {
+  DEVLOG_CTA_LABEL,
+  DEVLOG_PUBLIC_PRICE_NOTE,
+  DEVLOG_STRIPE_URL,
+} from "@/lib/productLeadContent";
 
 export default function DeveloperThoughtFooter() {
   return (
@@ -7,19 +12,19 @@ export default function DeveloperThoughtFooter() {
       <div className="mx-auto w-full max-w-6xl px-3 py-7 sm:px-4 sm:py-8">
         <div className="mb-6 rounded-xl border border-[#DADDE1] bg-[#F0F2F5] p-4 shadow-[0_1px_2px_rgba(0,0,0,0.06)] sm:p-5">
           <p className="text-sm font-semibold leading-relaxed text-[#050505] sm:text-base">
-            この声が形になるまでの全記録は、開発日誌で公開中（月額300円）
+            この声が形になるまでの全記録は、開発日誌で公開中（{DEVLOG_PUBLIC_PRICE_NOTE}）
           </p>
           <p className="mt-2 text-sm leading-relaxed text-[#65676B] sm:text-base">
             購読後はメール認証で、開発日誌コンテンツを閲覧できます。
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-3">
             <a
-              href="https://buy.stripe.com/7sY6oA2lKe2qfdg8NEeEo00"
+              href={DEVLOG_STRIPE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex w-full min-h-[48px] items-center justify-center rounded-lg bg-[#1877F2] px-4 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#166FE5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/50 sm:w-auto"
             >
-              葛藤ログを購読する（月額300円）
+              {DEVLOG_CTA_LABEL}
             </a>
             <Link
               href="/dev-log/unlock"

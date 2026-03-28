@@ -23,9 +23,12 @@ export const DEVLOG_TITLE =
   "Medirealize：開発の軌跡～医療とAIの現場から～" as const;
 
 export const DEVLOG_BODY =
-  "患者さんの届かなかった声を、医療の形に変えるまでの泥臭い試行錯誤を、月額300円の「開発日誌」として公開しています。一人の医師がキーボードを叩いて医療を再構築（Constructionism）する、その現在進行形のプロセスに並走していただけませんか。" as const;
+  "患者さんの届かなかった声を、医療の形に変えるまでの泥臭い試行錯誤を、月額100円の「開発日誌」として公開しています。一人の医師がキーボードを叩いて医療を再構築（Constructionism）する、その現在進行形のプロセスに並走していただけませんか。" as const;
 
-export const DEVLOG_CTA_LABEL = "葛藤ログを購読する（月額300円）" as const;
+export const DEVLOG_CTA_LABEL = "葛藤ログを購読する（月額100円）" as const;
+
+/** フッター等で使う短い購読案内（価格は DEVLOG と一致させる） */
+export const DEVLOG_PUBLIC_PRICE_NOTE = "月額100円" as const;
 
 export const DEVLOG_BULLETS = [
   "現場の医師の導線とAIの仕様を徹底的に磨き上げた日",

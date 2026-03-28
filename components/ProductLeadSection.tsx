@@ -1,13 +1,9 @@
 "use client";
 
+import DevelopmentLog from "@/components/DevelopmentLog";
 import FadeInUpOnScroll from "@/components/FadeInUpOnScroll";
 import FeatureCard from "@/components/FeatureCard";
 import {
-  DEVLOG_BODY,
-  DEVLOG_BULLETS,
-  DEVLOG_CTA_LABEL,
-  DEVLOG_STRIPE_URL,
-  DEVLOG_TITLE,
   FEATURE_DEFINITIONS,
   HERO_MAIN_COPY,
   HERO_SUB_COPY,
@@ -68,41 +64,10 @@ export default function ProductLeadSection() {
         </p>
       </section>
 
-      <div className="mt-10 flex justify-center sm:mt-11">
-        <section
-          className={`${HERO_BOX} w-full max-w-full p-6 sm:max-w-xl sm:p-8 md:max-w-2xl lg:w-fit lg:max-w-[min(100%,40rem)] lg:p-8 xl:max-w-[min(100%,42rem)] xl:p-10`}
-          aria-labelledby="devlog-portal-heading"
-        >
-          <h2
-            id="devlog-portal-heading"
-            className="text-pretty text-center text-base font-bold leading-snug tracking-tight text-[#050505] sm:text-lg md:text-xl"
-          >
-            {DEVLOG_TITLE}
-          </h2>
-          <ul className="mt-6 list-none space-y-4 text-left text-sm leading-[1.75] text-[#1C1E21] sm:mt-7 sm:space-y-4 md:text-base md:leading-relaxed lg:leading-relaxed">
-            {DEVLOG_BULLETS.map((line) => (
-              <li key={line} className="flex gap-3 pl-0">
-                <span className="shrink-0 pt-[0.2em] text-[#65676B]" aria-hidden>
-                  ・
-                </span>
-                <span className="min-w-0 break-words">{line}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-8 text-pretty text-left text-sm leading-[1.75] text-[#65676B] sm:mt-8 sm:text-center md:text-base md:leading-relaxed">
-            {DEVLOG_BODY}
-          </p>
-          <div className="mt-8 flex justify-center sm:mt-9">
-            <a
-              href={DEVLOG_STRIPE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-[52px] w-full max-w-sm items-center justify-center rounded-lg bg-[#1877F2] px-6 py-3.5 text-center text-base font-semibold text-white shadow-sm transition-colors hover:bg-[#166FE5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/50 active:scale-[0.99] sm:w-auto md:min-h-[52px] md:text-lg"
-            >
-              {DEVLOG_CTA_LABEL}
-            </a>
-          </div>
-        </section>
+      <div className="mt-10 w-full sm:mt-11">
+        <div className="flex w-full justify-center lg:justify-end">
+          <DevelopmentLog />
+        </div>
       </div>
 
       <div className="mt-10 flex justify-center sm:mt-11">
