@@ -81,7 +81,7 @@ export default function ProductLeadSection() {
   return (
     <div className="mx-auto w-full max-w-6xl px-3 pb-16 pt-5 sm:px-4 sm:pb-20 sm:pt-8">
       <section className="flex justify-center text-center">
-        <div className="relative mx-auto w-full max-w-[min(100%,26rem)] overflow-hidden rounded-xl border border-[#DADDE1] bg-white px-5 py-7 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:max-w-[min(100%,32rem)] sm:rounded-2xl sm:px-7 sm:py-8 md:max-w-[min(100%,44rem)] md:px-9 md:py-9 lg:max-w-[min(100%,52rem)] lg:px-10 lg:py-10 xl:max-w-[min(100%,60rem)]">
+        <div className="relative mx-auto w-full max-w-[min(100%,26rem)] rounded-xl border border-[#DADDE1] bg-white px-5 py-7 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:max-w-[min(100%,32rem)] sm:rounded-2xl sm:px-7 sm:py-8 md:w-full md:max-w-full md:px-9 md:py-9 lg:px-10 lg:py-10 xl:px-11 xl:py-11">
           <div className="relative mx-auto inline-flex max-w-full flex-wrap items-center justify-center gap-x-1.5 gap-y-1 rounded-full border border-[#DADDE1] bg-[#F0F2F5] px-2.5 py-1.5 text-center text-[10px] font-semibold leading-tight text-[#65676B] sm:gap-2 sm:px-3 sm:py-1 sm:text-xs md:text-[13px]">
             <span className="inline-flex h-2 w-2 shrink-0 rounded-full bg-[#1877F2]" aria-hidden />
             <span className="sm:hidden">Phase 1 · MA · 構築中</span>
@@ -138,7 +138,7 @@ export default function ProductLeadSection() {
                       >
                         {(["①", "②", "③"] as const)[stepIdx]}
                       </span>
-                      <span className="min-w-0 text-[0.9375rem] leading-[1.65] text-[#1C1E21] sm:text-base sm:leading-relaxed lg:text-[1.0625rem] lg:leading-relaxed">
+                      <span className="min-w-0 flex-1 text-[0.8125rem] leading-snug text-[#1C1E21] sm:text-[0.8125rem] sm:leading-snug md:text-[0.8125rem] lg:whitespace-nowrap lg:text-[0.625rem] lg:leading-[1.45] xl:text-[0.75rem] 2xl:text-[0.8125rem]">
                         {step}
                       </span>
                     </li>
