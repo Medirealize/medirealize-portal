@@ -43,7 +43,7 @@ export default function FeatureCard({
   return (
     <div
       className={[
-        "@container/card group relative flex h-full min-h-0 min-w-0 max-w-full flex-col self-stretch overflow-visible rounded-2xl border border-[#E4E6EB] bg-white p-5 text-left shadow-[0_2px_12px_rgba(0,0,0,0.05)] transition-shadow duration-200 sm:p-5 sm:px-5 sm:py-5 md:p-6",
+        "@container/card group relative flex h-full min-h-0 min-w-0 max-w-full flex-col self-stretch overflow-visible rounded-2xl border border-[#E4E6EB] bg-white px-5 pb-5 pt-7 text-left shadow-[0_2px_12px_rgba(0,0,0,0.05)] transition-shadow duration-200 sm:px-5 sm:pb-5 sm:pt-8 md:px-6 md:pb-6 md:pt-8",
         "hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] active:translate-y-0",
         "[touch-action:manipulation]",
       ].join(" ")}
@@ -51,17 +51,17 @@ export default function FeatureCard({
     >
       <span
         aria-hidden
-        className="pointer-events-none absolute -right-px -top-px z-10 rounded-bl-md rounded-tr-[11px] border border-red-200 bg-red-50 px-2.5 py-1.5 text-xs font-semibold leading-none text-red-600 shadow-sm sm:-right-1.5 sm:-top-1.5 sm:rounded-md sm:rounded-br-md sm:rounded-tl-none sm:rounded-tr-md sm:px-3 sm:py-1.5 sm:text-sm"
+        className="pointer-events-none absolute right-2 top-0 z-20 -translate-y-1/2 rounded-md border border-red-200 bg-red-50 px-2.5 py-1.5 text-xs font-semibold leading-none text-red-600 shadow-md sm:right-3 sm:px-3 sm:py-1.5 sm:text-sm"
       >
         {DEV_IN_PROGRESS_LABEL}
       </span>
 
-      <div className="relative flex min-w-0 items-start gap-2.5 pr-10 sm:gap-3 sm:pr-12">
+      <div className="relative flex min-w-0 items-start gap-2.5 pr-[4.75rem] sm:gap-3 sm:pr-[5.25rem] lg:pr-14 xl:pr-16">
         <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F0F2F5] text-[#1877F2] ring-1 ring-[#DADDE1] sm:h-11 sm:w-11">
           <Icon className="h-5 w-5" aria-hidden />
         </span>
         <h3
-          className="min-w-0 flex-1 break-words pt-0.5 text-left text-base font-bold leading-snug tracking-tight text-[#050505] sm:text-lg sm:leading-tight lg:truncate lg:whitespace-nowrap lg:leading-tight lg:tracking-tight lg:[font-size:clamp(0.625rem,0.12rem+4.6cqw,0.8125rem)] xl:[font-size:clamp(0.6875rem,0.15rem+4.2cqw,0.875rem)] min-[1600px]:[font-size:clamp(0.75rem,0.2rem+3.8cqw,0.9375rem)]"
+          className="min-w-0 flex-1 break-words pt-0.5 text-left text-base font-bold leading-snug tracking-tight text-[#050505] sm:text-lg sm:leading-tight lg:truncate lg:whitespace-nowrap lg:leading-tight lg:tracking-tight lg:[font-size:clamp(0.8125rem,0.22rem+5.8cqw,1.0625rem)] xl:[font-size:clamp(0.875rem,0.26rem+5.2cqw,1.125rem)] min-[1600px]:[font-size:clamp(0.9375rem,0.28rem+4.9cqw,1.1875rem)]"
           title={title}
         >
           {title}
