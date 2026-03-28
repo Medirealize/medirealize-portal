@@ -102,7 +102,7 @@ export default function ProductLeadSection() {
         <div className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((p, index) => {
             const cardClassName = [
-              "group relative flex w-full min-h-0 flex-col overflow-visible rounded-xl border border-[#DADDE1] bg-white p-5 pb-6 pt-6 text-left shadow-[0_1px_2px_rgba(0,0,0,0.08)] transition-all duration-200 sm:min-h-[300px] lg:min-h-[320px] lg:p-6 lg:pt-7",
+              "group relative flex w-full min-h-0 min-w-0 flex-col overflow-visible rounded-xl border border-[#DADDE1] bg-white p-5 pb-6 pt-6 text-left shadow-[0_1px_2px_rgba(0,0,0,0.08)] transition-all duration-200 sm:min-h-[300px] lg:min-h-[320px] lg:p-6 lg:pt-7",
               "hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] active:translate-y-0",
               "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40",
               "[touch-action:manipulation]",
@@ -112,7 +112,7 @@ export default function ProductLeadSection() {
               <>
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute -right-px -top-px z-10 rounded-bl-md rounded-tr-[11px] border border-[#DADDE1] bg-[#F0F2F5] px-2 py-1 text-[10px] font-medium leading-none text-[#65676B] shadow-sm sm:-right-1.5 sm:-top-1.5 sm:rounded-md sm:rounded-br-md sm:rounded-tl-none sm:rounded-tr-md sm:px-2 sm:py-0.5"
+                  className="pointer-events-none absolute -right-px -top-px z-10 rounded-bl-md rounded-tr-[11px] border border-red-200 bg-red-50 px-2.5 py-1.5 text-xs font-semibold leading-none text-red-600 shadow-sm sm:-right-1.5 sm:-top-1.5 sm:rounded-md sm:rounded-br-md sm:rounded-tl-none sm:rounded-tr-md sm:px-3 sm:py-1.5 sm:text-sm"
                 >
                   [開発中]
                 </span>
@@ -126,19 +126,21 @@ export default function ProductLeadSection() {
                   </h3>
                 </div>
 
-                <ol className="mt-5 space-y-3.5 lg:mt-6 lg:space-y-4">
+                <ol className="mt-5 min-w-0 space-y-3.5 lg:mt-6 lg:space-y-4">
                   {p.steps.map((step, stepIdx) => (
-                    <li key={stepIdx} className="flex gap-3 lg:gap-3.5">
+                    <li key={stepIdx} className="flex min-w-0 gap-2.5 sm:gap-3 lg:gap-2">
                       <span
                         className={[
-                          "mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-bold lg:h-10 lg:w-10 lg:text-sm",
+                          "mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-bold lg:h-9 lg:w-9 lg:text-xs",
                           "border-[#DADDE1] bg-[#F0F2F5] text-[#050505]",
                           "group-hover:border-[#CCD0D5] group-hover:bg-[#E4E6EB]",
                         ].join(" ")}
                       >
                         {(["①", "②", "③"] as const)[stepIdx]}
                       </span>
-                      <span className="min-w-0 flex-1 text-[0.8125rem] leading-snug text-[#1C1E21] sm:text-[0.8125rem] sm:leading-snug md:text-[0.8125rem] lg:whitespace-nowrap lg:text-[0.625rem] lg:leading-[1.45] xl:text-[0.75rem] 2xl:text-[0.8125rem]">
+                      <span
+                        className="min-w-0 flex-1 text-[0.8125rem] leading-snug tracking-tight text-[#1C1E21] sm:text-[0.8125rem] sm:leading-snug md:text-[0.8125rem] lg:whitespace-nowrap lg:leading-[1.4] lg:[font-size:clamp(0.5rem,0.18rem+0.68vw,0.8125rem)]"
+                      >
                         {step}
                       </span>
                     </li>
