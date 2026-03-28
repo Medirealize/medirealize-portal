@@ -65,7 +65,7 @@ export default function ProductLeadSection() {
       </section>
 
       <div className="mt-10 w-full sm:mt-11">
-        <div className="flex w-full justify-center lg:justify-end">
+        <div className="flex w-full min-w-0 justify-center lg:justify-end">
           <DevelopmentLog />
         </div>
       </div>

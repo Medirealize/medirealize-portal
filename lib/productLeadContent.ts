@@ -20,12 +20,17 @@ export const DEVLOG_STRIPE_URL =
   "https://buy.stripe.com/7sY6oA2lKe2qfdg8NEeEo00" as const;
 
 export const DEVLOG_TITLE =
-  "Medirealize：開発の軌跡～医療とAIの現場から～" as const;
+  "Medirealize：医療の未来を、100円から共に育てる「開発サポーター」募集" as const;
 
 export const DEVLOG_BODY =
-  "患者さんの届かなかった声を、医療の形に変えるまでの泥臭い試行錯誤を、月額100円の「開発日誌」として公開しています。一人の医師がキーボードを叩いて医療を再構築（Constructionism）する、その現在進行形のプロセスに並走していただけませんか。" as const;
+  "「届かなかった声」を形にする挑戦は、まだ始まったばかりです。月額100円の開発投資は、そのままMedirealizeの血となり、肉となります。一人の医師が現場の課題から理想の診療を再構築するプロセスに、あなたも「サポーター」として並走していただけませんか。" as const;
 
-export const DEVLOG_CTA_LABEL = "葛藤ログを購読する（月額100円）" as const;
+export const DEVLOG_CTA_LABEL =
+  "100円で開発を支援する（開発日誌へのアクセス権付）" as const;
+
+/** CTA 直下の誠実注釈（ランディング・必要に応じて他画面でも使用） */
+export const DEVLOG_SUPPORT_USAGE_NOTE =
+  "※お預かりした支援金は、すべて本サービスの開発維持費として大切に活用させていただきます。" as const;
 
 /** フッター等で使う短い購読案内（価格は DEVLOG と一致させる） */
 export const DEVLOG_PUBLIC_PRICE_NOTE = "月額100円" as const;
