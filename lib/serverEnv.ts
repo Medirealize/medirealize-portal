@@ -7,6 +7,6 @@
 export function serverEnv(name: string): string | undefined {
   const raw = process.env[name];
   if (raw === undefined) return undefined;
-  const t = raw.trim();
+  const t = raw.replace(/^\uFEFF/, "").trim();
   return t.length > 0 ? t : undefined;
 }
