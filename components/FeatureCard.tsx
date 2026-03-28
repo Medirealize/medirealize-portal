@@ -56,35 +56,42 @@ export default function FeatureCard({
         {DEV_IN_PROGRESS_LABEL}
       </span>
 
-      <div className="relative flex min-w-0 items-start gap-2.5 pr-[4.75rem] sm:gap-3 sm:pr-[5.25rem] lg:pr-14 xl:pr-16">
-        <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F0F2F5] text-[#1877F2] ring-1 ring-[#DADDE1] sm:h-11 sm:w-11">
-          <Icon className="h-5 w-5" aria-hidden />
-        </span>
-        <h3 className="line-clamp-2 min-w-0 flex-1 break-words pt-0.5 text-left text-[1.0625rem] font-bold leading-snug tracking-tight text-[#050505] max-lg:text-balance sm:text-lg sm:leading-snug lg:line-clamp-none lg:whitespace-nowrap lg:text-xl lg:leading-tight lg:tracking-tight xl:text-2xl xl:leading-snug">
-          {title}
-        </h3>
+      <div className="flex min-h-0 flex-1 flex-col justify-center">
+        <div className="mx-auto flex w-full max-w-full flex-col items-stretch text-left">
+          <div className="relative flex min-w-0 items-start gap-2.5 pr-[4.75rem] sm:gap-3 sm:pr-[5.25rem] lg:pr-14 xl:pr-16">
+            <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F0F2F5] text-[#1877F2] ring-1 ring-[#DADDE1] sm:h-11 sm:w-11">
+              <Icon className="h-5 w-5" aria-hidden />
+            </span>
+            <h3 className="line-clamp-2 min-w-0 flex-1 break-words pt-0.5 text-left text-[1.0625rem] font-bold leading-snug tracking-tight text-[#050505] max-lg:text-balance sm:text-lg sm:leading-snug lg:line-clamp-none lg:whitespace-nowrap lg:text-xl lg:leading-tight lg:tracking-tight xl:text-2xl xl:leading-snug">
+              {title}
+            </h3>
+          </div>
+
+          <ol className="mt-5 w-full min-w-0 space-y-3.5 text-left sm:mt-6 sm:space-y-4">
+            {steps.map((step, stepIdx) => (
+              <li
+                key={stepIdx}
+                className="grid min-w-0 grid-cols-[auto_1fr] items-start gap-x-2.5 sm:gap-x-3"
+              >
+                <span
+                  className={[
+                    "mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-bold sm:h-10 sm:w-10 sm:text-sm",
+                    "border-[#DADDE1] bg-[#F0F2F5] text-[#050505]",
+                    "group-hover:border-[#CCD0D5] group-hover:bg-[#E4E6EB]",
+                  ].join(" ")}
+                >
+                  {STEP_MARKERS[stepIdx]}
+                </span>
+                <span className="min-w-0 text-left text-[0.8125rem] leading-[1.65] text-[#1C1E21] sm:text-sm sm:leading-relaxed lg:text-[0.8125rem] lg:leading-[1.68] xl:text-[0.875rem] xl:leading-[1.7] min-[1600px]:text-base">
+                  {step}
+                </span>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
 
-      <ol className="mt-5 min-h-0 min-w-0 flex-1 space-y-3.5 sm:mt-6 sm:space-y-4">
-        {steps.map((step, stepIdx) => (
-          <li key={stepIdx} className="flex min-w-0 gap-2.5 sm:gap-3">
-            <span
-              className={[
-                "mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-bold sm:h-10 sm:w-10 sm:text-sm",
-                "border-[#DADDE1] bg-[#F0F2F5] text-[#050505]",
-                "group-hover:border-[#CCD0D5] group-hover:bg-[#E4E6EB]",
-              ].join(" ")}
-            >
-              {STEP_MARKERS[stepIdx]}
-            </span>
-            <span className="min-w-0 flex-1 break-words pt-0.5 text-[0.8125rem] leading-[1.65] text-[#1C1E21] sm:text-sm sm:leading-relaxed lg:text-[0.8125rem] lg:leading-[1.68] xl:text-[0.875rem] xl:leading-[1.7] min-[1600px]:text-base">
-              {step}
-            </span>
-          </li>
-        ))}
-      </ol>
-
-      <div className="mt-auto pt-5 sm:pt-6">
+      <div className="shrink-0 pt-5 sm:pt-6">
         <a
           href={href}
           target="_blank"
