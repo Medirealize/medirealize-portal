@@ -6,6 +6,24 @@ import Stripe from "stripe";
 import { DEVLOG_STRIPE_PRICE_ID } from "@/lib/devlogStripe";
 
 export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
+function publicOrigin(request: NextRequest): string {
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+  if (fromEnv) return fromEnv;
+
+  const forwardedHost = request.headers.get("x-forwarded-host");
+  const host = forwardedHost ?? request.headers.get("host");
+  if (host) {
+    const forwardedProto = request.headers.get("x-forwarded-proto");
+    const proto =
+      forwardedProto ??
+      (host.startsWith("localhost") || host.startsWith("127.0.0.1") ? "http" : "https");
+    return `${proto}://${host}`;
+  }
+
+  return request.nextUrl.origin;
+}
 
 export async function GET(request: NextRequest) {
   const secretKey = process.env.STRIPE_SECRET_KEY;
@@ -15,14 +33,15 @@ export async function GET(request: NextRequest) {
 
   const priceId = process.env.STRIPE_DEVLOG_PRICE_ID ?? DEVLOG_STRIPE_PRICE_ID;
   const stripe = new Stripe(secretKey);
-  const origin = request.headers.get("origin") ?? request.nextUrl.origin;
+  const origin = publicOrigin(request);
 
   try {
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
+      locale: "ja",
       line_items: [{ price: priceId, quantity: 1 }],
       success_url: `${origin}/dev-log/unlock?checkout=success`,
-      cancel_url: `${origin}/?from=checkout#products`,
+      cancel_url: `${origin}/dev-log/unlock?checkout=cancel`,
     });
 
     if (!session.url) {

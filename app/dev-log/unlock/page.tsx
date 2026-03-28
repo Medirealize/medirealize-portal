@@ -3,6 +3,11 @@ import Link from "next/link";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { hasDevLogAccess } from "@/lib/subscription-access";
+import {
+  DEVLOG_CHECKOUT_PATH,
+  DEVLOG_CTA_LABEL,
+  DEVLOG_SUPPORT_USAGE_NOTE,
+} from "@/lib/productLeadContent";
 
 export const metadata: Metadata = {
   title: "購読者ログイン | 開発日誌",
@@ -43,10 +48,12 @@ async function unlockAction(formData: FormData) {
 export default async function DevLogUnlockPage({
   searchParams,
 }: {
-  searchParams: Promise<{ error?: string }>;
+  searchParams: Promise<{ error?: string; checkout?: string }>;
 }) {
   const params = await searchParams;
   const hasError = params.error === "1";
+  const checkoutSuccess = params.checkout === "success";
+  const checkoutCancel = params.checkout === "cancel";
 
   return (
     <div className="min-h-screen bg-[#F7F8FB] px-4 py-10 sm:py-14">
@@ -57,6 +64,31 @@ export default async function DevLogUnlockPage({
         <p className="mt-2 text-sm leading-relaxed text-slate-600">
           決済時に使用したメールアドレスで確認します。購読中の方のみ開発日誌を閲覧できます。
         </p>
+
+        {checkoutSuccess && (
+          <p className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm leading-relaxed text-emerald-900">
+            お支払いありがとうございます。Stripe の処理が反映されるまで少し時間がかかる場合があります。数分後に、決済時のメールアドレスで再度ログインをお試しください。
+          </p>
+        )}
+        {checkoutCancel && (
+          <p className="mt-4 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm leading-relaxed text-slate-700">
+            決済は完了していません。購読をご希望の場合は、もう一度お手続きください。
+          </p>
+        )}
+
+        <div className="mt-6 rounded-2xl border border-blue-200 bg-blue-50/60 p-4">
+          <p className="text-sm font-medium text-slate-800">まだ購読されていない方</p>
+          <p className="mt-1 text-xs leading-relaxed text-slate-600">
+            Stripe の安全な決済ページへ進み、月額100円で開発日誌を購読できます。
+          </p>
+          <a
+            href={DEVLOG_CHECKOUT_PATH}
+            className="mt-3 inline-flex w-full items-center justify-center rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+          >
+            {DEVLOG_CTA_LABEL}
+          </a>
+          <p className="mt-2 text-center text-[11px] leading-relaxed text-slate-600">{DEVLOG_SUPPORT_USAGE_NOTE}</p>
+        </div>
 
         <form action={unlockAction} className="mt-6 space-y-3">
           <label className="block text-sm font-medium text-slate-700" htmlFor="email">
