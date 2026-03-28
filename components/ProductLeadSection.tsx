@@ -15,9 +15,9 @@ import {
 
 const HERO_BOX =
   "rounded-2xl border border-[#E4E6EB] bg-white shadow-[0_2px_14px_rgba(0,0,0,0.06)]";
-/** 横パディングを厚めにし、nowrap 見出しが枠に密着しないようにする */
+/** 横パディングを厚めにし、見出し・本文が枠線から離れるようにする */
 const HERO_PAD =
-  "py-6 pl-6 pr-6 sm:py-7 sm:pl-7 sm:pr-7 md:py-8 md:pl-9 md:pr-9 lg:py-8 lg:pl-10 lg:pr-10 xl:py-10 xl:pl-12 xl:pr-12 2xl:pl-14 2xl:pr-14";
+  "py-6 pl-6 pr-6 sm:py-7 sm:pl-8 sm:pr-8 md:py-8 md:pl-10 md:pr-10 lg:py-8 lg:pl-11 lg:pr-11 xl:py-10 xl:pl-14 xl:pr-14 2xl:pl-16 2xl:pr-16";
 const INNER_MAX = "mx-auto w-full max-w-6xl px-4 sm:px-6";
 
 export default function ProductLeadSection() {
@@ -34,11 +34,11 @@ export default function ProductLeadSection() {
               <span className="hidden sm:inline">{PHASE_BADGE_LONG}</span>
             </div>
 
-            <h1 className="relative mx-auto mt-6 w-full min-w-0 max-w-full px-0 text-center text-lg font-extrabold leading-snug tracking-tight text-[#050505] sm:mt-6 sm:text-2xl sm:leading-tight md:text-3xl md:leading-[1.2] lg:mt-6 lg:whitespace-nowrap lg:text-[clamp(1.375rem,1.35rem+1.4vw,2.5rem)] lg:leading-[1.12] xl:text-[clamp(1.5rem,1.25rem+1.35vw,2.625rem)] xl:leading-[1.1] 2xl:text-[clamp(1.625rem,1.5rem+1.2vw,2.75rem)] 2xl:leading-[1.08]">
+            <h1 className="relative mx-auto mt-6 w-full min-w-0 max-w-full text-center text-lg font-extrabold leading-snug tracking-tight text-[#050505] sm:mt-6 sm:text-2xl sm:leading-tight md:text-3xl md:leading-[1.2] lg:mt-6 lg:whitespace-nowrap lg:text-[clamp(1.125rem,0.75rem+1.15vw,1.875rem)] lg:leading-[1.14] xl:text-[clamp(1.1875rem,0.8rem+1.05vw,2rem)] xl:leading-[1.12] 2xl:text-[clamp(1.25rem,0.85rem+0.95vw,2.125rem)] 2xl:leading-[1.1]">
               {HERO_MAIN_COPY}
             </h1>
 
-            <p className="relative mx-auto mt-5 w-full min-w-0 max-w-full text-pretty text-center text-base font-normal leading-[1.85] text-[#65676B] sm:text-lg sm:leading-[1.8] lg:mt-6 lg:max-w-[48rem] lg:text-xl lg:leading-[1.75] xl:max-w-[52rem] xl:text-[1.25rem] xl:leading-[1.72]">
+            <p className="relative mx-auto mt-5 w-full min-w-0 max-w-[min(100%,34rem)] text-pretty text-center text-[0.9375rem] font-normal leading-[1.8] text-[#65676B] sm:mt-5 sm:max-w-[min(100%,36rem)] sm:text-base sm:leading-[1.78] md:max-w-[min(100%,40rem)] lg:mt-6 lg:max-w-[min(100%,42rem)] lg:text-[1.0625rem] lg:leading-[1.72] xl:max-w-[min(100%,44rem)] xl:text-lg xl:leading-[1.68]">
               {HERO_SUB_COPY}
             </p>
           </div>

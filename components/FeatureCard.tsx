@@ -43,7 +43,7 @@ export default function FeatureCard({
   return (
     <div
       className={[
-        "group relative flex h-full min-h-0 min-w-0 max-w-full flex-col self-stretch overflow-visible rounded-2xl border border-[#E4E6EB] bg-white p-5 text-left shadow-[0_2px_12px_rgba(0,0,0,0.05)] transition-shadow duration-200 sm:p-6",
+        "@container/card group relative flex h-full min-h-0 min-w-0 max-w-full flex-col self-stretch overflow-visible rounded-2xl border border-[#E4E6EB] bg-white p-5 text-left shadow-[0_2px_12px_rgba(0,0,0,0.05)] transition-shadow duration-200 sm:p-5 sm:px-5 sm:py-5 md:p-6",
         "hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] active:translate-y-0",
         "[touch-action:manipulation]",
       ].join(" ")}
@@ -60,7 +60,10 @@ export default function FeatureCard({
         <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F0F2F5] text-[#1877F2] ring-1 ring-[#DADDE1] sm:h-11 sm:w-11">
           <Icon className="h-5 w-5" aria-hidden />
         </span>
-        <h3 className="min-w-0 flex-1 break-words pt-0.5 text-left text-base font-bold leading-snug tracking-tight text-[#050505] sm:text-lg sm:leading-tight lg:whitespace-nowrap lg:text-[0.6875rem] lg:leading-tight lg:tracking-tight xl:text-[0.8125rem] 2xl:text-[0.875rem] min-[1600px]:text-[0.9375rem]">
+        <h3
+          className="min-w-0 flex-1 break-words pt-0.5 text-left text-base font-bold leading-snug tracking-tight text-[#050505] sm:text-lg sm:leading-tight lg:truncate lg:whitespace-nowrap lg:leading-tight lg:tracking-tight lg:[font-size:clamp(0.625rem,0.12rem+4.6cqw,0.8125rem)] xl:[font-size:clamp(0.6875rem,0.15rem+4.2cqw,0.875rem)] min-[1600px]:[font-size:clamp(0.75rem,0.2rem+3.8cqw,0.9375rem)]"
+          title={title}
+        >
           {title}
         </h3>
       </div>
@@ -77,7 +80,7 @@ export default function FeatureCard({
             >
               {STEP_MARKERS[stepIdx]}
             </span>
-            <span className="min-w-0 flex-1 break-words pt-0.5 text-sm leading-[1.65] text-[#1C1E21] sm:text-[0.9375rem] sm:leading-relaxed lg:text-base lg:leading-[1.7]">
+            <span className="min-w-0 flex-1 break-words pt-0.5 text-[0.8125rem] leading-[1.65] text-[#1C1E21] sm:text-sm sm:leading-relaxed lg:text-[0.8125rem] lg:leading-[1.68] xl:text-[0.875rem] xl:leading-[1.7] min-[1600px]:text-base">
               {step}
             </span>
           </li>
@@ -89,7 +92,7 @@ export default function FeatureCard({
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex min-h-[48px] w-full items-center justify-center rounded-lg bg-[#1877F2] px-3 py-3 text-center text-base font-semibold leading-snug text-white shadow-sm transition-colors hover:bg-[#166FE5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40 active:scale-[0.99] sm:min-h-[52px] sm:px-4 sm:py-3.5 sm:text-lg lg:min-h-[54px] lg:text-[1.0625rem]"
+          className="flex min-h-[48px] w-full items-center justify-center rounded-lg bg-[#1877F2] px-3 py-3 text-center text-sm font-semibold leading-snug text-white shadow-sm transition-colors hover:bg-[#166FE5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40 active:scale-[0.99] sm:min-h-[50px] sm:px-4 sm:py-3.5 sm:text-base lg:min-h-[52px] lg:text-[0.9375rem] xl:text-base"
         >
           {cta}
         </a>
