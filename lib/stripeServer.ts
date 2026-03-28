@@ -1,25 +1,10 @@
-import { loadEnvConfig } from "@next/env";
 import Stripe from "stripe";
 import { serverEnv } from "@/lib/serverEnv";
 
-let envTouched = false;
-
-function isRunningOnVercel(): boolean {
-  return process.env["VERCEL"] === "1";
-}
-
 /**
- * ローカルでは .env / .env.local を読み込む。
- * Vercel ではダッシュボード注入の process.env のみ使う（loadEnvConfig が
- * スナップショットと .env をマージする過程で、注入済みのキーが欠落する事例を避ける）。
+ * Next.js / Vercel は起動時に process.env へ注入する。
+ * @next/env の loadEnvConfig はここでは使わない（二重読み込みやマージの副作用を避ける）。
  */
-function ensureProjectEnvLoaded() {
-  if (envTouched) return;
-  if (!isRunningOnVercel()) {
-    loadEnvConfig(process.cwd());
-  }
-  envTouched = true;
-}
 
 function normalizeSecretKey(raw: string | undefined): string | undefined {
   if (raw == null) return undefined;
@@ -28,7 +13,7 @@ function normalizeSecretKey(raw: string | undefined): string | undefined {
 }
 
 /** 先頭から順に試す（Vercel の名前ミス・別テンプレート対策） */
-const STRIPE_SECRET_ENV_NAMES = [
+export const STRIPE_SECRET_ENV_NAMES = [
   "STRIPE_SECRET_KEY",
   "STRIPE_API_KEY",
   "STRIPE_KEY",
@@ -39,7 +24,6 @@ const STRIPE_SECRET_ENV_NAMES = [
  * 複数の変数名を試す。空・引用符のみは未定義扱い。
  */
 export function resolveStripeSecretKey(): string | undefined {
-  ensureProjectEnvLoaded();
   for (const name of STRIPE_SECRET_ENV_NAMES) {
     const v = normalizeSecretKey(serverEnv(name));
     if (v) return v;
@@ -72,13 +56,27 @@ export function isStripeConfigured(): boolean {
   return resolveStripeSecretKey() !== undefined;
 }
 
-export function stripeMisconfigurationBody(): {
-  error: string;
-  code: string;
-  hint?: string;
-} {
-  const isDev = process.env["NODE_ENV"] === "development";
+/** Vercel に一時的に STRIPE_SETUP_DEBUG=1 を入れると、秘密は出さず診断用フィールドが付く */
+function stripeSetupDebugPayload(): Record<string, unknown> | undefined {
+  if (serverEnv("STRIPE_SETUP_DEBUG") !== "1") return undefined;
+  const stripeRelatedEnvKeyNames = Object.keys(process.env).filter((k) =>
+    k.toUpperCase().includes("STRIPE"),
+  );
+  const secretCandidateLengths = Object.fromEntries(
+    STRIPE_SECRET_ENV_NAMES.map((n) => [n, process.env[n]?.length ?? 0]),
+  );
   return {
+    stripeRelatedEnvKeyNames: stripeRelatedEnvKeyNames.sort(),
+    secretCandidateLengths,
+    vercel: process.env["VERCEL"],
+    vercelEnv: process.env["VERCEL_ENV"],
+    nodeEnv: process.env["NODE_ENV"],
+  };
+}
+
+export function stripeMisconfigurationBody(): Record<string, unknown> {
+  const isDev = process.env["NODE_ENV"] === "development";
+  const base: Record<string, unknown> = {
     error: isDev
       ? "Stripe のシークレットキーが読み込めていません"
       : "決済の開始に必要な設定が完了していません",
@@ -90,6 +88,12 @@ export function stripeMisconfigurationBody(): {
           "試している URL が本番ドメインなら Production に、*.vercel.app のプレビューなら Preview にチェックが入っているか確認。",
           "別チーム・別 Project にキーを入れていないか、Git 連携しているリポジトリがこのアプリか確認。",
           "保存後は Redeploy（キャッシュなし推奨）を実行。",
+          "原因切り分け: Vercel に STRIPE_SETUP_DEBUG=1 を追加して再デプロイし、同じ URL を開くと debug オブジェクトに「どの STRIPE_* 名がサーバーに見えているか」（値は出ません）が返ります。確認後は STRIPE_SETUP_DEBUG を削除してください。",
         ].join(" "),
   };
+  const debug = stripeSetupDebugPayload();
+  if (debug) {
+    base.debug = debug;
+  }
+  return base;
 }

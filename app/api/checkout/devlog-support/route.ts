@@ -33,10 +33,15 @@ function resolveDevlogPriceId(): string | undefined {
   return DEVLOG_STRIPE_PRICE_ID;
 }
 
+const NO_STORE = { "Cache-Control": "no-store, max-age=0" } as const;
+
 export async function GET(request: NextRequest) {
   const stripe = getStripeServer();
   if (!stripe) {
-    return NextResponse.json(stripeMisconfigurationBody(), { status: 503 });
+    return NextResponse.json(stripeMisconfigurationBody(), {
+      status: 503,
+      headers: NO_STORE,
+    });
   }
 
   const priceId = resolveDevlogPriceId();
@@ -50,7 +55,7 @@ export async function GET(request: NextRequest) {
             ? "STRIPE_DEVLOG_PRICE_ID を .env.local に設定するか、lib/devlogStripe.ts の DEVLOG_STRIPE_PRICE_ID を更新してください。"
             : "ご利用の Stripe アカウントで作成したサブスクリプション用 price_... を STRIPE_DEVLOG_PRICE_ID に設定してください。",
       },
-      { status: 500 },
+      { status: 500, headers: NO_STORE },
     );
   }
 
@@ -68,12 +73,15 @@ export async function GET(request: NextRequest) {
     if (!session.url) {
       return NextResponse.json(
         { error: "Checkout URL を取得できませんでした" },
-        { status: 500 },
+        { status: 500, headers: NO_STORE },
       );
     }
     return NextResponse.redirect(session.url);
   } catch (err) {
     console.error("[checkout/devlog-support]", err);
-    return NextResponse.json({ error: "Checkout の開始に失敗しました" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Checkout の開始に失敗しました" },
+      { status: 500, headers: NO_STORE },
+    );
   }
 }
