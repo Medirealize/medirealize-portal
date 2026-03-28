@@ -79,7 +79,7 @@ export default async function DevLogUnlockPage({
         <div className="mt-6 rounded-2xl border border-blue-200 bg-blue-50/60 p-4">
           <p className="text-sm font-medium text-slate-800">まだ購読されていない方</p>
           <p className="mt-1 text-xs leading-relaxed text-slate-600">
-            Stripe の安全な決済ページへ進み、月額100円で開発日誌を購読できます。
+            Stripe の安全な決済ページへ進み、100円（月額・税込）で開発を支援・購読いただけます。
           </p>
           <a
             href={DEVLOG_CHECKOUT_PATH}

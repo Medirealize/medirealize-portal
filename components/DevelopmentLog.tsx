@@ -3,7 +3,8 @@ import {
   DEVLOG_BULLETS,
   DEVLOG_CHECKOUT_PATH,
   DEVLOG_CTA_LABEL,
-  DEVLOG_SUPPORT_USAGE_NOTE,
+  DEVLOG_SUPPORT_CANCEL_NOTE,
+  DEVLOG_SUPPORT_FUND_NOTE,
   DEVLOG_TITLE,
 } from "@/lib/productLeadContent";
 
@@ -11,7 +12,7 @@ const SURFACE =
   "rounded-2xl border border-[#E4E6EB] bg-white shadow-[0_2px_16px_rgba(0,0,0,0.06)]";
 
 function LeadBody({ text }: { text: string }) {
-  const marker = "月額100円";
+  const marker = "100円（月額）";
   const i = text.indexOf(marker);
   if (i < 0) return <>{text}</>;
   return (
@@ -59,9 +60,10 @@ export default function DevelopmentLog() {
         >
           {DEVLOG_CTA_LABEL}
         </a>
-        <p className="mt-3 max-w-2xl text-pretty text-center text-xs leading-[1.65] text-[#65676B] sm:text-[0.8125rem] sm:leading-relaxed">
-          {DEVLOG_SUPPORT_USAGE_NOTE}
-        </p>
+        <div className="mt-3 max-w-2xl text-pretty text-center text-xs leading-[1.65] text-[#65676B] sm:text-[0.8125rem] sm:leading-relaxed">
+          <p>{DEVLOG_SUPPORT_FUND_NOTE}</p>
+          <p className="mt-1.5">{DEVLOG_SUPPORT_CANCEL_NOTE}</p>
+        </div>
       </div>
     </section>
   );

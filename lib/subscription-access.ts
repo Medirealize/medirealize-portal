@@ -1,4 +1,4 @@
-import Stripe from "stripe";
+import { getStripeServer } from "@/lib/stripeServer";
 
 const BYPASS_EMAILS = (process.env.DEVLOG_BYPASS_EMAILS ?? "")
   .split(",")
@@ -14,10 +14,8 @@ export async function hasDevLogAccess(email: string): Promise<boolean> {
   if (!normalized) return false;
   if (isBypassEmail(normalized)) return true;
 
-  const secretKey = process.env.STRIPE_SECRET_KEY;
-  if (!secretKey) return false;
-
-  const stripe = new Stripe(secretKey);
+  const stripe = getStripeServer();
+  if (!stripe) return false;
 
   const customers = await stripe.customers.list({ email: normalized, limit: 10 });
   if (!customers.data.length) return false;

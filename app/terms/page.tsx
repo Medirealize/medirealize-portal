@@ -35,7 +35,27 @@ export default function TermsPage() {
           <section>
             <h2 className="text-base font-semibold text-slate-900">第3条（返品・返金）</h2>
             <p className="mt-1">
-              デジタルコンテンツの特性上、購入後の返品・返金には応じられません。定期購読の解約はいつでも可能であり、次回請求日以降の自動更新を停止します。
+              デジタルコンテンツの特性上、購入後の返品・返金には応じられません。定期購読の解約はいつでも可能であり、次回請求日以降の自動更新を停止します。解約手続きの詳細は、下記「定期購読の解約・キャンセル」および特定商取引法に基づく表記に従います。
+            </p>
+          </section>
+
+          <section id="subscription-cancellation" className="scroll-mt-8">
+            <h2 className="text-base font-semibold text-slate-900">
+              定期購読の解約・キャンセル（Stripe）
+            </h2>
+            <p className="mt-1">
+              本サービスの月額購読（サブスクリプション）の解約・お支払い方法の変更は、決済代行である
+              Stripe が提供するカスタマーポータルから、利用者ご自身のタイミングでいつでも手続きいただけます。
+            </p>
+            <p className="mt-2">
+              解約手続き完了後も、当該請求期間の終了日までは既にお支払い済みの範囲でコンテンツをご利用いただけます。日割り計算による返金および過去に請求済みの料金の返金は行いません。
+            </p>
+            <p className="mt-2 text-sm text-slate-600">
+              特定商取引法に基づく表記・商品代金等の詳細は
+              <Link href="/tokushoho" className="font-medium text-blue-700 underline-offset-2 hover:underline">
+                こちら
+              </Link>
+              をご確認ください。
             </p>
           </section>
 
@@ -54,19 +74,30 @@ export default function TermsPage() {
           </section>
         </div>
 
-        <div className="mt-7 flex flex-wrap gap-3">
-          <Link
-            href="/tokushoho"
-            className="inline-flex items-center rounded-xl border border-blue-200 bg-blue-50 px-4 py-2.5 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-100"
-          >
-            特定商取引法に基づく表記
-          </Link>
-          <Link
-            href="/"
-            className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50"
-          >
-            ポータルへ戻る
-          </Link>
+        <div className="mt-7 flex flex-col gap-3 border-t border-slate-100 pt-6">
+          <p className="text-xs leading-relaxed text-slate-500">
+            <Link
+              href="#subscription-cancellation"
+              className="font-medium text-blue-700 underline-offset-2 hover:underline"
+            >
+              定期購読の解約・キャンセル（Stripe）
+            </Link>
+            については本文の該当箇所をご確認ください。
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/tokushoho"
+              className="inline-flex items-center rounded-xl border border-blue-200 bg-blue-50 px-4 py-2.5 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-100"
+            >
+              特定商取引法に基づく表記
+            </Link>
+            <Link
+              href="/"
+              className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50"
+            >
+              ポータルへ戻る
+            </Link>
+          </div>
         </div>
       </main>
     </div>

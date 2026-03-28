@@ -2,8 +2,8 @@
  * 開発日誌の月額購読（Stripe Checkout / Subscription）
  */
 import { NextRequest, NextResponse } from "next/server";
-import Stripe from "stripe";
 import { DEVLOG_STRIPE_PRICE_ID } from "@/lib/devlogStripe";
+import { getStripeServer, stripeMisconfigurationBody } from "@/lib/stripeServer";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -25,14 +25,33 @@ function publicOrigin(request: NextRequest): string {
   return request.nextUrl.origin;
 }
 
+function resolveDevlogPriceId(): string | undefined {
+  const fromEnv = process.env.STRIPE_DEVLOG_PRICE_ID?.trim().replace(/^["']|["']$/g, "");
+  if (fromEnv) return fromEnv;
+  return DEVLOG_STRIPE_PRICE_ID;
+}
+
 export async function GET(request: NextRequest) {
-  const secretKey = process.env.STRIPE_SECRET_KEY;
-  if (!secretKey) {
-    return NextResponse.json({ error: "Stripe は未設定です" }, { status: 500 });
+  const stripe = getStripeServer();
+  if (!stripe) {
+    return NextResponse.json(stripeMisconfigurationBody(), { status: 503 });
   }
 
-  const priceId = process.env.STRIPE_DEVLOG_PRICE_ID ?? DEVLOG_STRIPE_PRICE_ID;
-  const stripe = new Stripe(secretKey);
+  const priceId = resolveDevlogPriceId();
+  if (!priceId) {
+    return NextResponse.json(
+      {
+        error: "開発日誌用の Stripe Price ID が設定されていません",
+        code: "STRIPE_PRICE_MISSING",
+        hint:
+          process.env.NODE_ENV === "development"
+            ? "STRIPE_DEVLOG_PRICE_ID を .env.local に設定するか、lib/devlogStripe.ts の DEVLOG_STRIPE_PRICE_ID を更新してください。"
+            : undefined,
+      },
+      { status: 500 },
+    );
+  }
+
   const origin = publicOrigin(request);
 
   try {

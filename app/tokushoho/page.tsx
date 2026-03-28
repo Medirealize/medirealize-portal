@@ -33,7 +33,7 @@ const rows = [
   {
     label: "返品・キャンセル",
     value:
-      "デジタルコンテンツの特性上、返品・返金はできません。解約はいつでも可能です（次月より停止）。",
+      "デジタルコンテンツの特性上、返品・返金はできません。サブスクリプションの解約は Stripe のカスタマーポータルからいつでも可能です。解約後も当該請求期間終了までは閲覧できます。日割り計算による返金は行いません。",
   },
 ];
 
@@ -66,6 +66,12 @@ export default function TokushohoPage() {
               className="inline-flex items-center rounded-xl border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-100"
             >
               利用規約
+            </Link>
+            <Link
+              href="/terms#subscription-cancellation"
+              className="inline-flex items-center rounded-xl border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-100"
+            >
+              解約・キャンセル
             </Link>
             <Link
               href="/dev-log"
