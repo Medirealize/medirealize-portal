@@ -71,29 +71,28 @@ function stripeSetupDebugPayload(): Record<string, unknown> | undefined {
     vercel: process.env["VERCEL"],
     vercelEnv: process.env["VERCEL_ENV"],
     nodeEnv: process.env["NODE_ENV"],
+    readme:
+      "secretCandidateLengths がすべて 0 かつ stripeRelatedEnvKeyNames が空に近い → この Vercel Project に STRIPE_SECRET_KEY が届いていません。名前の typo・Production/Preview の適用・別 Project への登録を確認。確認後は STRIPE_SETUP_DEBUG を削除。",
   };
 }
 
 export function stripeMisconfigurationBody(): Record<string, unknown> {
   const isDev = process.env["NODE_ENV"] === "development";
+  const debug = stripeSetupDebugPayload();
+
   const base: Record<string, unknown> = {
     error: isDev
       ? "Stripe のシークレットキーが読み込めていません"
       : "決済の開始に必要な設定が完了していません",
     code: "STRIPE_NOT_CONFIGURED",
     hint: isDev
-      ? "プロジェクト直下の .env.local に STRIPE_SECRET_KEY=sk_test_... を記述し、開発サーバーを再起動してください。Vercel では Environment Variables に同じ名前で登録し、再デプロイしてください。"
-      : [
-          "Vercel → 該当 Project → Settings → Environment Variables で名前が正確に STRIPE_SECRET_KEY か確認（末尾スペース・全角記号なし）。値は sk_live_ または sk_test_ で始まる 1 行のみ。",
-          "試している URL が本番ドメインなら Production に、*.vercel.app のプレビューなら Preview にチェックが入っているか確認。",
-          "別チーム・別 Project にキーを入れていないか、Git 連携しているリポジトリがこのアプリか確認。",
-          "保存後は Redeploy（キャッシュなし推奨）を実行。",
-          "原因切り分け: Vercel に STRIPE_SETUP_DEBUG=1 を追加して再デプロイし、同じ URL を開くと debug オブジェクトに「どの STRIPE_* 名がサーバーに見えているか」（値は出ません）が返ります。確認後は STRIPE_SETUP_DEBUG を削除してください。",
-        ].join(" "),
+      ? ".env.local に STRIPE_SECRET_KEY を設定して開発サーバーを再起動するか、Vercel の Environment Variables に登録して再デプロイしてください。"
+      : "サーバーに STRIPE_SECRET_KEY（sk_ で始まる Stripe シークレット）が届いていません。ホスティングの環境変数と再デプロイを確認してください。",
   };
-  const debug = stripeSetupDebugPayload();
+
   if (debug) {
     base.debug = debug;
   }
+
   return base;
 }
