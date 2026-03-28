@@ -56,11 +56,11 @@ export default function FeatureCard({
         {DEV_IN_PROGRESS_LABEL}
       </span>
 
-      <div className="relative flex min-w-0 items-start gap-3">
-        <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#F0F2F5] text-[#1877F2] ring-1 ring-[#DADDE1]">
+      <div className="relative flex min-w-0 items-start gap-2.5 pr-10 sm:gap-3 sm:pr-12">
+        <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F0F2F5] text-[#1877F2] ring-1 ring-[#DADDE1] sm:h-11 sm:w-11">
           <Icon className="h-5 w-5" aria-hidden />
         </span>
-        <h3 className="min-w-0 flex-1 break-words pt-0.5 text-left text-base font-bold leading-snug tracking-tight text-[#050505] sm:text-lg lg:text-xl lg:leading-tight">
+        <h3 className="min-w-0 flex-1 break-words pt-0.5 text-left text-base font-bold leading-snug tracking-tight text-[#050505] sm:text-lg sm:leading-tight lg:whitespace-nowrap lg:text-[0.6875rem] lg:leading-tight lg:tracking-tight xl:text-[0.8125rem] 2xl:text-[0.875rem] min-[1600px]:text-[0.9375rem]">
           {title}
         </h3>
       </div>

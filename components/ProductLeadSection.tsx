@@ -15,7 +15,9 @@ import {
 
 const HERO_BOX =
   "rounded-2xl border border-[#E4E6EB] bg-white shadow-[0_2px_14px_rgba(0,0,0,0.06)]";
-const HERO_PAD = "p-6 sm:p-7 md:p-8 lg:p-8 xl:p-10";
+/** 横パディングを厚めにし、nowrap 見出しが枠に密着しないようにする */
+const HERO_PAD =
+  "py-6 pl-6 pr-6 sm:py-7 sm:pl-7 sm:pr-7 md:py-8 md:pl-9 md:pr-9 lg:py-8 lg:pl-10 lg:pr-10 xl:py-10 xl:pl-12 xl:pr-12 2xl:pl-14 2xl:pr-14";
 const INNER_MAX = "mx-auto w-full max-w-6xl px-4 sm:px-6";
 
 export default function ProductLeadSection() {
@@ -32,7 +34,7 @@ export default function ProductLeadSection() {
               <span className="hidden sm:inline">{PHASE_BADGE_LONG}</span>
             </div>
 
-            <h1 className="relative mx-auto mt-6 w-full min-w-0 text-center text-lg font-extrabold leading-snug tracking-tight text-[#050505] sm:mt-6 sm:text-2xl sm:leading-tight md:text-3xl md:leading-[1.2] lg:mt-6 lg:whitespace-nowrap lg:text-[clamp(2rem,2.8vw,3rem)] lg:leading-[1.1] xl:text-[clamp(2.25rem,2.5vw,3.25rem)] xl:leading-[1.08] 2xl:text-[3.25rem] 2xl:leading-[1.05]">
+            <h1 className="relative mx-auto mt-6 w-full min-w-0 max-w-full px-0 text-center text-lg font-extrabold leading-snug tracking-tight text-[#050505] sm:mt-6 sm:text-2xl sm:leading-tight md:text-3xl md:leading-[1.2] lg:mt-6 lg:whitespace-nowrap lg:text-[clamp(1.375rem,1.35rem+1.4vw,2.5rem)] lg:leading-[1.12] xl:text-[clamp(1.5rem,1.25rem+1.35vw,2.625rem)] xl:leading-[1.1] 2xl:text-[clamp(1.625rem,1.5rem+1.2vw,2.75rem)] 2xl:leading-[1.08]">
               {HERO_MAIN_COPY}
             </h1>
 
