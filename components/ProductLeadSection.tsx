@@ -36,7 +36,7 @@ export default function ProductLeadSection() {
               {HERO_MAIN_COPY}
             </h1>
 
-            <p className="relative mx-auto mt-5 w-full min-w-0 max-w-full text-pretty text-center text-sm font-normal leading-relaxed text-[#65676B] sm:text-base md:text-base lg:mt-5 lg:max-w-[52rem] lg:text-lg lg:leading-relaxed xl:text-xl xl:leading-relaxed">
+            <p className="relative mx-auto mt-5 w-full min-w-0 max-w-full text-pretty text-center text-base font-normal leading-[1.85] text-[#65676B] sm:text-lg sm:leading-[1.8] lg:mt-6 lg:max-w-[48rem] lg:text-xl lg:leading-[1.75] xl:max-w-[52rem] xl:text-[1.25rem] xl:leading-[1.72]">
               {HERO_SUB_COPY}
             </p>
           </div>
@@ -44,7 +44,7 @@ export default function ProductLeadSection() {
       </section>
 
       <section className="mt-9 sm:mt-10" aria-label="プロダクト導線">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-4 sm:items-stretch lg:grid-cols-4 lg:gap-4 lg:[grid-auto-rows:minmax(0,1fr)]">
+        <div className="grid min-w-0 grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-5 sm:items-stretch lg:grid-cols-4 lg:gap-6 lg:[grid-auto-rows:minmax(0,1fr)]">
           {FEATURE_DEFINITIONS.map((f, i) => (
             <FeatureCard
               key={f.key}
@@ -59,7 +59,7 @@ export default function ProductLeadSection() {
         </div>
 
         <p
-          className="mt-5 w-full text-right text-xs leading-relaxed text-[#65676B] sm:mt-6 sm:text-sm lg:mt-6"
+          className="mt-6 w-full text-right text-xs leading-relaxed text-[#65676B] sm:mt-7 sm:text-sm lg:mt-8 lg:text-[0.9375rem] lg:leading-relaxed"
           role="note"
         >
           {MEDICAL_DISCLAIMER}

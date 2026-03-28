@@ -6,7 +6,7 @@ export const HERO_MAIN_COPY =
   "届かなかった声を、医療(Medi)の形（Realize）に変える。" as const;
 
 export const HERO_SUB_COPY =
-  "診察がひと段落したあと、静かな診察室でキーボードの音だけが続く――その時間に、今プロトタイプが少しずつ形になります。" as const;
+  "診察がひと段落したあと、静かな診察室でキーボードの音だけが続く――その時間に、今\u200bプロトタイプが少しずつ形になります。" as const;
 
 export const PHASE_BADGE_SHORT = "Phase 1 · MA · 構築中" as const;
 export const PHASE_BADGE_LONG = "Phase 1 · Medical Articulation · 構築中" as const;

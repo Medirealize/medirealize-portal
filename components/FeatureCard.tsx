@@ -43,8 +43,8 @@ export default function FeatureCard({
   return (
     <div
       className={[
-        "group relative flex h-full min-h-0 min-w-0 flex-col self-stretch overflow-visible rounded-2xl border border-[#E4E6EB] bg-white p-6 text-left shadow-[0_2px_12px_rgba(0,0,0,0.05)] transition-all duration-200",
-        "hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] active:translate-y-0",
+        "group relative flex h-full min-h-0 min-w-0 max-w-full flex-col self-stretch overflow-visible rounded-2xl border border-[#E4E6EB] bg-white p-5 text-left shadow-[0_2px_12px_rgba(0,0,0,0.05)] transition-shadow duration-200 sm:p-6",
+        "hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] active:translate-y-0",
         "[touch-action:manipulation]",
       ].join(" ")}
       aria-label={`${title} のカード`}
@@ -60,36 +60,36 @@ export default function FeatureCard({
         <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#F0F2F5] text-[#1877F2] ring-1 ring-[#DADDE1]">
           <Icon className="h-5 w-5" aria-hidden />
         </span>
-        <h3 className="min-w-0 flex-1 pt-0.5 text-left text-lg font-bold leading-tight tracking-tight text-[#050505] sm:text-xl lg:text-[1.25rem] xl:whitespace-nowrap xl:text-2xl xl:leading-snug">
+        <h3 className="min-w-0 flex-1 break-words pt-0.5 text-left text-base font-bold leading-snug tracking-tight text-[#050505] sm:text-lg lg:text-xl lg:leading-tight">
           {title}
         </h3>
       </div>
 
-      <ol className="mt-6 min-h-0 min-w-0 flex-1 space-y-4">
+      <ol className="mt-5 min-h-0 min-w-0 flex-1 space-y-3.5 sm:mt-6 sm:space-y-4">
         {steps.map((step, stepIdx) => (
-          <li key={stepIdx} className="flex min-w-0 gap-3">
+          <li key={stepIdx} className="flex min-w-0 gap-2.5 sm:gap-3">
             <span
               className={[
-                "mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border text-sm font-bold",
+                "mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-bold sm:h-10 sm:w-10 sm:text-sm",
                 "border-[#DADDE1] bg-[#F0F2F5] text-[#050505]",
                 "group-hover:border-[#CCD0D5] group-hover:bg-[#E4E6EB]",
               ].join(" ")}
             >
               {STEP_MARKERS[stepIdx]}
             </span>
-            <span className="min-w-0 flex-1 pt-0.5 text-[0.9375rem] leading-snug tracking-tight text-[#1C1E21] sm:text-base lg:whitespace-nowrap lg:leading-[1.45] lg:[font-size:clamp(0.75rem,0.24rem+0.7vw,1rem)] xl:[font-size:clamp(0.8125rem,0.28rem+0.62vw,1.0625rem)]">
+            <span className="min-w-0 flex-1 break-words pt-0.5 text-sm leading-[1.65] text-[#1C1E21] sm:text-[0.9375rem] sm:leading-relaxed lg:text-base lg:leading-[1.7]">
               {step}
             </span>
           </li>
         ))}
       </ol>
 
-      <div className="mt-auto pt-6">
+      <div className="mt-auto pt-5 sm:pt-6">
         <a
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex min-h-[52px] w-full items-center justify-center rounded-lg bg-[#1877F2] px-4 py-3.5 text-center text-lg font-semibold text-white shadow-sm transition-colors hover:bg-[#166FE5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40 active:scale-[0.99] lg:min-h-[56px] lg:text-xl lg:leading-tight xl:text-[1.3125rem]"
+          className="flex min-h-[48px] w-full items-center justify-center rounded-lg bg-[#1877F2] px-3 py-3 text-center text-base font-semibold leading-snug text-white shadow-sm transition-colors hover:bg-[#166FE5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40 active:scale-[0.99] sm:min-h-[52px] sm:px-4 sm:py-3.5 sm:text-lg lg:min-h-[54px] lg:text-[1.0625rem]"
         >
           {cta}
         </a>
