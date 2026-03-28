@@ -60,7 +60,7 @@ export default function FeatureCard({
         <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F0F2F5] text-[#1877F2] ring-1 ring-[#DADDE1] sm:h-11 sm:w-11">
           <Icon className="h-5 w-5" aria-hidden />
         </span>
-        <h3 className="line-clamp-2 min-w-0 flex-1 break-words pt-0.5 text-left text-[1.0625rem] font-bold leading-snug tracking-tight text-[#050505] text-balance sm:text-lg sm:leading-snug lg:leading-snug lg:tracking-tight lg:[font-size:clamp(1rem,0.55rem+3.4cqw,1.25rem)] xl:[font-size:clamp(1.0625rem,0.5rem+3.1cqw,1.3125rem)] min-[1600px]:[font-size:clamp(1.125rem,0.55rem+2.8cqw,1.375rem)]">
+        <h3 className="line-clamp-2 min-w-0 flex-1 break-words pt-0.5 text-left text-[1.0625rem] font-bold leading-snug tracking-tight text-[#050505] max-lg:text-balance sm:text-lg sm:leading-snug lg:line-clamp-none lg:whitespace-nowrap lg:text-xl lg:leading-tight lg:tracking-tight xl:text-2xl xl:leading-snug">
           {title}
         </h3>
       </div>

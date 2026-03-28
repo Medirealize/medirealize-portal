@@ -46,7 +46,7 @@ export default function ProductLeadSection() {
       </section>
 
       <section className="mt-9 sm:mt-10" aria-label="プロダクト導線">
-        <div className="grid min-w-0 grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-5 sm:items-stretch lg:grid-cols-4 lg:gap-6 lg:[grid-auto-rows:minmax(0,1fr)]">
+        <div className="grid min-w-0 grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-6 lg:[grid-auto-rows:minmax(0,1fr)]">
           {FEATURE_DEFINITIONS.map((f, i) => (
             <FeatureCard
               key={f.key}
