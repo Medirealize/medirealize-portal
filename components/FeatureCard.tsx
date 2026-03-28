@@ -43,7 +43,7 @@ export default function FeatureCard({
   return (
     <div
       className={[
-        "group relative flex h-full min-h-0 min-w-0 flex-col overflow-visible rounded-2xl border border-[#DADDE1] bg-white p-6 text-left shadow-[0_1px_2px_rgba(0,0,0,0.08)] transition-all duration-200",
+        "group relative flex h-full min-h-0 min-w-0 flex-col self-stretch overflow-visible rounded-2xl border border-[#E4E6EB] bg-white p-6 text-left shadow-[0_2px_12px_rgba(0,0,0,0.05)] transition-all duration-200",
         "hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] active:translate-y-0",
         "[touch-action:manipulation]",
       ].join(" ")}

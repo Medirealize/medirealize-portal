@@ -1,14 +1,27 @@
 import {
   DEVLOG_BODY,
   DEVLOG_BULLETS,
+  DEVLOG_CHECKOUT_PATH,
   DEVLOG_CTA_LABEL,
-  DEVLOG_STRIPE_URL,
   DEVLOG_SUPPORT_USAGE_NOTE,
   DEVLOG_TITLE,
 } from "@/lib/productLeadContent";
 
 const SURFACE =
-  "rounded-2xl border border-[#DADDE1] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.08)]";
+  "rounded-2xl border border-[#E4E6EB] bg-white shadow-[0_2px_16px_rgba(0,0,0,0.06)]";
+
+function LeadBody({ text }: { text: string }) {
+  const marker = "月額100円";
+  const i = text.indexOf(marker);
+  if (i < 0) return <>{text}</>;
+  return (
+    <>
+      {text.slice(0, i)}
+      <strong className="font-semibold text-[#050505]">{marker}</strong>
+      {text.slice(i + marker.length)}
+    </>
+  );
+}
 
 /**
  * ランディング「開発サポーター／開発日誌」ブロック。文言は lib/productLeadContent の定数のみ使用。
@@ -16,7 +29,7 @@ const SURFACE =
 export default function DevelopmentLog() {
   return (
     <section
-      className={`${SURFACE} min-w-0 w-full max-w-3xl p-8 lg:p-10`}
+      className={`${SURFACE} min-w-0 w-full max-w-3xl p-8 lg:p-9 xl:p-10`}
       aria-labelledby="devlog-portal-heading"
     >
       <h2
@@ -37,20 +50,18 @@ export default function DevelopmentLog() {
         ))}
       </ul>
 
-      <p className="mt-8 text-pretty text-left text-base leading-[1.75] text-[#65676B] sm:text-[1.0625rem] sm:leading-relaxed lg:text-center lg:text-lg lg:leading-relaxed">
-        {DEVLOG_BODY}
+      <p className="mt-8 text-pretty text-left text-base leading-[1.75] text-[#65676B] sm:text-[1.0625rem] sm:leading-relaxed lg:text-center lg:text-lg lg:leading-[1.7] xl:text-[1.125rem]">
+        <LeadBody text={DEVLOG_BODY} />
       </p>
 
-      <div className="mx-auto mt-8 flex w-full min-w-0 max-w-md flex-col items-stretch sm:items-center">
+      <div className="mx-auto mt-9 flex w-full min-w-0 max-w-lg flex-col items-stretch sm:items-center lg:mt-10">
         <a
-          href={DEVLOG_STRIPE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex min-h-[52px] w-full items-center justify-center rounded-lg bg-[#1877F2] px-4 py-3.5 text-center text-sm font-semibold leading-snug text-white shadow-sm transition-colors hover:bg-[#166FE5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/50 active:scale-[0.99] sm:min-h-[54px] sm:px-5 sm:text-base md:text-lg"
+          href={DEVLOG_CHECKOUT_PATH}
+          className="inline-flex min-h-[54px] w-full items-center justify-center rounded-xl bg-[#1877F2] px-5 py-3.5 text-center text-sm font-semibold leading-snug tracking-tight text-white shadow-md transition-[box-shadow,transform,background-color] hover:bg-[#166FE5] hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/45 active:scale-[0.99] sm:min-h-[56px] sm:px-6 sm:text-base md:text-lg md:leading-snug"
         >
           {DEVLOG_CTA_LABEL}
         </a>
-        <p className="mt-3 text-center text-xs leading-relaxed text-[#65676B] sm:max-w-none sm:px-1">
+        <p className="mt-3 max-w-lg text-center text-xs leading-relaxed text-[#65676B]">
           {DEVLOG_SUPPORT_USAGE_NOTE}
         </p>
       </div>

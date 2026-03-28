@@ -16,8 +16,8 @@ export const MEDICAL_DISCLAIMER =
 
 export const DEV_IN_PROGRESS_LABEL = "[開発中]" as const;
 
-export const DEVLOG_STRIPE_URL =
-  "https://buy.stripe.com/7sY6oA2lKe2qfdg8NEeEo00" as const;
+/** 開発サポーター決済（Stripe Checkout Session を発行してリダイレクト） */
+export const DEVLOG_CHECKOUT_PATH = "/api/checkout/devlog-support" as const;
 
 export const DEVLOG_TITLE =
   "Medirealize：医療の未来を、100円から共に育てる「開発サポーター」募集" as const;
@@ -30,7 +30,7 @@ export const DEVLOG_CTA_LABEL =
 
 /** CTA 直下の誠実注釈（ランディング・必要に応じて他画面でも使用） */
 export const DEVLOG_SUPPORT_USAGE_NOTE =
-  "※お預かりした支援金は、すべて本サービスの開発維持費として大切に活用させていただきます。" as const;
+  "※支援金はすべて本サービスの開発維持費として大切に活用させていただきます。" as const;
 
 /** フッター等で使う短い購読案内（価格は DEVLOG と一致させる） */
 export const DEVLOG_PUBLIC_PRICE_NOTE = "月額100円" as const;

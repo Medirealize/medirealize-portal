@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
 import {
+  DEVLOG_CHECKOUT_PATH,
   DEVLOG_CTA_LABEL,
   DEVLOG_PUBLIC_PRICE_NOTE,
-  DEVLOG_STRIPE_URL,
+  DEVLOG_SUPPORT_USAGE_NOTE,
 } from "@/lib/productLeadContent";
 
 export default function DeveloperThoughtFooter() {
@@ -19,10 +20,8 @@ export default function DeveloperThoughtFooter() {
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-3">
             <a
-              href={DEVLOG_STRIPE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full min-h-[52px] items-center justify-center rounded-lg bg-[#1877F2] px-3 py-3 text-center text-xs font-semibold leading-snug text-white shadow-sm transition-colors hover:bg-[#166FE5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/50 sm:min-h-[48px] sm:px-4 sm:text-sm sm:leading-normal md:text-base md:leading-snug sm:w-auto"
+              href={DEVLOG_CHECKOUT_PATH}
+              className="inline-flex w-full min-h-[52px] items-center justify-center rounded-lg bg-[#1877F2] px-3 py-3 text-center text-xs font-semibold leading-snug text-white shadow-md transition-colors hover:bg-[#166FE5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/50 sm:min-h-[48px] sm:px-4 sm:text-sm sm:leading-normal md:text-base md:leading-snug sm:w-auto"
             >
               {DEVLOG_CTA_LABEL}
             </a>
@@ -33,6 +32,9 @@ export default function DeveloperThoughtFooter() {
               開発日誌を閲覧する
             </Link>
           </div>
+          <p className="mt-2 text-center text-xs leading-relaxed text-[#65676B]">
+            {DEVLOG_SUPPORT_USAGE_NOTE}
+          </p>
           <p className="mt-3 text-xs leading-relaxed text-[#65676B]">
             ※本決済は寄付ではなく、デジタルコンテンツの閲覧権およびプレミアム機能の利用ライセンス提供に対する対価です。
           </p>
