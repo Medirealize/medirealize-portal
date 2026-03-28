@@ -16,21 +16,22 @@ export const MEDICAL_DISCLAIMER =
 
 export const DEV_IN_PROGRESS_LABEL = "[開発中]" as const;
 
-/** 開発サポーター決済（Stripe Checkout Session を発行してリダイレクト） */
+/** 開発日誌の購読決済（Stripe Checkout Session を発行してリダイレクト） */
 export const DEVLOG_CHECKOUT_PATH = "/api/checkout/devlog-support" as const;
 
 export const DEVLOG_TITLE =
-  "Medirealize：医療の未来を、100円から共に育てる「開発サポーター」募集" as const;
+  "Medirealize：開発の軌跡 ～現場の医師による開発日誌～" as const;
 
 export const DEVLOG_BODY =
-  "「届かなかった声」を形にする挑戦は、まだ始まったばかりです。月額100円の開発投資は、そのままMedirealizeの血となり、肉となります。一人の医師が現場の課題から理想の診療を再構築するプロセスに、あなたも「サポーター」として並走していただけませんか。" as const;
+  "「届かなかった声」を形にする挑戦のプロセスを、月額100円の「開発日誌（葛藤ログ）」として公開しています。一人の医師が現場の課題に向き合い、コードを書き進める現在進行形のドキュメントを、購読という形でぜひ見守ってください。" as const;
 
-export const DEVLOG_CTA_LABEL =
-  "100円で開発を支援する（開発日誌へのアクセス権付）" as const;
+export const DEVLOG_CTA_LABEL = "100円で開発日誌を購読する" as const;
 
-/** CTA 直下の誠実注釈（ランディング・必要に応じて他画面でも使用） */
+/**
+ * CTA 直下の注釈（購読料の用途＋ Stripe カスタマーポータルでの解約のしやすさ）
+ */
 export const DEVLOG_SUPPORT_USAGE_NOTE =
-  "※支援金はすべて本サービスの開発維持費として大切に活用させていただきます。" as const;
+  "※購読料はすべて本サービスの開発維持費として大切に活用させていただきます。購読の停止（サブスクリプションの解約）は、Stripeのカスタマーポータルからいつでもお手続きいただけます。" as const;
 
 /** フッター等で使う短い購読案内（価格は DEVLOG と一致させる） */
 export const DEVLOG_PUBLIC_PRICE_NOTE = "月額100円" as const;

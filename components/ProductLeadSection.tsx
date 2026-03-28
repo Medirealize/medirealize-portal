@@ -24,7 +24,7 @@ export default function ProductLeadSection() {
       <section className="w-full text-center" aria-label="ヒーロー">
         <div className="flex w-full justify-center">
           <div
-            className={`${HERO_BOX} ${HERO_PAD} w-full max-w-[min(100%,26rem)] sm:max-w-[min(100%,32rem)] md:max-w-[min(100%,40rem)] lg:w-max lg:max-w-[min(100%,calc(100vw-2rem))] lg:min-w-0`}
+            className={`${HERO_BOX} ${HERO_PAD} w-full max-w-[min(100%,26rem)] sm:max-w-[min(100%,32rem)] md:max-w-[min(100%,42rem)] lg:w-max lg:max-w-[min(100%,calc(100vw-2rem))] lg:min-w-0 xl:max-w-[min(100%,72rem)]`}
           >
             <div className="mx-auto inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-[#DADDE1] bg-[#F0F2F5] px-3 py-1.5 text-xs font-semibold leading-tight text-[#65676B] md:px-3.5 md:py-1.5 md:text-[13px]">
               <span className="inline-flex h-2 w-2 shrink-0 rounded-full bg-[#1877F2]" aria-hidden />
@@ -32,11 +32,11 @@ export default function ProductLeadSection() {
               <span className="hidden sm:inline">{PHASE_BADGE_LONG}</span>
             </div>
 
-            <h1 className="relative mx-auto mt-6 w-full min-w-0 text-center text-lg font-extrabold leading-snug tracking-tight text-[#050505] sm:mt-6 sm:text-2xl sm:leading-tight md:text-3xl md:leading-[1.2] lg:mt-6 lg:whitespace-nowrap lg:text-5xl lg:leading-[1.12] xl:text-[2.75rem] xl:leading-[1.08] 2xl:text-[3rem] 2xl:leading-[1.05]">
+            <h1 className="relative mx-auto mt-6 w-full min-w-0 text-center text-lg font-extrabold leading-snug tracking-tight text-[#050505] sm:mt-6 sm:text-2xl sm:leading-tight md:text-3xl md:leading-[1.2] lg:mt-6 lg:whitespace-nowrap lg:text-[clamp(2rem,2.8vw,3rem)] lg:leading-[1.1] xl:text-[clamp(2.25rem,2.5vw,3.25rem)] xl:leading-[1.08] 2xl:text-[3.25rem] 2xl:leading-[1.05]">
               {HERO_MAIN_COPY}
             </h1>
 
-            <p className="relative mx-auto mt-5 w-full min-w-0 max-w-full text-pretty text-center text-sm font-normal leading-relaxed text-[#65676B] sm:text-base md:text-base lg:mt-5 lg:text-lg lg:leading-relaxed xl:text-xl xl:leading-relaxed 2xl:whitespace-nowrap">
+            <p className="relative mx-auto mt-5 w-full min-w-0 max-w-full text-pretty text-center text-sm font-normal leading-relaxed text-[#65676B] sm:text-base md:text-base lg:mt-5 lg:max-w-[52rem] lg:text-lg lg:leading-relaxed xl:text-xl xl:leading-relaxed">
               {HERO_SUB_COPY}
             </p>
           </div>
@@ -44,7 +44,7 @@ export default function ProductLeadSection() {
       </section>
 
       <section className="mt-9 sm:mt-10" aria-label="プロダクト導線">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:items-stretch lg:gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-4 sm:items-stretch lg:grid-cols-4 lg:gap-4 lg:[grid-auto-rows:minmax(0,1fr)]">
           {FEATURE_DEFINITIONS.map((f, i) => (
             <FeatureCard
               key={f.key}
@@ -67,7 +67,7 @@ export default function ProductLeadSection() {
       </section>
 
       <div className="mt-10 w-full sm:mt-11">
-        <div className="flex w-full min-w-0 justify-center lg:justify-end">
+        <div className="flex w-full min-w-0 justify-center">
           <DevelopmentLog />
         </div>
       </div>

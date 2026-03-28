@@ -13,10 +13,10 @@ export default function DeveloperThoughtFooter() {
       <div className="mx-auto w-full max-w-6xl px-3 py-7 sm:px-4 sm:py-8">
         <div className="mb-6 rounded-xl border border-[#DADDE1] bg-[#F0F2F5] p-4 shadow-[0_1px_2px_rgba(0,0,0,0.06)] sm:p-5">
           <p className="text-sm font-semibold leading-relaxed text-[#050505] sm:text-base">
-            この声が形になるまでの全記録は、開発日誌で公開中（{DEVLOG_PUBLIC_PRICE_NOTE}）
+            この声が形になるまでの記録は、開発日誌として{DEVLOG_PUBLIC_PRICE_NOTE}でご購読いただけます。
           </p>
           <p className="mt-2 text-sm leading-relaxed text-[#65676B] sm:text-base">
-            購読後はメール認証で、開発日誌コンテンツを閲覧できます。
+            購読後はメール認証で、開発日誌コンテンツを閲覧できます。解約は Stripe のカスタマーポータルからいつでも可能です。
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-3">
             <a

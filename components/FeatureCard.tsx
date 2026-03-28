@@ -65,7 +65,7 @@ export default function FeatureCard({
         </h3>
       </div>
 
-      <ol className="mt-6 min-w-0 flex-1 space-y-4">
+      <ol className="mt-6 min-h-0 min-w-0 flex-1 space-y-4">
         {steps.map((step, stepIdx) => (
           <li key={stepIdx} className="flex min-w-0 gap-3">
             <span
@@ -84,7 +84,7 @@ export default function FeatureCard({
         ))}
       </ol>
 
-      <div className="mt-6">
+      <div className="mt-auto pt-6">
         <a
           href={href}
           target="_blank"

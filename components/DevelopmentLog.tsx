@@ -23,9 +23,7 @@ function LeadBody({ text }: { text: string }) {
   );
 }
 
-/**
- * ランディング「開発サポーター／開発日誌」ブロック。文言は lib/productLeadContent の定数のみ使用。
- */
+/** ランディング「開発の軌跡／開発日誌」購読ブロック */
 export default function DevelopmentLog() {
   return (
     <section
@@ -34,7 +32,7 @@ export default function DevelopmentLog() {
     >
       <h2
         id="devlog-portal-heading"
-        className="text-pretty text-center text-base font-bold leading-snug tracking-tight text-[#050505] sm:text-lg md:text-xl lg:leading-tight"
+        className="text-balance text-center text-base font-bold leading-snug tracking-tight text-[#050505] sm:text-lg md:text-xl lg:leading-tight"
       >
         {DEVLOG_TITLE}
       </h2>
@@ -61,7 +59,7 @@ export default function DevelopmentLog() {
         >
           {DEVLOG_CTA_LABEL}
         </a>
-        <p className="mt-3 max-w-lg text-center text-xs leading-relaxed text-[#65676B]">
+        <p className="mt-3 max-w-2xl text-pretty text-center text-xs leading-[1.65] text-[#65676B] sm:text-[0.8125rem] sm:leading-relaxed">
           {DEVLOG_SUPPORT_USAGE_NOTE}
         </p>
       </div>

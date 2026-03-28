@@ -1,3 +1,6 @@
+/**
+ * 開発日誌の月額購読（Stripe Checkout / Subscription）
+ */
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { DEVLOG_STRIPE_PRICE_ID } from "@/lib/devlogStripe";
