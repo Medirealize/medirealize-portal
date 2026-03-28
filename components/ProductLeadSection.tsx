@@ -81,18 +81,18 @@ export default function ProductLeadSection() {
   return (
     <div className="mx-auto w-full max-w-6xl px-3 pb-16 pt-5 sm:px-4 sm:pb-20 sm:pt-8">
       <section className="flex justify-center text-center">
-        <div className="relative mx-auto w-full max-w-[min(100%,26rem)] rounded-xl border border-[#DADDE1] bg-white px-5 py-7 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:max-w-[min(100%,32rem)] sm:rounded-2xl sm:px-7 sm:py-8 md:w-full md:max-w-full md:px-9 md:py-9 lg:px-10 lg:py-10 xl:px-11 xl:py-11">
+        <div className="relative mx-auto w-full max-w-[min(100%,26rem)] rounded-xl border border-[#DADDE1] bg-white px-5 py-7 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:max-w-[min(100%,32rem)] sm:rounded-2xl sm:px-7 sm:py-8 md:max-w-[min(100%,40rem)] md:px-8 md:py-9 lg:max-w-[min(100%,50rem)] lg:px-9 lg:py-9 xl:max-w-[min(100%,54rem)] xl:px-10 xl:py-10 2xl:max-w-[min(100%,58rem)] 2xl:px-11 2xl:py-10">
           <div className="relative mx-auto inline-flex max-w-full flex-wrap items-center justify-center gap-x-1.5 gap-y-1 rounded-full border border-[#DADDE1] bg-[#F0F2F5] px-2.5 py-1.5 text-center text-[10px] font-semibold leading-tight text-[#65676B] sm:gap-2 sm:px-3 sm:py-1 sm:text-xs md:text-[13px]">
             <span className="inline-flex h-2 w-2 shrink-0 rounded-full bg-[#1877F2]" aria-hidden />
             <span className="sm:hidden">Phase 1 · MA · 構築中</span>
             <span className="hidden sm:inline">Phase 1 · Medical Articulation · 構築中</span>
           </div>
 
-          <h1 className="relative mx-auto mt-5 w-full min-w-0 max-w-full text-balance text-center text-lg font-extrabold leading-snug tracking-tight text-[#050505] sm:mt-6 sm:text-2xl sm:leading-tight md:mt-6 md:text-3xl md:leading-[1.2] lg:whitespace-nowrap lg:text-4xl lg:leading-[1.15] xl:text-[2.35rem] xl:leading-[1.1]">
+          <h1 className="relative mx-auto mt-5 w-full min-w-0 max-w-full text-balance text-center text-lg font-extrabold leading-snug tracking-tight text-[#050505] sm:mt-6 sm:text-2xl sm:leading-tight md:mt-6 md:text-3xl md:leading-[1.2] lg:whitespace-nowrap lg:text-5xl lg:leading-[1.12] lg:tracking-tight xl:text-[2.75rem] xl:leading-[1.08] 2xl:text-[3rem] 2xl:leading-[1.05]">
             届かなかった声を、医療(Medi)の形（Realize）に変える。
           </h1>
 
-          <p className="relative mx-auto mt-4 w-full min-w-0 max-w-full text-pretty text-center text-[0.8125rem] font-normal leading-relaxed text-[#65676B] sm:mt-5 sm:text-sm md:mt-5 md:text-base md:leading-relaxed lg:text-lg lg:leading-relaxed xl:text-[1.125rem] 2xl:whitespace-nowrap">
+          <p className="relative mx-auto mt-4 w-full min-w-0 max-w-full text-pretty text-center text-[0.8125rem] font-normal leading-relaxed text-[#65676B] sm:mt-5 sm:text-sm md:mt-5 md:text-base md:leading-relaxed lg:mt-5 lg:max-w-[46rem] lg:text-lg lg:leading-relaxed xl:text-xl xl:leading-relaxed 2xl:max-w-[50rem] 2xl:whitespace-nowrap">
             診察がひと段落したあと、静かな診察室でキーボードの音だけが続く――その時間に、今プロトタイプが少しずつ形になります。
           </p>
         </div>
@@ -121,17 +121,17 @@ export default function ProductLeadSection() {
                   <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F0F2F5] text-[#1877F2] ring-1 ring-[#DADDE1] lg:h-11 lg:w-11">
                     {p.icon}
                   </span>
-                  <h3 className="min-w-0 flex-1 text-left text-[0.9375rem] font-bold leading-tight tracking-tight text-[#050505] sm:text-base lg:text-[0.95rem] lg:leading-tight xl:whitespace-nowrap xl:text-[1.0625rem]">
+                  <h3 className="min-w-0 flex-1 text-left text-[0.9375rem] font-bold leading-tight tracking-tight text-[#050505] sm:text-lg lg:text-[1.125rem] lg:leading-tight xl:whitespace-nowrap xl:text-xl xl:leading-snug 2xl:text-[1.3125rem]">
                     {p.catchCopy}
                   </h3>
                 </div>
 
-                <ol className="mt-5 min-w-0 space-y-3.5 lg:mt-6 lg:space-y-4">
+                <ol className="mt-5 min-w-0 space-y-3.5 lg:mt-6 lg:space-y-[1.125rem]">
                   {p.steps.map((step, stepIdx) => (
-                    <li key={stepIdx} className="flex min-w-0 gap-2.5 sm:gap-3 lg:gap-2">
+                    <li key={stepIdx} className="flex min-w-0 gap-2.5 sm:gap-3 lg:gap-2.5">
                       <span
                         className={[
-                          "mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-bold lg:h-9 lg:w-9 lg:text-xs",
+                          "mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-bold lg:h-10 lg:w-10 lg:text-sm",
                           "border-[#DADDE1] bg-[#F0F2F5] text-[#050505]",
                           "group-hover:border-[#CCD0D5] group-hover:bg-[#E4E6EB]",
                         ].join(" ")}
@@ -139,7 +139,7 @@ export default function ProductLeadSection() {
                         {(["①", "②", "③"] as const)[stepIdx]}
                       </span>
                       <span
-                        className="min-w-0 flex-1 text-[0.8125rem] leading-snug tracking-tight text-[#1C1E21] sm:text-[0.8125rem] sm:leading-snug md:text-[0.8125rem] lg:whitespace-nowrap lg:leading-[1.4] lg:[font-size:clamp(0.5rem,0.18rem+0.68vw,0.8125rem)]"
+                        className="min-w-0 flex-1 text-[0.875rem] leading-snug tracking-tight text-[#1C1E21] sm:text-[0.9375rem] sm:leading-snug md:text-[0.9375rem] lg:whitespace-nowrap lg:leading-[1.45] lg:[font-size:clamp(0.6875rem,0.22rem+0.72vw,0.9375rem)] xl:[font-size:clamp(0.75rem,0.28rem+0.65vw,1rem)]"
                       >
                         {step}
                       </span>
@@ -152,7 +152,7 @@ export default function ProductLeadSection() {
                     href={p.externalUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex min-h-[48px] items-center justify-center rounded-lg bg-[#1877F2] px-4 py-3.5 text-center text-base font-semibold text-white shadow-sm transition-colors hover:bg-[#166FE5] active:scale-[0.99] lg:min-h-[52px] lg:py-3.5 lg:text-lg"
+                    className="flex min-h-[48px] items-center justify-center rounded-lg bg-[#1877F2] px-4 py-3.5 text-center text-base font-semibold text-white shadow-sm transition-colors hover:bg-[#166FE5] active:scale-[0.99] sm:text-lg lg:min-h-[54px] lg:py-3.5 lg:text-xl lg:leading-tight xl:text-[1.3125rem] xl:min-h-[56px]"
                   >
                     {p.cta}
                   </a>
@@ -169,11 +169,18 @@ export default function ProductLeadSection() {
             );
           })}
         </div>
+
+        <p
+          className="mt-4 w-full text-right text-xs leading-relaxed text-[#65676B] sm:mt-5 sm:text-sm lg:mt-6"
+          role="note"
+        >
+          ※本サービスは非医療機器であり、診察を補助するコミュニケーションツールです。
+        </p>
       </section>
 
       <div className="mt-8 flex justify-center sm:mt-9">
         <section
-          className="w-full max-w-full rounded-xl border border-[#DADDE1] bg-white px-6 py-9 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:max-w-xl sm:px-8 sm:py-10 md:max-w-2xl lg:w-fit lg:max-w-[min(100%,44rem)] lg:px-10 lg:py-10"
+          className="w-full max-w-full rounded-xl border border-[#DADDE1] bg-white px-6 py-9 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:max-w-xl sm:px-8 sm:py-10 md:max-w-2xl lg:w-fit lg:max-w-[min(100%,40rem)] lg:px-9 lg:py-9 xl:max-w-[min(100%,42rem)]"
           aria-labelledby="devlog-portal-heading"
         >
           <h2
