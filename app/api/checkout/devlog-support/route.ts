@@ -3,13 +3,14 @@
  */
 import { NextRequest, NextResponse } from "next/server";
 import { DEVLOG_STRIPE_PRICE_ID } from "@/lib/devlogStripe";
+import { serverEnv } from "@/lib/serverEnv";
 import { getStripeServer, stripeMisconfigurationBody } from "@/lib/stripeServer";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 function publicOrigin(request: NextRequest): string {
-  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+  const fromEnv = serverEnv("NEXT_PUBLIC_SITE_URL")?.replace(/\/$/, "");
   if (fromEnv) return fromEnv;
 
   const forwardedHost = request.headers.get("x-forwarded-host");
@@ -26,7 +27,8 @@ function publicOrigin(request: NextRequest): string {
 }
 
 function resolveDevlogPriceId(): string | undefined {
-  const fromEnv = process.env.STRIPE_DEVLOG_PRICE_ID?.trim().replace(/^["']|["']$/g, "");
+  const raw = serverEnv("STRIPE_DEVLOG_PRICE_ID");
+  const fromEnv = raw?.replace(/^["']|["']$/g, "");
   if (fromEnv) return fromEnv;
   return DEVLOG_STRIPE_PRICE_ID;
 }
@@ -44,9 +46,9 @@ export async function GET(request: NextRequest) {
         error: "開発日誌用の Stripe Price ID が設定されていません",
         code: "STRIPE_PRICE_MISSING",
         hint:
-          process.env.NODE_ENV === "development"
+          process.env["NODE_ENV"] === "development"
             ? "STRIPE_DEVLOG_PRICE_ID を .env.local に設定するか、lib/devlogStripe.ts の DEVLOG_STRIPE_PRICE_ID を更新してください。"
-            : undefined,
+            : "ご利用の Stripe アカウントで作成したサブスクリプション用 price_... を STRIPE_DEVLOG_PRICE_ID に設定してください。",
       },
       { status: 500 },
     );

@@ -1,12 +1,15 @@
 import { getStripeServer } from "@/lib/stripeServer";
+import { serverEnv } from "@/lib/serverEnv";
 
-const BYPASS_EMAILS = (process.env.DEVLOG_BYPASS_EMAILS ?? "")
-  .split(",")
-  .map((v) => v.trim().toLowerCase())
-  .filter(Boolean);
+function bypassEmails(): string[] {
+  return (serverEnv("DEVLOG_BYPASS_EMAILS") ?? "")
+    .split(",")
+    .map((v) => v.trim().toLowerCase())
+    .filter(Boolean);
+}
 
 function isBypassEmail(email: string) {
-  return BYPASS_EMAILS.includes(email.toLowerCase());
+  return bypassEmails().includes(email.toLowerCase());
 }
 
 export async function hasDevLogAccess(email: string): Promise<boolean> {

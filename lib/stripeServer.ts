@@ -1,5 +1,6 @@
 import { loadEnvConfig } from "@next/env";
 import Stripe from "stripe";
+import { serverEnv } from "@/lib/serverEnv";
 
 let envTouched = false;
 
@@ -22,7 +23,7 @@ function normalizeSecretKey(raw: string | undefined): string | undefined {
  */
 export function resolveStripeSecretKey(): string | undefined {
   ensureProjectEnvLoaded();
-  return normalizeSecretKey(process.env.STRIPE_SECRET_KEY);
+  return normalizeSecretKey(serverEnv("STRIPE_SECRET_KEY"));
 }
 
 let stripeClient: Stripe | null = null;
@@ -55,17 +56,14 @@ export function stripeMisconfigurationBody(): {
   code: string;
   hint?: string;
 } {
-  const isDev = process.env.NODE_ENV === "development";
+  const isDev = process.env["NODE_ENV"] === "development";
   return {
     error: isDev
       ? "Stripe のシークレットキーが読み込めていません"
       : "決済の開始に必要な設定が完了していません",
     code: "STRIPE_NOT_CONFIGURED",
-    ...(isDev
-      ? {
-          hint:
-            "プロジェクト直下の .env.local に STRIPE_SECRET_KEY=sk_test_... を記述し、開発サーバーを再起動してください。Vercel では Environment Variables に同じ名前で登録します。",
-        }
-      : {}),
+    hint: isDev
+      ? "プロジェクト直下の .env.local に STRIPE_SECRET_KEY=sk_test_... を記述し、開発サーバーを再起動してください。Vercel では Environment Variables に同じ名前で登録し、再デプロイしてください。"
+      : "ホスティング（例: Vercel）の Environment Variables に STRIPE_SECRET_KEY を追加し、Production / Preview いずれの環境で試しているかに合わせて有効化したうえで再デプロイしてください。ローカルの .env.local はデプロイには含まれません。",
   };
 }
