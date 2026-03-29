@@ -51,6 +51,12 @@ export default async function DevLogPage() {
         </div>
 
         <div className="mt-6 flex flex-wrap gap-3">
+          <a
+            href="/api/portal"
+            className="inline-flex items-center rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-2.5 text-sm font-semibold text-emerald-800 transition-colors hover:bg-emerald-100"
+          >
+            支払い情報の管理・解約はこちら
+          </a>
           <Link
             href="/"
             className="inline-flex items-center rounded-xl border border-blue-200 bg-blue-50 px-4 py-2.5 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-100"

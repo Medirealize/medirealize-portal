@@ -49,12 +49,14 @@ async function unlockAction(formData: FormData) {
 export default async function DevLogUnlockPage({
   searchParams,
 }: {
-  searchParams: Promise<{ error?: string; checkout?: string }>;
+  searchParams: Promise<{ error?: string; checkout?: string; portal?: string }>;
 }) {
   const params = await searchParams;
   const hasError = params.error === "1";
   const checkoutSuccess = params.checkout === "success";
   const checkoutCancel = params.checkout === "cancel";
+  const portalLogin = params.portal === "login";
+  const portalNoCustomer = params.portal === "no-customer";
 
   return (
     <div className="min-h-screen bg-[#F7F8FB] px-4 py-10 sm:py-14">
@@ -74,6 +76,16 @@ export default async function DevLogUnlockPage({
         {checkoutCancel && (
           <p className="mt-4 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm leading-relaxed text-slate-700">
             決済は完了していません。購読をご希望の場合は、もう一度お手続きください。
+          </p>
+        )}
+        {portalLogin && (
+          <p className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-sm leading-relaxed text-amber-950">
+            お支払いの管理には、先に下のフォームから開発日誌へログインしてください。
+          </p>
+        )}
+        {portalNoCustomer && (
+          <p className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-sm leading-relaxed text-amber-950">
+            このメールアドレスに紐づく Stripe の顧客情報を確認できませんでした。決済時のメールアドレスでログインしているかご確認ください。
           </p>
         )}
         <div className="mt-6 rounded-2xl border border-blue-200 bg-blue-50/60 p-4">
