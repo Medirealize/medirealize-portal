@@ -77,7 +77,7 @@ async function main() {
 
   const newEntry = {
     date: dateStr,
-    title: `C/D${dateStr.slice(5).replace("-", "")}：導線と仕様を縫い直した日`,
+    title: "導線と仕様を縫い直した日",
     body: buildBody(commits),
     valueLink: {
       href: `/dev-log/tips/${slug}`,
