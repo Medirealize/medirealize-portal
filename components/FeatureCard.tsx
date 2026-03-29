@@ -67,7 +67,7 @@ export default function FeatureCard({
             </h3>
           </div>
 
-          <ol className="mt-5 w-full min-w-0 space-y-3.5 text-left sm:mt-6 sm:space-y-4">
+          <ol className="mt-5 w-full min-w-0 space-y-5 text-left sm:mt-6 md:space-y-3.5 lg:space-y-4">
             {steps.map((step, stepIdx) => (
               <li
                 key={stepIdx}
@@ -82,7 +82,7 @@ export default function FeatureCard({
                 >
                   {STEP_MARKERS[stepIdx]}
                 </span>
-                <span className="min-w-0 text-left text-[0.8125rem] leading-[1.65] text-[#1C1E21] sm:text-sm sm:leading-relaxed lg:text-[0.8125rem] lg:leading-[1.68] xl:text-[0.875rem] xl:leading-[1.7] min-[1600px]:text-base">
+                <span className="min-w-0 text-left text-base leading-relaxed text-[#1C1E21] md:text-sm md:leading-relaxed lg:text-[0.8125rem] lg:leading-[1.68] xl:text-[0.875rem] xl:leading-[1.7] min-[1600px]:text-base">
                   {step}
                 </span>
               </li>

@@ -30,12 +30,12 @@ export default function SiteHeader() {
             </span>
           </span>
 
-          <nav className="flex shrink-0 items-center gap-1.5 sm:gap-6" aria-label="主要メニュー">
+          <nav className="flex shrink-0 items-center gap-3 md:gap-6" aria-label="主要メニュー">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="group relative inline-flex min-h-[44px] min-w-0 items-center px-0.5 pb-0.5 pt-0.5 text-[11px] font-semibold leading-tight text-[#050505] transition-colors hover:text-[#1877F2] sm:min-h-0 sm:px-0 sm:text-sm"
+                className="group relative inline-flex min-h-[44px] min-w-0 items-center px-1 py-0.5 text-[15px] font-semibold leading-snug text-[#050505] transition-colors hover:text-[#1877F2] md:min-h-0 md:px-0 md:text-sm md:leading-tight"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 h-px w-0 bg-[#1877F2] transition-all duration-300 group-hover:w-full" />
