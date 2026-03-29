@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { TERMS_SUBSCRIPTION_CANCEL_PRIMARY } from "@/lib/productLeadContent";
 
 export const metadata: Metadata = {
   title: "利用規約 | Medirealize",
@@ -40,13 +41,8 @@ export default function TermsPage() {
           </section>
 
           <section id="subscription-cancellation" className="scroll-mt-8">
-            <h2 className="text-base font-semibold text-slate-900">
-              定期購読の解約・キャンセル（Stripe）
-            </h2>
-            <p className="mt-1">
-              本サービスの月額購読（サブスクリプション）の解約・お支払い方法の変更は、決済代行である
-              Stripe が提供するカスタマーポータルから、利用者ご自身のタイミングでいつでも手続きいただけます。
-            </p>
+            <h2 className="text-base font-semibold text-slate-900">定期購読の解約・キャンセル</h2>
+            <p className="mt-1">{TERMS_SUBSCRIPTION_CANCEL_PRIMARY}</p>
             <p className="mt-2">
               解約手続き完了後も、当該請求期間の終了日までは既にお支払い済みの範囲でコンテンツをご利用いただけます。日割り計算による返金および過去に請求済みの料金の返金は行いません。
             </p>
@@ -80,7 +76,7 @@ export default function TermsPage() {
               href="#subscription-cancellation"
               className="font-medium text-blue-700 underline-offset-2 hover:underline"
             >
-              定期購読の解約・キャンセル（Stripe）
+              定期購読の解約・キャンセル
             </Link>
             については本文の該当箇所をご確認ください。
           </p>

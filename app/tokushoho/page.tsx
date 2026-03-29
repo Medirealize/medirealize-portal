@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { TOKUSHOHO_SUBSCRIPTION_CANCEL_BODY } from "@/lib/productLeadContent";
 
 export const metadata: Metadata = {
   title: "特定商取引法に基づく表記 | Medirealize",
@@ -35,8 +36,7 @@ const rows = [
   { label: "提供時期", value: "決済完了後、直ちにご利用いただけます。" },
   {
     label: "返品・キャンセル",
-    value:
-      "デジタルコンテンツの特性上、返品・返金はできません。サブスクリプションの解約は Stripe のカスタマーポータルからいつでも可能です。解約後も当該請求期間終了までは閲覧できます。日割り計算による返金は行いません。",
+    value: TOKUSHOHO_SUBSCRIPTION_CANCEL_BODY,
   },
 ];
 

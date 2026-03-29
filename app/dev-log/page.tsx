@@ -4,6 +4,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { readDevLogEntries } from "@/lib/dev-log";
 import {
+  DEVLOG_PAYMENT_MANAGE_ON_PAGE_NOTE,
   DEVLOG_STRIPE_BILLING_LOGIN_LABEL,
   DEVLOG_STRIPE_BILLING_LOGIN_URL,
 } from "@/lib/productLeadContent";
@@ -52,10 +53,7 @@ export default async function DevLogPage() {
           <p className="text-sm leading-relaxed text-slate-700">
             本ページは購読者向けのデジタルコンテンツです。決済完了後、継続的に更新される開発記録の閲覧権と、プレミアム機能の利用ライセンスを提供します。
           </p>
-          <p className="mt-3 text-xs leading-relaxed text-slate-600">
-            お支払い方法の変更や解約は、下のボタンから Stripe のカスタマーポータルへ進むか、決済時のメールアドレスで Stripe
-            の顧客ページにログインしてお手続きいただけます。
-          </p>
+          <p className="mt-3 text-xs leading-relaxed text-slate-600">{DEVLOG_PAYMENT_MANAGE_ON_PAGE_NOTE}</p>
           <a
             href={DEVLOG_STRIPE_BILLING_LOGIN_URL}
             rel="noopener noreferrer"

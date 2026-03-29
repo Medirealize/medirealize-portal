@@ -19,12 +19,20 @@ export const DEV_IN_PROGRESS_LABEL = "[開発中]" as const;
 /** 開発日誌の購読決済（Stripe Checkout Session を発行してリダイレクト） */
 export const DEVLOG_CHECKOUT_PATH = "/api/checkout/devlog-support" as const;
 
-/** Stripe が発行するカスタマーポータル（メールログイン）URL */
+/** 購読済みユーザー向けログイン（メールで閲覧権を確認） */
+export const DEVLOG_UNLOCK_PATH = "/dev-log/unlock" as const;
+
+export const DEVLOG_VIEWER_LOGIN_LABEL = "開発日誌を閲覧する" as const;
+
+/** ランディング中盤など・購読者向けの見出し */
+export const DEVLOG_ALREADY_SUBSCRIBED_LEAD = "既に購読中の方" as const;
+
+/** 開発日誌の案内から遷移する Stripe のメールログイン（支払い・解約）URL */
 export const DEVLOG_STRIPE_BILLING_LOGIN_URL =
   "https://billing.stripe.com/p/login/7sY6oA2lKe2qfdg8NEeEo00" as const;
 
 export const DEVLOG_STRIPE_BILLING_LOGIN_LABEL =
-  "Stripe の顧客ページで支払いを管理する" as const;
+  "メールでログインして支払い・解約を行う" as const;
 
 export const DEVLOG_TITLE =
   "Medirealize：開発の軌跡 ～現場の医師による開発日誌～" as const;
@@ -39,7 +47,29 @@ export const DEVLOG_SUPPORT_FUND_NOTE =
   "※購読料は、開発日誌（デジタルコンテンツ）の提供および関連機能の維持に使用いたします。" as const;
 
 export const DEVLOG_SUPPORT_CANCEL_NOTE =
-  "購読の停止（サブスクリプションの解約）は、Stripeのカスタマーポータルからいつでもお手続きいただけます。" as const;
+  "購読の停止（サブスクリプションの解約）は、開発日誌（購読者向けページ）内の案内からいつでもお手続きいただけます。" as const;
+
+/** 開発日誌（ログイン後）ページ内の支払い・解約の案内 */
+export const DEVLOG_PAYMENT_MANAGE_ON_PAGE_NOTE =
+  "お支払い方法の変更や解約は、本ページ内の案内（下のボタン・リンク）からいつでもお手続きいただけます。" as const;
+
+/** 購読者ログイン画面の「支払い・解約」ブロック */
+export const DEVLOG_PAYMENT_MANAGE_UNLOCK_SECTION_TITLE = "購読のお支払い・解約" as const;
+
+export const DEVLOG_PAYMENT_MANAGE_UNLOCK_SECTION_BODY =
+  "開発日誌（購読者向けページ）の案内に沿って、お支払いの確認や解約を行えます。ログイン後は開発日誌本体のボタンから、未ログインの場合は下のボタンからメールで認証のうえお進みください。" as const;
+
+/** `/api/portal` 未ログイン時など：ログイン後の案内を促す */
+export const DEVLOG_PORTAL_REQUIRES_LOGIN_HINT =
+  "開発日誌にログイン後、ページ内の案内（ボタン）からお支払いの管理へ進んでください。ログイン前に手続きする場合は、ページ下部の案内からお進みください。" as const;
+
+/** 利用規約「定期購読の解約・キャンセル」第1段落 */
+export const TERMS_SUBSCRIPTION_CANCEL_PRIMARY =
+  "本サービスの月額購読（サブスクリプション）の解約およびお支払い方法の変更は、開発日誌（購読者向けページ）内の案内に従い、利用者ご自身のタイミングでいつでも手続きいただけます。当該手続きは決済代行である Stripe を通じて行われます。" as const;
+
+/** 特定商取引法「返品・キャンセル」欄の本文 */
+export const TOKUSHOHO_SUBSCRIPTION_CANCEL_BODY =
+  "デジタルコンテンツの特性上、返品・返金はできません。サブスクリプションの解約は、開発日誌（購読者向けページ）内の案内に従いいつでも可能です。解約後も当該請求期間終了までは閲覧できます。日割り計算による返金は行いません。" as const;
 
 /** 1 行で使う場合（ログインページ等） */
 export const DEVLOG_SUPPORT_USAGE_NOTE =

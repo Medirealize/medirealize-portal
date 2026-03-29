@@ -1,9 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import DevelopmentLog from "@/components/DevelopmentLog";
 import FadeInUpOnScroll from "@/components/FadeInUpOnScroll";
 import FeatureCard from "@/components/FeatureCard";
 import {
+  DEVLOG_ALREADY_SUBSCRIBED_LEAD,
+  DEVLOG_UNLOCK_PATH,
+  DEVLOG_VIEWER_LOGIN_LABEL,
   FEATURE_DEFINITIONS,
   HERO_MAIN_COPY,
   HERO_SUB_COPY,
@@ -66,6 +70,19 @@ export default function ProductLeadSection() {
         >
           {MEDICAL_DISCLAIMER}
         </p>
+
+        <div
+          className="mt-8 flex flex-col items-center gap-3 border-t border-[#E4E6EB] pt-8 sm:mt-9 sm:pt-9"
+          aria-label="購読者向け開発日誌ログイン"
+        >
+          <p className="text-center text-xs font-semibold text-[#65676B] sm:text-sm">{DEVLOG_ALREADY_SUBSCRIBED_LEAD}</p>
+          <Link
+            href={DEVLOG_UNLOCK_PATH}
+            className="inline-flex min-h-[48px] w-full max-w-sm items-center justify-center rounded-lg border border-[#DADDE1] bg-white px-5 py-3 text-sm font-semibold text-[#050505] shadow-[0_1px_2px_rgba(0,0,0,0.06)] transition-colors hover:bg-[#F0F2F5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40 sm:w-auto"
+          >
+            {DEVLOG_VIEWER_LOGIN_LABEL}
+          </Link>
+        </div>
       </section>
 
       <div className="mt-10 w-full sm:mt-11">

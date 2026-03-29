@@ -78,7 +78,7 @@ export async function GET(request: NextRequest) {
   } catch (err) {
     console.error("[api/portal]", err);
     return NextResponse.json(
-      { error: "カスタマーポータルの開始に失敗しました" },
+      { error: "お支払い管理画面の開始に失敗しました" },
       { status: 500, headers: NO_STORE },
     );
   }

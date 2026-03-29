@@ -6,6 +6,8 @@ import {
   DEVLOG_PUBLIC_PRICE_NOTE,
   DEVLOG_SUPPORT_CANCEL_NOTE,
   DEVLOG_SUPPORT_FUND_NOTE,
+  DEVLOG_UNLOCK_PATH,
+  DEVLOG_VIEWER_LOGIN_LABEL,
 } from "@/lib/productLeadContent";
 
 export default function DeveloperThoughtFooter() {
@@ -27,10 +29,10 @@ export default function DeveloperThoughtFooter() {
               {DEVLOG_CTA_LABEL}
             </a>
             <Link
-              href="/dev-log/unlock"
+              href={DEVLOG_UNLOCK_PATH}
               className="inline-flex w-full min-h-[48px] items-center justify-center rounded-lg border border-[#DADDE1] bg-white px-4 py-3 text-sm font-semibold text-[#050505] transition-colors hover:bg-[#F0F2F5] sm:w-auto"
             >
-              開発日誌を閲覧する
+              {DEVLOG_VIEWER_LOGIN_LABEL}
             </Link>
           </div>
           <div className="mt-2 text-center text-xs leading-relaxed text-[#65676B]">
