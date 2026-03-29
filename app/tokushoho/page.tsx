@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import Link from "next/link";
-import StripeCustomerPortalLink from "@/components/StripeCustomerPortalLink";
 
 export const metadata: Metadata = {
   title: "特定商取引法に基づく表記 | Medirealize",
   description: "Medirealize の特定商取引法に基づく表記です。",
 };
 
-const portalLinkClass =
-  "font-medium text-blue-700 underline underline-offset-2 hover:text-blue-800";
-
-const rows: { label: string; value: ReactNode }[] = [
+const rows = [
   { label: "販売業者", value: "メディリアライズ" },
   { label: "運営責任者", value: "野村 信介" },
   {
@@ -40,13 +35,8 @@ const rows: { label: string; value: ReactNode }[] = [
   { label: "提供時期", value: "決済完了後、直ちにご利用いただけます。" },
   {
     label: "返品・キャンセル",
-    value: (
-      <>
-        デジタルコンテンツの特性上、返品・返金はできません。サブスクリプションの解約は{" "}
-        <StripeCustomerPortalLink className={portalLinkClass}>Stripe のカスタマーポータル</StripeCustomerPortalLink>
-        からいつでも可能です。解約後も当該請求期間終了までは閲覧できます。日割り計算による返金は行いません。
-      </>
-    ),
+    value:
+      "デジタルコンテンツの特性上、返品・返金はできません。サブスクリプションの解約は Stripe のカスタマーポータルからいつでも可能です。解約後も当該請求期間終了までは閲覧できます。日割り計算による返金は行いません。",
   },
 ];
 
