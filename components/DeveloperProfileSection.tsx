@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import FacebookIcon from "@/components/FacebookIcon";
+import XSocialIcon from "@/components/XSocialIcon";
+import { SOCIAL_FACEBOOK_URL, SOCIAL_X_URL } from "@/lib/socialLinks";
 
 const NOTE_STORY_URL = "https://note.com/medirealize_note";
-const FACEBOOK_PROFILE_URL = "https://www.facebook.com/nomshin1983jp";
 
 const FACEBOOK_FRIENDS_NOTE =
   "※Facebookは基本的に「友達のみ閲覧可能」としております。日々の開発の裏側をご覧になりたい方は、お手数ですが「Medirealizeのサイトを見て友達申請しました」と一言添えて、申請をお願いいたします。";
@@ -42,9 +43,19 @@ export default function DeveloperProfileSection() {
                   <ExternalLink className="h-3 w-3 shrink-0 opacity-90" aria-hidden />
                 </span>
               </a>
-              <div className="flex w-full min-w-0 flex-col items-center gap-1.5 sm:w-auto sm:max-w-[11rem] sm:items-start">
+              <div className="flex w-full min-w-0 flex-wrap items-start justify-center gap-3 sm:justify-start">
                 <a
-                  href={FACEBOOK_PROFILE_URL}
+                  href={SOCIAL_X_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-[#DADDE1] bg-[#F0F2F5] text-[#1877F2] transition-colors hover:bg-[#E4E6EB] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40"
+                  aria-label="X（@med_structure）"
+                >
+                  <XSocialIcon className="h-5 w-5" />
+                </a>
+                <div className="flex min-w-0 max-w-full flex-col items-center gap-1.5 sm:max-w-[11rem] sm:items-start">
+                <a
+                  href={SOCIAL_FACEBOOK_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-[#DADDE1] bg-[#F0F2F5] text-[#1877F2] transition-colors hover:bg-[#E4E6EB] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40"
@@ -55,6 +66,7 @@ export default function DeveloperProfileSection() {
                 <p className="w-full text-center text-[12px] leading-relaxed text-[#65676B] sm:text-left sm:text-[13px]">
                   {FACEBOOK_FRIENDS_NOTE}
                 </p>
+                </div>
               </div>
             </div>
           </aside>

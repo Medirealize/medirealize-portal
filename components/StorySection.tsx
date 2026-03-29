@@ -1,9 +1,8 @@
 import { ArrowUpRight, MessageCircleMore } from "lucide-react";
 import FacebookIcon from "@/components/FacebookIcon";
+import { SOCIAL_FACEBOOK_URL, SOCIAL_X_URL } from "@/lib/socialLinks";
 
 const NOTE_STORY_URL = "https://note.com/medirealize_note";
-const X_DM_URL = "https://x.com/med_structure";
-const FACEBOOK_PROFILE_URL = "https://www.facebook.com/nomshin1983jp";
 
 const socialCtaBase =
   "inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-lg border border-[#DADDE1] bg-[#F0F2F5] px-4 py-2.5 text-sm font-semibold text-[#1877F2] transition-colors hover:bg-[#E4E6EB] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40";
@@ -47,12 +46,12 @@ export default function StorySection() {
             理想を現実に。医療の構造を共に実装しませんか。医師によるプロトタイプ開発のスピードを、技術で加速できる方との協業を歓迎しています。
           </p>
           <div className="mt-5 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <a href={X_DM_URL} target="_blank" rel="noopener noreferrer" className={socialCtaRecruit}>
+            <a href={SOCIAL_X_URL} target="_blank" rel="noopener noreferrer" className={socialCtaRecruit}>
               X（旧Twitter）でDMを送る
               <MessageCircleMore className="h-4 w-4 shrink-0" />
             </a>
             <a
-              href={FACEBOOK_PROFILE_URL}
+              href={SOCIAL_FACEBOOK_URL}
               target="_blank"
               rel="noopener noreferrer"
               className={socialCtaRecruit}
