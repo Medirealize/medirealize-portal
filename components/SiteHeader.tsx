@@ -16,7 +16,7 @@ export default function SiteHeader() {
           className="inline-flex min-h-[40px] w-fit max-w-full shrink-0 items-center gap-2 text-sm font-bold leading-tight tracking-[0.06em] text-[#050505] transition-colors hover:text-[#1877F2] md:min-h-0 md:gap-2.5 md:text-base md:tracking-[0.08em]"
         >
           <span
-            className="inline-flex h-[1.15em] w-[1.15em] shrink-0 items-center justify-center"
+            className="inline-flex h-[1.55em] w-[1.55em] shrink-0 items-center justify-center"
             aria-hidden
           >
             <img
