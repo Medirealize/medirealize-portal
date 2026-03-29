@@ -9,8 +9,11 @@ export const metadata: Metadata = {
 const rows = [
   { label: "販売業者", value: "メディリアライズ" },
   { label: "運営責任者", value: "野村 信介" },
-  { label: "所在地", value: "宮崎県宮崎市熊野7465" },
-  { label: "電話番号", value: "050-1809-9969" },
+  {
+    label: "所在地・電話番号",
+    value:
+      "所在地・電話番号については、請求をいただいた場合、遅滞なく電子メール等にて提供いたします。",
+  },
   { label: "メールアドレス", value: "info@medirealize.jp" },
   {
     label: "販売商品",
