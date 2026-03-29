@@ -16,17 +16,16 @@ export default function SiteHeader() {
           className="inline-flex min-h-[40px] w-fit max-w-full shrink-0 items-center gap-2 text-sm font-bold leading-tight tracking-[0.06em] text-[#050505] transition-colors hover:text-[#1877F2] md:min-h-0 md:gap-2.5 md:text-base md:tracking-[0.08em]"
         >
           <span
-            className="relative inline-block h-[1.15em] w-[1.15em] shrink-0 overflow-hidden rounded-[3px]"
+            className="inline-flex h-[1.15em] w-[1.15em] shrink-0 items-center justify-center"
             aria-hidden
           >
-            {/* 縦積みロゴPNGの上部（マーク）のみを表示 — 高さは隣接テキストの em に追従 */}
             <img
-              src="/medirealize-logo-full.png"
+              src="/medirealize-mark.png"
               alt=""
-              width={1024}
-              height={572}
+              width={332}
+              height={308}
               decoding="async"
-              className="pointer-events-none h-[3.1em] w-full select-none object-cover object-[50%_0%]"
+              className="pointer-events-none h-full w-full select-none object-contain"
             />
           </span>
           メディリアライズ
