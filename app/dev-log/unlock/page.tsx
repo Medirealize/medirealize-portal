@@ -6,6 +6,8 @@ import { hasDevLogAccess } from "@/lib/subscription-access";
 import {
   DEVLOG_CHECKOUT_PATH,
   DEVLOG_CTA_LABEL,
+  DEVLOG_STRIPE_BILLING_LOGIN_LABEL,
+  DEVLOG_STRIPE_BILLING_LOGIN_URL,
   DEVLOG_SUPPORT_USAGE_NOTE,
   DEVLOG_UNLOCK_CHECKOUT_LEAD,
 } from "@/lib/productLeadContent";
@@ -80,7 +82,8 @@ export default async function DevLogUnlockPage({
         )}
         {portalLogin && (
           <p className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-sm leading-relaxed text-amber-950">
-            お支払いの管理には、先に下のフォームから開発日誌へログインしてください。
+            サイト経由のポータルには、先に下のフォームから開発日誌へログインしてください。ログインなしで手続きする場合は、ページ下部の「Stripe
+            の顧客ページで支払いを管理する」からお進みください。
           </p>
         )}
         {portalNoCustomer && (
@@ -127,6 +130,20 @@ export default async function DevLogUnlockPage({
             購読状況を確認してログイン
           </button>
         </form>
+
+        <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
+          <p className="text-sm font-medium text-slate-800">購読のお支払い・解約（Stripe）</p>
+          <p className="mt-1 text-xs leading-relaxed text-slate-600">
+            開発日誌にログインしなくても、決済時のメールアドレスから Stripe の顧客ページへ進めます。
+          </p>
+          <a
+            href={DEVLOG_STRIPE_BILLING_LOGIN_URL}
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex w-full items-center justify-center rounded-xl border border-violet-200 bg-violet-50 px-4 py-2.5 text-sm font-semibold text-violet-900 transition-colors hover:bg-violet-100"
+          >
+            {DEVLOG_STRIPE_BILLING_LOGIN_LABEL}
+          </a>
+        </div>
 
         <div className="mt-4 flex flex-wrap gap-3">
           <Link

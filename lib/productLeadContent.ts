@@ -19,6 +19,13 @@ export const DEV_IN_PROGRESS_LABEL = "[開発中]" as const;
 /** 開発日誌の購読決済（Stripe Checkout Session を発行してリダイレクト） */
 export const DEVLOG_CHECKOUT_PATH = "/api/checkout/devlog-support" as const;
 
+/** Stripe が発行するカスタマーポータル（メールログイン）URL */
+export const DEVLOG_STRIPE_BILLING_LOGIN_URL =
+  "https://billing.stripe.com/p/login/7sY6oA2lKe2qfdg8NEeEo00" as const;
+
+export const DEVLOG_STRIPE_BILLING_LOGIN_LABEL =
+  "Stripe の顧客ページで支払いを管理する" as const;
+
 export const DEVLOG_TITLE =
   "Medirealize：開発の軌跡 ～現場の医師による開発日誌～" as const;
 
