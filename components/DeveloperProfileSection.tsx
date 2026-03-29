@@ -1,13 +1,11 @@
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
+import FacebookFriendsRequestNote from "@/components/FacebookFriendsRequestNote";
 import FacebookIcon from "@/components/FacebookIcon";
 import XSocialIcon from "@/components/XSocialIcon";
 import { SOCIAL_FACEBOOK_URL, SOCIAL_X_URL } from "@/lib/socialLinks";
 
 const NOTE_STORY_URL = "https://note.com/medirealize_note";
-
-const FACEBOOK_FRIENDS_NOTE =
-  "※Facebookは基本的に「友達のみ閲覧可能」としております。日々の開発の裏側をご覧になりたい方は、お手数ですが「Medirealizeのサイトを見て友達申請しました」と一言添えて、申請をお願いいたします。";
 
 export default function DeveloperProfileSection() {
   return (
@@ -63,9 +61,7 @@ export default function DeveloperProfileSection() {
                 >
                   <FacebookIcon className="h-5 w-5" />
                 </a>
-                <p className="w-full text-center text-[12px] leading-relaxed text-[#65676B] sm:text-left sm:text-[13px]">
-                  {FACEBOOK_FRIENDS_NOTE}
-                </p>
+                <FacebookFriendsRequestNote className="w-full text-center sm:text-left" />
                 </div>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import { ArrowUpRight, MessageCircleMore } from "lucide-react";
+import FacebookFriendsRequestNote from "@/components/FacebookFriendsRequestNote";
 import FacebookIcon from "@/components/FacebookIcon";
 import { SOCIAL_FACEBOOK_URL, SOCIAL_X_URL } from "@/lib/socialLinks";
 
@@ -60,6 +61,7 @@ export default function StorySection() {
               <FacebookIcon className="h-4 w-4 shrink-0" />
             </a>
           </div>
+          <FacebookFriendsRequestNote className="mt-3 max-w-prose" />
         </article>
       </div>
     </section>
