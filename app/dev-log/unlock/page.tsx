@@ -3,10 +3,11 @@ import Link from "next/link";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { hasDevLogAccess } from "@/lib/subscription-access";
+import { DevlogSubscriptionCancelNote } from "@/components/StripeCustomerPortalLink";
 import {
   DEVLOG_CHECKOUT_PATH,
   DEVLOG_CTA_LABEL,
-  DEVLOG_SUPPORT_USAGE_NOTE,
+  DEVLOG_SUPPORT_FUND_NOTE,
   DEVLOG_UNLOCK_CHECKOUT_LEAD,
 } from "@/lib/productLeadContent";
 
@@ -86,7 +87,8 @@ export default async function DevLogUnlockPage({
           >
             {DEVLOG_CTA_LABEL}
           </a>
-          <p className="mt-2 text-center text-[11px] leading-relaxed text-slate-600">{DEVLOG_SUPPORT_USAGE_NOTE}</p>
+          <p className="mt-2 text-center text-[11px] leading-relaxed text-slate-600">{DEVLOG_SUPPORT_FUND_NOTE}</p>
+          <DevlogSubscriptionCancelNote className="mt-1 text-center text-[11px] leading-relaxed text-slate-600" />
         </div>
 
         <form action={unlockAction} className="mt-6 space-y-3">

@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
+import { DevlogSubscriptionCancelNote } from "@/components/StripeCustomerPortalLink";
 import {
   DEVLOG_CHECKOUT_PATH,
   DEVLOG_CTA_LABEL,
   DEVLOG_PUBLIC_PRICE_NOTE,
-  DEVLOG_SUPPORT_CANCEL_NOTE,
   DEVLOG_SUPPORT_FUND_NOTE,
 } from "@/lib/productLeadContent";
 
@@ -35,7 +35,7 @@ export default function DeveloperThoughtFooter() {
           </div>
           <div className="mt-2 text-center text-xs leading-relaxed text-[#65676B]">
             <p>{DEVLOG_SUPPORT_FUND_NOTE}</p>
-            <p className="mt-1">{DEVLOG_SUPPORT_CANCEL_NOTE}</p>
+            <DevlogSubscriptionCancelNote className="mt-1" />
           </div>
           <p className="mt-3 text-xs leading-relaxed text-[#65676B]">
             ※本決済は寄付ではなく、デジタルコンテンツの閲覧権およびプレミアム機能の利用ライセンス提供に対する対価です。

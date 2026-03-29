@@ -1,9 +1,9 @@
+import { DevlogSubscriptionCancelNote } from "@/components/StripeCustomerPortalLink";
 import {
   DEVLOG_BODY,
   DEVLOG_BULLETS,
   DEVLOG_CHECKOUT_PATH,
   DEVLOG_CTA_LABEL,
-  DEVLOG_SUPPORT_CANCEL_NOTE,
   DEVLOG_SUPPORT_FUND_NOTE,
   DEVLOG_TITLE,
 } from "@/lib/productLeadContent";
@@ -62,7 +62,7 @@ export default function DevelopmentLog() {
         </a>
         <div className="mt-3 max-w-2xl text-pretty text-center text-xs leading-[1.65] text-[#65676B] sm:text-[0.8125rem] sm:leading-relaxed">
           <p>{DEVLOG_SUPPORT_FUND_NOTE}</p>
-          <p className="mt-1.5">{DEVLOG_SUPPORT_CANCEL_NOTE}</p>
+          <DevlogSubscriptionCancelNote className="mt-1.5 text-center" />
         </div>
       </div>
     </section>

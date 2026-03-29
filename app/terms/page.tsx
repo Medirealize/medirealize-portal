@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import StripeCustomerPortalLink from "@/components/StripeCustomerPortalLink";
 
 export const metadata: Metadata = {
   title: "利用規約 | Medirealize",
@@ -44,8 +45,11 @@ export default function TermsPage() {
               定期購読の解約・キャンセル（Stripe）
             </h2>
             <p className="mt-1">
-              本サービスの月額購読（サブスクリプション）の解約・お支払い方法の変更は、決済代行である
-              Stripe が提供するカスタマーポータルから、利用者ご自身のタイミングでいつでも手続きいただけます。
+              本サービスの月額購読（サブスクリプション）の解約・お支払い方法の変更は、決済代行である Stripe の
+              <StripeCustomerPortalLink className="font-medium text-blue-700 underline underline-offset-2 hover:text-blue-800">
+                カスタマーポータル
+              </StripeCustomerPortalLink>
+              から、利用者ご自身のタイミングでいつでも手続きいただけます。
             </p>
             <p className="mt-2">
               解約手続き完了後も、当該請求期間の終了日までは既にお支払い済みの範囲でコンテンツをご利用いただけます。日割り計算による返金および過去に請求済みの料金の返金は行いません。
