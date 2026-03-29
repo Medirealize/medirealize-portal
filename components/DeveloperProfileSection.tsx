@@ -2,8 +2,7 @@ import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import FacebookFriendsRequestNote from "@/components/FacebookFriendsRequestNote";
 import FacebookIcon from "@/components/FacebookIcon";
-import XSocialIcon from "@/components/XSocialIcon";
-import { SOCIAL_FACEBOOK_URL, SOCIAL_X_URL } from "@/lib/socialLinks";
+import { FACEBOOK_MESSENGER_URL } from "@/lib/socialLinks";
 
 const NOTE_STORY_URL = "https://note.com/medirealize_note";
 
@@ -29,42 +28,17 @@ export default function DeveloperProfileSection() {
                 医師 / 医学博士 / Medirealize代表
               </p>
             </div>
-            <div className="mt-2 flex flex-wrap items-start gap-x-4 gap-y-3">
-              <a
-                href={NOTE_STORY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="min-w-0 flex-1 text-xs font-semibold leading-snug text-[#1877F2] no-underline hover:underline sm:flex-none sm:max-w-[min(100%,14rem)]"
-              >
-                <span className="inline-flex items-center gap-1">
-                  note：なぜ、外科医がコードを書くのか
-                  <ExternalLink className="h-3 w-3 shrink-0 opacity-90" aria-hidden />
-                </span>
-              </a>
-              <div className="flex w-full min-w-0 flex-wrap items-start justify-center gap-3 sm:justify-start">
-                <a
-                  href={SOCIAL_X_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-[#DADDE1] bg-[#F0F2F5] text-[#1877F2] transition-colors hover:bg-[#E4E6EB] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40"
-                  aria-label="X（@med_structure）"
-                >
-                  <XSocialIcon className="h-5 w-5" />
-                </a>
-                <div className="flex min-w-0 max-w-full flex-col items-center gap-1.5 sm:max-w-[11rem] sm:items-start">
-                <a
-                  href={SOCIAL_FACEBOOK_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-[#DADDE1] bg-[#F0F2F5] text-[#1877F2] transition-colors hover:bg-[#E4E6EB] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40"
-                  aria-label="Facebook（野村信介）"
-                >
-                  <FacebookIcon className="h-5 w-5" />
-                </a>
-                <FacebookFriendsRequestNote className="w-full text-center sm:text-left" />
-                </div>
-              </div>
-            </div>
+            <a
+              href={NOTE_STORY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 block text-xs font-semibold leading-snug text-[#1877F2] no-underline hover:underline"
+            >
+              <span className="inline-flex items-center gap-1">
+                note：なぜ、外科医がコードを書くのか
+                <ExternalLink className="h-3 w-3 shrink-0 opacity-90" aria-hidden />
+              </span>
+            </a>
           </aside>
 
           <div className="min-w-0">
@@ -130,6 +104,20 @@ export default function DeveloperProfileSection() {
                   </p>
                 </div>
               </section>
+
+              <div className="rounded-lg border border-[#DADDE1] bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.05)] sm:p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#1877F2]">Facebook</p>
+                <a
+                  href={FACEBOOK_MESSENGER_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex min-h-[44px] w-full max-w-md items-center justify-center gap-2 rounded-lg border border-[#DADDE1] bg-[#F0F2F5] px-4 py-2.5 text-sm font-semibold text-[#1877F2] transition-colors hover:bg-[#E4E6EB] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40 sm:w-auto sm:justify-start"
+                >
+                  <FacebookIcon className="h-5 w-5 shrink-0" />
+                  Messenger でメッセージを送る
+                </a>
+                <FacebookFriendsRequestNote className="mt-3 max-w-prose" />
+              </div>
             </div>
           </div>
         </div>

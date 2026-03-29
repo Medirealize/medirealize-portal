@@ -9,8 +9,6 @@ import {
   DEVLOG_UNLOCK_PATH,
   DEVLOG_VIEWER_LOGIN_LABEL,
 } from "@/lib/productLeadContent";
-import { SOCIAL_X_URL } from "@/lib/socialLinks";
-
 export default function DeveloperThoughtFooter() {
   return (
     <footer className="border-t border-[#DADDE1] bg-white">
@@ -60,17 +58,6 @@ export default function DeveloperThoughtFooter() {
               >
                 開発日誌
               </Link>
-              <span className="text-[#DADDE1]" aria-hidden>
-                ·
-              </span>
-              <a
-                href={SOCIAL_X_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-[#65676B] no-underline decoration-[#1877F2]/40 underline-offset-2 transition-colors hover:text-[#1877F2] hover:underline"
-              >
-                X（@med_structure）
-              </a>
               <span className="text-[#DADDE1]" aria-hidden>
                 ·
               </span>
