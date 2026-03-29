@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: ogImageUrl,
-        width: 1200,
-        height: 630,
-        alt: "Medirealize — 開発プロセスを共有する医療テックプロジェクト",
+        width: 1024,
+        height: 541,
+        alt: "Medirealize — 届かなかった声を、医療(Medi)の形(Realize)に変える",
       },
     ],
   },
