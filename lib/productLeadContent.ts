@@ -23,24 +23,28 @@ export const DEVLOG_TITLE =
   "Medirealize：開発の軌跡 ～現場の医師による開発日誌～" as const;
 
 export const DEVLOG_BODY =
-  "「届かなかった声」を形にする挑戦のプロセスを、100円（月額）の「開発日誌（葛藤ログ）」として公開しています。一人の医師が現場の課題に向き合い、コードを書き進める現在進行形のドキュメントを、購読という形でぜひ見守ってください。" as const;
+  "「届かなかった声」を形にする挑戦のプロセスを、月額100円の「開発日誌（葛藤ログ）」として公開しています。一人の医師が現場の課題に向き合い、コードを書き進める現在進行形のドキュメントを、購読という形でぜひ見守ってください。" as const;
 
-export const DEVLOG_CTA_LABEL = "100円で開発を支援する" as const;
+export const DEVLOG_CTA_LABEL = "開発日誌（葛藤ログ）を覗いてみる（月額100円）" as const;
 
-/** CTA 直下・用途の注釈（支援金の使途） */
+/** 購読料の用途（Stripe 審査上「デジタルコンテンツの対価」に整合） */
 export const DEVLOG_SUPPORT_FUND_NOTE =
-  "※支援金はすべて本サービスの開発維持費として大切に活用させていただきます。" as const;
+  "※購読料は、開発日誌（デジタルコンテンツ）の提供および関連機能の維持に使用いたします。" as const;
 
-/** 解約導線の明示（Stripe カスタマーポータル） */
+/** 解約導線 */
 export const DEVLOG_SUPPORT_CANCEL_NOTE =
-  "支援の停止（サブスクリプションの解約）は、Stripeのカスタマーポータルからいつでもお手続きいただけます。" as const;
+  "購読の停止（サブスクリプションの解約）は、Stripeのカスタマーポータルからいつでもお手続きいただけます。" as const;
 
 /** 1 行で使う場合（ログインページ等） */
 export const DEVLOG_SUPPORT_USAGE_NOTE =
   `${DEVLOG_SUPPORT_FUND_NOTE}${DEVLOG_SUPPORT_CANCEL_NOTE}`;
 
-/** フッター等で使う短い価格表記（税込は特商法・利用規約で補足） */
-export const DEVLOG_PUBLIC_PRICE_NOTE = "100円" as const;
+/** フッター等の価格表記 */
+export const DEVLOG_PUBLIC_PRICE_NOTE = "月額100円" as const;
+
+/** 購読者ログイン周りのリード */
+export const DEVLOG_UNLOCK_CHECKOUT_LEAD =
+  "Stripe の安全な決済ページへ進み、月額100円（税込）で開発日誌（デジタルコンテンツ）を購読いただけます。" as const;
 
 export const DEVLOG_BULLETS = [
   "現場の医師の導線とAIの仕様を徹底的に磨き上げた日",

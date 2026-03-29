@@ -12,7 +12,7 @@ const SURFACE =
   "rounded-2xl border border-[#E4E6EB] bg-white shadow-[0_2px_16px_rgba(0,0,0,0.06)]";
 
 function LeadBody({ text }: { text: string }) {
-  const marker = "100円（月額）";
+  const marker = "月額100円";
   const i = text.indexOf(marker);
   if (i < 0) return <>{text}</>;
   return (
@@ -56,7 +56,7 @@ export default function DevelopmentLog() {
       <div className="mx-auto mt-9 flex w-full min-w-0 max-w-lg flex-col items-stretch sm:items-center lg:mt-10">
         <a
           href={DEVLOG_CHECKOUT_PATH}
-          className="inline-flex min-h-[54px] w-full items-center justify-center rounded-xl bg-[#1877F2] px-5 py-3.5 text-center text-sm font-semibold leading-snug tracking-tight text-white shadow-md transition-[box-shadow,transform,background-color] hover:bg-[#166FE5] hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/45 active:scale-[0.99] sm:min-h-[56px] sm:px-6 sm:text-base md:text-lg md:leading-snug"
+          className="inline-flex min-h-[52px] w-full items-center justify-center rounded-xl bg-[#1877F2] px-4 py-3 text-center text-[0.8125rem] font-semibold leading-snug tracking-tight text-white shadow-md transition-[box-shadow,transform,background-color] hover:bg-[#166FE5] hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/45 active:scale-[0.99] sm:min-h-[54px] sm:px-5 sm:text-sm md:min-h-[56px] md:px-6 md:text-base md:leading-snug"
         >
           {DEVLOG_CTA_LABEL}
         </a>

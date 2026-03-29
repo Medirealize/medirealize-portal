@@ -12,10 +12,41 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://www.medirealize.jp";
+const ogTitle = "Medirealize｜届かなかった声を、医療の形に変える。";
+const ogDescription =
+  "一人の医師が、外来のたびに感じていた「届かなかった声」。それを形にするための開発日誌（葛藤ログ）を、あえて未完成なまま公開します。";
+const ogImageUrl = `${siteUrl}/og-image.png`;
+
 export const metadata: Metadata = {
-  title: "Medirealize",
-  description:
-    "届かなかった声を、医療の形（Realize）に変える。医療の言語化（Medical Articulation）で、理想の診察を現実に。",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: ogTitle,
+    template: "%s | Medirealize",
+  },
+  description: ogDescription,
+  openGraph: {
+    title: ogTitle,
+    description: ogDescription,
+    url: siteUrl,
+    siteName: "Medirealize",
+    locale: "ja_JP",
+    type: "website",
+    images: [
+      {
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        alt: "Medirealize — 開発プロセスを共有する医療テックプロジェクト",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: ogTitle,
+    description: ogDescription,
+    images: [ogImageUrl],
+  },
 };
 
 export default function RootLayout({

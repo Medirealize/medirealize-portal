@@ -7,15 +7,15 @@ export default function DeveloperProfileSection() {
   return (
     <section className="border-y border-[#DADDE1] bg-white py-9 sm:py-12" aria-label="Profile">
       <div className="mx-auto max-w-6xl px-3 sm:px-4">
-        <div className="grid grid-cols-1 items-start gap-6 sm:gap-8 lg:grid-cols-[minmax(0,auto)_1fr] lg:gap-10">
-          <aside className="mx-auto w-full max-w-[16rem] rounded-lg border border-[#DADDE1] bg-white p-3 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:max-w-[18rem] lg:mx-0 lg:w-auto lg:max-w-none lg:self-start">
+        <div className="grid grid-cols-1 items-start gap-6 sm:gap-8 lg:grid-cols-[13.5rem_minmax(0,1fr)] lg:gap-10 xl:grid-cols-[14rem_minmax(0,1fr)]">
+          <aside className="mx-auto w-full max-w-[14rem] shrink-0 rounded-lg border border-[#DADDE1] bg-white p-3 shadow-[0_1px_2px_rgba(0,0,0,0.08)] lg:mx-0 lg:w-full lg:max-w-none lg:self-start">
             <div className="relative mx-auto h-[72px] w-[72px] shrink-0 overflow-hidden rounded-full ring-1 ring-[#DADDE1] sm:h-20 sm:w-20">
               <Image
-                src="/image_11eb7b.png"
+                src="/nomura-profile.png"
                 alt="野村信介"
                 fill
-                className="object-cover object-center"
-                sizes="80px"
+                className="object-cover object-[center_22%]"
+                sizes="(max-width: 1024px) 80px, 80px"
                 priority={false}
               />
             </div>

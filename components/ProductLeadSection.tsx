@@ -26,7 +26,7 @@ export default function ProductLeadSection() {
       <section className="w-full text-center" aria-label="ヒーロー">
         <div className="flex w-full justify-center">
           <div
-            className={`${HERO_BOX} ${HERO_PAD} w-full max-w-[min(100%,26rem)] sm:max-w-[min(100%,32rem)] md:max-w-[min(100%,42rem)] lg:w-max lg:max-w-[min(100%,calc(100vw-2rem))] lg:min-w-0 xl:max-w-[min(100%,72rem)]`}
+            className={`${HERO_BOX} ${HERO_PAD} w-full max-w-[min(100%,26rem)] sm:max-w-[min(100%,32rem)] md:max-w-[min(100%,42rem)] lg:inline-block lg:w-max lg:max-w-[min(100%,calc(100vw-2rem))] lg:min-w-0`}
           >
             <div className="mx-auto inline-flex max-w-full items-center justify-center gap-2 whitespace-normal rounded-full border border-[#DADDE1] bg-[#F0F2F5] px-3 py-1.5 text-xs font-semibold leading-tight text-[#65676B] sm:whitespace-nowrap md:px-3.5 md:py-1.5 md:text-[13px]">
               <span className="inline-flex h-2 w-2 shrink-0 rounded-full bg-[#1877F2]" aria-hidden />

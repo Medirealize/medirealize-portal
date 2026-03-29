@@ -7,6 +7,7 @@ import {
   DEVLOG_CHECKOUT_PATH,
   DEVLOG_CTA_LABEL,
   DEVLOG_SUPPORT_USAGE_NOTE,
+  DEVLOG_UNLOCK_CHECKOUT_LEAD,
 } from "@/lib/productLeadContent";
 
 export const metadata: Metadata = {
@@ -78,9 +79,7 @@ export default async function DevLogUnlockPage({
 
         <div className="mt-6 rounded-2xl border border-blue-200 bg-blue-50/60 p-4">
           <p className="text-sm font-medium text-slate-800">まだ購読されていない方</p>
-          <p className="mt-1 text-xs leading-relaxed text-slate-600">
-            Stripe の安全な決済ページへ進み、100円（月額・税込）で開発を支援・購読いただけます。
-          </p>
+          <p className="mt-1 text-xs leading-relaxed text-slate-600">{DEVLOG_UNLOCK_CHECKOUT_LEAD}</p>
           <a
             href={DEVLOG_CHECKOUT_PATH}
             className="mt-3 inline-flex w-full items-center justify-center rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
