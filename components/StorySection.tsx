@@ -1,10 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
-import FacebookFriendsRequestNote from "@/components/FacebookFriendsRequestNote";
 import FacebookIcon from "@/components/FacebookIcon";
-import {
-  CONTACT_GOOGLE_FORM_URL,
-  FACEBOOK_MESSENGER_URL,
-} from "@/lib/socialLinks";
+import { FACEBOOK_MESSENGER_URL } from "@/lib/socialLinks";
 
 const NOTE_STORY_URL = "https://note.com/medirealize_note";
 
@@ -49,7 +45,7 @@ export default function StorySection() {
           <p className="mt-3 text-[0.9375rem] leading-[1.65] text-[#65676B] sm:text-sm sm:leading-relaxed">
             理想を現実に。医療の構造を共に実装しませんか。医師によるプロトタイプ開発のスピードを、技術で加速できる方との協業を歓迎しています。
           </p>
-          <p className="mt-4 rounded-lg border border-blue-100 bg-blue-50/70 p-3 text-[0.9375rem] leading-relaxed text-[#1C1E21] sm:p-4 sm:text-sm">
+          <p className="mt-3 rounded-lg border border-blue-100 bg-blue-50/70 px-2.5 py-2 text-[0.9375rem] leading-snug text-[#1C1E21] sm:px-3 sm:py-2.5 sm:text-sm sm:leading-relaxed">
             {RECRUIT_LEAD}
           </p>
           <a
@@ -59,20 +55,8 @@ export default function StorySection() {
             className="mt-4 inline-flex min-h-[52px] w-full items-center justify-center gap-2.5 rounded-xl bg-[#1877F2] px-4 py-3.5 text-center text-sm font-bold leading-snug text-white shadow-md transition-colors hover:bg-[#166FE5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/50 active:scale-[0.99] sm:min-h-[56px] sm:px-5 sm:text-base sm:leading-snug"
           >
             <FacebookIcon className="h-5 w-5 shrink-0 text-white" />
-            Facebookで参謀に立候補する（合言葉：メディリアライズ）
+            Facebookで参謀に立候補する
           </a>
-          <p className="mt-3 text-center text-[12px] leading-relaxed text-[#8A8D91]">
-            ※FBアカウントをお持ちでない方は
-            <a
-              href={CONTACT_GOOGLE_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-[#1877F2] underline decoration-[#1877F2]/40 underline-offset-2 transition-colors hover:text-[#166FE5] hover:decoration-[#166FE5]"
-            >
-              こちら（お問い合わせフォーム）
-            </a>
-          </p>
-          <FacebookFriendsRequestNote className="mt-4 max-w-prose border-t border-[#E4E6EB] pt-4" />
         </article>
       </div>
     </section>

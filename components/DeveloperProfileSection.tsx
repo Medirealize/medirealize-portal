@@ -2,7 +2,10 @@ import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import FacebookFriendsRequestNote from "@/components/FacebookFriendsRequestNote";
 import FacebookIcon from "@/components/FacebookIcon";
-import { FACEBOOK_MESSENGER_URL } from "@/lib/socialLinks";
+import {
+  CONTACT_GOOGLE_FORM_URL,
+  FACEBOOK_MESSENGER_URL,
+} from "@/lib/socialLinks";
 
 const NOTE_STORY_URL = "https://note.com/medirealize_note";
 
@@ -105,17 +108,27 @@ export default function DeveloperProfileSection() {
                 </div>
               </section>
 
-              <div className="rounded-lg border border-[#DADDE1] bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.05)] sm:p-4">
+              <div className="w-full min-w-0 rounded-lg border border-[#DADDE1] bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.05)] sm:p-4 lg:max-w-3xl">
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#1877F2]">Facebook</p>
-                <a
-                  href={FACEBOOK_MESSENGER_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 inline-flex min-h-[44px] w-full max-w-md items-center justify-center gap-2 rounded-lg border border-[#DADDE1] bg-[#F0F2F5] px-4 py-2.5 text-sm font-semibold text-[#1877F2] transition-colors hover:bg-[#E4E6EB] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40 sm:w-auto sm:justify-start"
-                >
-                  <FacebookIcon className="h-5 w-5 shrink-0" />
-                  Messenger でメッセージを送る
-                </a>
+                <div className="mt-2 flex min-w-0 flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+                  <a
+                    href={FACEBOOK_MESSENGER_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-[44px] w-full shrink-0 items-center justify-center gap-2 rounded-lg border border-[#DADDE1] bg-[#F0F2F5] px-4 py-2.5 text-sm font-semibold text-[#1877F2] transition-colors hover:bg-[#E4E6EB] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40 sm:w-auto sm:justify-start"
+                  >
+                    <FacebookIcon className="h-5 w-5 shrink-0" />
+                    Messenger でメッセージを送る
+                  </a>
+                  <a
+                    href={CONTACT_GOOGLE_FORM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="min-w-0 flex-1 text-xs font-medium leading-snug text-[#1877F2] underline decoration-[#1877F2]/35 underline-offset-2 hover:decoration-[#1877F2] sm:flex-initial sm:pt-0.5"
+                  >
+                    ※FBアカウントをお持ちでない方はこちら（お問い合わせフォーム）
+                  </a>
+                </div>
                 <FacebookFriendsRequestNote className="mt-3 max-w-prose" />
               </div>
             </div>
