@@ -1,6 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
 import FacebookIcon from "@/components/FacebookIcon";
-import { FACEBOOK_MESSENGER_URL } from "@/lib/socialLinks";
+import {
+  FACEBOOK_MESSENGER_URL,
+  SOCIAL_FACEBOOK_URL,
+} from "@/lib/socialLinks";
 
 const NOTE_STORY_URL = "https://note.com/medirealize_note";
 
@@ -24,15 +27,36 @@ export default function StorySection() {
           <p className="mt-3 text-[0.9375rem] leading-[1.65] text-[#65676B] sm:text-sm sm:leading-relaxed">
             15年のキャリア、ボストンでの研究、そして宮崎での再挑戦。医療の現場で見えてきた「構造の限界」を乗り越えるために、医師によるプロトタイプ開発を続けています。現場で得た知見を、実装可能なプロダクトへと変換しています。
           </p>
-          <a
-            href={NOTE_STORY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`mt-5 ${socialCtaBase}`}
-          >
-            noteでストーリーを読む
-            <ArrowUpRight className="h-4 w-4 shrink-0" />
-          </a>
+          <p className="mt-5 text-pretty text-sm leading-relaxed text-[#65676B] sm:text-[0.9375rem] sm:leading-relaxed">
+            noteでは診療設計の『構造論』を、Facebookではアプリ構築の『泥臭い裏側』をリアルタイムで発信しています。このアプリは、それら全ての仮説を検証するための実験場でもあります。
+          </p>
+          <div className="mt-4 flex w-full min-w-0 flex-col gap-3 sm:mt-4 sm:flex-row sm:items-stretch sm:gap-3">
+            <a
+              href={NOTE_STORY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${socialCtaBase} shrink-0 sm:min-w-0 sm:flex-1`}
+            >
+              noteでストーリーを読む
+              <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden />
+            </a>
+            <div className="flex min-w-0 w-full flex-col gap-2 sm:min-w-0 sm:flex-1">
+              <a
+                href={SOCIAL_FACEBOOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${socialCtaBase} shrink-0`}
+              >
+                <FacebookIcon className="h-5 w-5 shrink-0" aria-hidden />
+                <span className="min-w-0 text-center sm:text-left">
+                  Facebookで『開発秘話』を読む
+                </span>
+              </a>
+              <p className="text-pretty text-xs leading-relaxed text-[#65676B] sm:text-[0.8125rem]">
+                ※Facebookは友達限定公開です。申請の際は「メディリアライズ」と一言添えてください。
+              </p>
+            </div>
+          </div>
         </article>
 
         <article className="rounded-xl border border-[#DADDE1] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.08)] sm:p-6">
