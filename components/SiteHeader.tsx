@@ -13,8 +13,22 @@ export default function SiteHeader() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-3 py-2 md:flex-row md:items-center md:justify-between md:gap-3 md:px-4 md:py-3">
         <a
           href="#top"
-          className="inline-flex min-h-[40px] w-fit max-w-full shrink-0 items-center text-sm font-bold leading-tight tracking-[0.06em] text-[#050505] transition-colors hover:text-[#1877F2] md:min-h-0 md:text-base md:tracking-[0.08em]"
+          className="inline-flex min-h-[40px] w-fit max-w-full shrink-0 items-center gap-2 text-sm font-bold leading-tight tracking-[0.06em] text-[#050505] transition-colors hover:text-[#1877F2] md:min-h-0 md:gap-2.5 md:text-base md:tracking-[0.08em]"
         >
+          <span
+            className="relative inline-block h-[1.15em] w-[1.15em] shrink-0 overflow-hidden rounded-[3px]"
+            aria-hidden
+          >
+            {/* 縦積みロゴPNGの上部（マーク）のみを表示 — 高さは隣接テキストの em に追従 */}
+            <img
+              src="/medirealize-logo-full.png"
+              alt=""
+              width={1024}
+              height={572}
+              decoding="async"
+              className="pointer-events-none h-[3.1em] w-full select-none object-cover object-[50%_0%]"
+            />
+          </span>
           メディリアライズ
         </a>
 
