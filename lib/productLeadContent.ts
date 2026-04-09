@@ -24,6 +24,12 @@ export const DEVLOG_UNLOCK_PATH = "/dev-log/unlock" as const;
 
 export const DEVLOG_VIEWER_LOGIN_LABEL = "開発日誌を閲覧する" as const;
 
+/** 「開発日誌を閲覧する」周辺の最終更新表示（YYYY.MM.DD）。UI のラベルと揃える */
+export const DEVLOG_VIEWER_LAST_UPDATED = "2026.04.10" as const;
+
+/** `<time dateTime>` 用（DEVLOG_VIEWER_LAST_UPDATED と同日であること） */
+export const DEVLOG_VIEWER_LAST_UPDATED_ISO = "2026-04-10" as const;
+
 /** ランディング中盤など・購読者向けの見出し */
 export const DEVLOG_ALREADY_SUBSCRIBED_LEAD = "既に購読中の方" as const;
 

@@ -1,4 +1,5 @@
 "use client";
+import DevLogViewerLastUpdatedLabel from "@/components/DevLogViewerLastUpdatedLabel";
 import Link from "next/link";
 import {
   DEVLOG_CHECKOUT_PATH,
@@ -27,12 +28,15 @@ export default function DeveloperThoughtFooter() {
             >
               {DEVLOG_CTA_LABEL}
             </a>
-            <Link
-              href={DEVLOG_UNLOCK_PATH}
-              className="inline-flex w-full min-h-[48px] items-center justify-center rounded-lg border border-[#DADDE1] bg-white px-4 py-3 text-sm font-semibold text-[#050505] transition-colors hover:bg-[#F0F2F5] sm:w-auto"
-            >
-              {DEVLOG_VIEWER_LOGIN_LABEL}
-            </Link>
+            <div className="flex w-full flex-col items-center sm:w-auto">
+              <Link
+                href={DEVLOG_UNLOCK_PATH}
+                className="inline-flex min-h-[48px] w-full items-center justify-center rounded-lg border border-[#DADDE1] bg-white px-4 py-3 text-sm font-semibold text-[#050505] transition-colors hover:bg-[#F0F2F5] sm:w-auto"
+              >
+                {DEVLOG_VIEWER_LOGIN_LABEL}
+              </Link>
+              <DevLogViewerLastUpdatedLabel className="mt-1.5" />
+            </div>
           </div>
           <div className="mt-2 text-center text-xs leading-relaxed text-[#65676B]">
             <p>{DEVLOG_SUPPORT_FUND_NOTE}</p>
