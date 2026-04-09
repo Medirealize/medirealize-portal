@@ -28,7 +28,7 @@ export default function DeveloperThoughtFooter() {
             >
               {DEVLOG_CTA_LABEL}
             </a>
-            <div className="flex w-full flex-col items-center sm:w-auto">
+            <div className="flex w-full flex-col items-center sm:w-max">
               <Link
                 href={DEVLOG_UNLOCK_PATH}
                 className="inline-flex min-h-[48px] w-full items-center justify-center rounded-lg border border-[#DADDE1] bg-white px-4 py-3 text-sm font-semibold text-[#050505] transition-colors hover:bg-[#F0F2F5] sm:w-auto"

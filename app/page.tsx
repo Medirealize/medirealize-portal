@@ -170,7 +170,7 @@ export default function Home() {
 
               <div className="mt-8 flex flex-col items-center gap-3 border-t border-[#E4E6EB] pt-8 sm:mt-9 sm:pt-9">
                 <p className="text-center text-xs font-semibold text-[#65676B] sm:text-sm">{DEVLOG_ALREADY_SUBSCRIBED_LEAD}</p>
-                <div className="flex w-full max-w-sm flex-col items-center sm:w-auto sm:max-w-none">
+                <div className="flex w-full max-w-sm flex-col items-center sm:w-max sm:max-w-none">
                   <Link
                     href={DEVLOG_UNLOCK_PATH}
                     className="inline-flex min-h-[48px] w-full items-center justify-center rounded-lg border border-[#DADDE1] bg-white px-5 py-3 text-sm font-semibold text-[#050505] shadow-[0_1px_2px_rgba(0,0,0,0.06)] transition-colors hover:bg-[#F0F2F5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40 sm:w-auto"
@@ -401,7 +401,7 @@ export default function Home() {
               >
                 {DEVLOG_CTA_LABEL}
               </a>
-              <div className="flex w-full flex-col items-center sm:w-auto">
+              <div className="flex w-full flex-col items-center sm:w-max">
                 <Link
                   href={DEVLOG_UNLOCK_PATH}
                   className="inline-flex min-h-[48px] w-full items-center justify-center rounded-lg border border-[#DADDE1] bg-white px-4 py-3 text-sm font-semibold text-[#050505] transition-colors hover:bg-[#F0F2F5] sm:w-auto"
