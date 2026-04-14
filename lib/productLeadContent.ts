@@ -155,6 +155,6 @@ export const FEATURE_DEFINITIONS: readonly FeatureDefinition[] = [
       "なりたい自分へ、言葉を処方",
     ],
     cta: "明日を予約する",
-    externalUrl: "https://future-chartv7.vercel.app/login",
+    externalUrl: "https://future-chart.vercel.app/login",
   },
 ] satisfies readonly FeatureDefinition[];
