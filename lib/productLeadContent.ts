@@ -136,7 +136,7 @@ export const FEATURE_DEFINITIONS: readonly FeatureDefinition[] = [
   {
     key: "app-3",
     icon: "message",
-    catchCopy: "先生、本当はね。",
+    catchCopy: "ほんね。",
     steps: [
       "言いにくい本音を吐き出す",
       "AIが伝わる「言葉」に翻訳",
