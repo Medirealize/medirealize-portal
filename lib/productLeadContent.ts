@@ -143,7 +143,7 @@ export const FEATURE_DEFINITIONS: readonly FeatureDefinition[] = [
       "医師への伝え方を台本化",
     ],
     cta: "本音を言葉にする",
-    externalUrl: "https://kiduki-insight-v2.vercel.app/",
+    externalUrl: "https://insight.medirealize.jp/",
   },
   {
     key: "app-4",
