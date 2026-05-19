@@ -119,9 +119,15 @@ export default function Home() {
                     className="group relative flex h-full flex-col rounded-2xl border border-[#E4E6EB] bg-white px-5 pb-5 pt-7 text-left shadow-[0_2px_12px_rgba(0,0,0,0.05)] transition-shadow duration-200 hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] sm:px-6 sm:pb-6 sm:pt-8"
                     aria-label={`${f.catchCopy} のカード`}
                   >
-                    <span className="pointer-events-none absolute right-2 top-0 z-20 -translate-y-1/2 rounded-md border border-red-200 bg-red-50 px-2.5 py-1.5 text-xs font-semibold leading-none text-red-600 shadow-md sm:right-3 sm:px-3 sm:text-sm">
-                      [開発中]
-                    </span>
+                    {i === 2 ? (
+                      <span className="pointer-events-none absolute right-2 top-0 z-20 -translate-y-1/2 rounded-md border border-green-200 bg-green-50 px-2.5 py-1.5 text-xs font-semibold leading-none text-green-700 shadow-md sm:right-3 sm:px-3 sm:text-sm">
+                        無料で使える
+                      </span>
+                    ) : (
+                      <span className="pointer-events-none absolute right-2 top-0 z-20 -translate-y-1/2 rounded-md border border-red-200 bg-red-50 px-2.5 py-1.5 text-xs font-semibold leading-none text-red-600 shadow-md sm:right-3 sm:px-3 sm:text-sm">
+                        [開発中]
+                      </span>
+                    )}
                     <div className="flex flex-1 flex-col">
                       <div className="flex items-start gap-3">
                         <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#F0F2F5] text-xl text-[#1877F2] ring-1 ring-[#DADDE1]">

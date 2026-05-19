@@ -138,9 +138,9 @@ export const FEATURE_DEFINITIONS: readonly FeatureDefinition[] = [
     icon: "message",
     catchCopy: "ほんね。",
     steps: [
-      "言いにくい本音を吐き出す",
-      "AIが伝わる「言葉」に翻訳",
-      "医師への伝え方を台本化",
+      "言えない気持ちを書き出す",
+      "AIが本音を言語化する",
+      "誰かへの伝え方が見つかる",
     ],
     cta: "本音を言葉にする",
     externalUrl: "https://insight.medirealize.jp/",
