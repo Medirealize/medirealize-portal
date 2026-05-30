@@ -1,4 +1,5 @@
 import DevLogViewerLastUpdatedLabel from "@/components/DevLogViewerLastUpdatedLabel";
+import FieldToolSection from "@/components/FieldToolSection";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -22,6 +23,7 @@ import {
   HERO_MAIN_COPY,
   HERO_SUB_COPY,
   MA_FOOTNOTE_CHIP,
+  MA_PRODUCTS_SECTION_LABEL,
   MEDICAL_DISCLAIMER,
   PHASE_BADGE_LONG,
   PHASE_BADGE_SHORT,
@@ -112,6 +114,12 @@ export default function Home() {
             </section>
 
             <section className="mt-9 sm:mt-10" aria-label="プロダクト導線">
+              <div className="mb-5 flex flex-col items-center gap-2 sm:mb-6">
+                <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-[#65676B]">
+                  {MA_PRODUCTS_SECTION_LABEL}
+                </p>
+                <div className="h-px w-12 bg-[#DADDE1]" aria-hidden />
+              </div>
               <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-6">
                 {FEATURE_DEFINITIONS.map((f, i) => (
                   <article
@@ -169,6 +177,8 @@ export default function Home() {
                   </article>
                 ))}
               </div>
+
+              <FieldToolSection />
 
               <p className="mt-6 w-full text-right text-xs leading-relaxed text-[#65676B] sm:mt-7 sm:text-sm lg:mt-8 lg:text-[0.9375rem]">
                 {MEDICAL_DISCLAIMER}
