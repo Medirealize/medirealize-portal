@@ -180,6 +180,89 @@ export const FIELD_TOOL_STEPS = [
   },
 ] as const;
 
+/** 医療者向けプロトタイプ群（診療科横断のクリニカルツール） */
+export const CLINICAL_TOOLS_SECTION_LABEL = "医療者向け · 診療プロトタイプ" as const;
+
+export const CLINICAL_TOOLS_EYEBROW = "Clinical Tools · 開発中プロトタイプ" as const;
+
+export const CLINICAL_TOOLS_HEADLINE =
+  "現場の「あったらいいな」を、その日のうちに動くプロトタイプへ。" as const;
+
+export const CLINICAL_TOOLS_LEAD =
+  "外来のちょっとした計算・確認・記録の手間を減らすための、医師によるミニツール群です。各科の診療の合間に生まれたアイデアを、すぐ試せる形で公開しています。" as const;
+
+export const CLINICAL_TOOLS_DISCLAIMER =
+  "※いずれも診療の意思決定を支援する参考ツール（プロトタイプ）であり、医療機器ではありません。最終判断は必ず添付文書・ガイドライン等の一次情報でご確認ください。" as const;
+
+export const CLINICAL_TOOLS_STATUS_BADGE = "医療者向け · プロトタイプ" as const;
+
+export type ClinicalToolDefinition = {
+  key: string;
+  icon: string;
+  name: string;
+  tagline: string;
+  externalUrl: string;
+};
+
+export const CLINICAL_TOOL_DEFINITIONS = [
+  {
+    key: "ai-monshin-scribe",
+    icon: "🩺",
+    name: "Aegis Scribe AI",
+    tagline: "AIが問診を要約し、SOAP形式の診察記録を自動生成",
+    externalUrl: "https://ai-monshin-scribe.vercel.app/",
+  },
+  {
+    key: "pregmed-safe",
+    icon: "🤰",
+    name: "PregMed Safe",
+    tagline: "妊娠期・授乳期の医薬品・漢方薬の安全性プロファイルを検索",
+    externalUrl: "https://pregmed-safe.vercel.app/",
+  },
+  {
+    key: "menopause",
+    icon: "🌸",
+    name: "Meno Care",
+    tagline: "更年期問診（SMI）を診察中にスコアリングし即時表示",
+    externalUrl: "https://menopause-six.vercel.app/",
+  },
+  {
+    key: "polypharmacy-management",
+    icon: "💊",
+    name: "診察のおとも",
+    tagline: "高齢者のポリファーマシー・抗コリン負荷・減薬を多職種で管理",
+    externalUrl: "https://polypharmacy-management.vercel.app/",
+  },
+  {
+    key: "headache-app",
+    icon: "🧠",
+    name: "頭痛支援ツール",
+    tagline: "ICHD-3・頭痛診療ガイドラインに基づく簡易分類と治療支援",
+    externalUrl: "https://headache-app-theta.vercel.app/",
+  },
+  {
+    key: "vaccine-app",
+    icon: "💉",
+    name: "予防接種スケジュール管理",
+    tagline: "小児科クリニック向け、予防接種の最適化・チェック管理",
+    externalUrl: "https://vaccine-app-cyan-kappa.vercel.app/",
+  },
+  {
+    key: "dbd13r-app",
+    icon: "📋",
+    name: "DBD13R 行動評価アンケート",
+    tagline: "認知症の行動・心理症状（BPSD）を待合室のタブレットで入力",
+    externalUrl: "https://dbd13r-app.vercel.app/",
+  },
+  {
+    key: "pediatric-prescription",
+    icon: "👶",
+    name: "小児用処方量計算ツール",
+    tagline: "体重・年齢から剤形別の投与量と安全上限を素早く算出",
+    externalUrl: "https://pediatric-prescription.vercel.app/",
+  },
+] satisfies readonly ClinicalToolDefinition[];
+
 export type FeatureIconKey = "stethoscope" | "calendar" | "message" | "sparkles";
 
 export type FeatureDefinition = {

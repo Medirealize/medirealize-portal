@@ -1,3 +1,4 @@
+import ClinicalToolsSection from "@/components/ClinicalToolsSection";
 import DevLogViewerLastUpdatedLabel from "@/components/DevLogViewerLastUpdatedLabel";
 import FieldToolSection from "@/components/FieldToolSection";
 import Image from "next/image";
@@ -179,6 +180,8 @@ export default function Home() {
               </div>
 
               <FieldToolSection />
+
+              <ClinicalToolsSection />
 
               <p className="mt-6 w-full text-right text-xs leading-relaxed text-[#65676B] sm:mt-7 sm:text-sm lg:mt-8 lg:text-[0.9375rem]">
                 {MEDICAL_DISCLAIMER}
