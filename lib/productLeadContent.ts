@@ -208,14 +208,14 @@ export const CLINICAL_TOOL_DEFINITIONS = [
   {
     key: "ai-monshin-scribe",
     icon: "🩺",
-    name: "Aegis Scribe AI",
+    name: "AI問診シュライバー",
     tagline: "AIが問診を要約し、SOAP形式の診察記録を自動生成",
     externalUrl: "https://ai-monshin-scribe.vercel.app/",
   },
   {
     key: "pregmed-safe",
     icon: "🤰",
-    name: "PregMed Safe",
+    name: "妊娠授乳期処方サポート",
     tagline: "妊娠期・授乳期の医薬品・漢方薬の安全性プロファイルを検索",
     externalUrl: "https://pregmed-safe.vercel.app/",
   },
