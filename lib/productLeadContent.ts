@@ -222,14 +222,14 @@ export const CLINICAL_TOOL_DEFINITIONS = [
   {
     key: "menopause",
     icon: "🌸",
-    name: "Meno Care",
+    name: "更年期スコア",
     tagline: "更年期問診（SMI）を診察中にスコアリングし即時表示",
     externalUrl: "https://menopause-six.vercel.app/",
   },
   {
     key: "polypharmacy-management",
     icon: "💊",
-    name: "診察のおとも",
+    name: "高齢者服薬評価",
     tagline: "高齢者のポリファーマシー・抗コリン負荷・減薬を多職種で管理",
     externalUrl: "https://polypharmacy-management.vercel.app/",
   },
