@@ -255,6 +255,13 @@ export const CLINICAL_TOOL_DEFINITIONS = [
     externalUrl: "https://dbd13r-app.vercel.app/",
   },
   {
+    key: "act-app",
+    icon: "🫁",
+    name: "喘息コントロールテスト",
+    tagline: "成人ACT・小児C-ACTを待合室で回答し、スコアをカルテ用にコピー",
+    externalUrl: "https://act-app-green.vercel.app/",
+  },
+  {
     key: "pediatric-prescription",
     icon: "👶",
     name: "小児用処方量計算ツール",

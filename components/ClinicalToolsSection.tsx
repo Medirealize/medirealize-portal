@@ -35,14 +35,14 @@ export default function ClinicalToolsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-3">
           {CLINICAL_TOOL_DEFINITIONS.map((tool) => (
             <a
               key={tool.key}
               href={tool.externalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col gap-3 border-b border-[#E4E6EB] px-5 py-6 transition-colors hover:bg-[#F0F2F5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40 sm:px-6 sm:py-7 lg:border-r lg:last:border-r-0"
+              className="group flex flex-col gap-3 border-b border-[#E4E6EB] px-5 py-6 transition-colors hover:bg-[#F0F2F5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1877F2]/40 sm:px-6 sm:py-7 lg:border-r lg:[&:nth-child(3n)]:border-r-0"
             >
               <div className="flex items-center justify-between gap-2">
                 <span
